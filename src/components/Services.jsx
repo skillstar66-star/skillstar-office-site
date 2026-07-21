@@ -54,32 +54,40 @@ const Services = () => {
         viewport={{ once: true, margin: "-50px" }}
         className="grid grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6"
       >
-        {services.map((service, i) => (
-          <motion.div
-            key={i}
-            variants={itemVariants}
-            whileHover={{ y: -8, scale: 1.02 }}
-            className="group relative bg-[#0A0D1A]/80 backdrop-blur-sm border border-white/5 rounded-xl md:rounded-2xl p-3 md:p-6 hover:border-primary/50 transition-all duration-500 hover:shadow-[0_10px_40px_rgba(37,99,235,0.2)] cursor-pointer overflow-hidden z-10"
-          >
-            {/* Animated Hover Gradient Background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none -z-10"></div>
-            
-            <div className="relative z-10 flex flex-col items-center text-center gap-2 md:gap-4">
-              <div className="w-10 h-10 md:w-16 md:h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-500 group-hover:border-primary/50 relative overflow-hidden">
-                {/* Ping animation on hover */}
-                <span className="absolute inset-0 rounded-full bg-primary/20 opacity-0 group-hover:animate-ping"></span>
-                <service.icon className="w-5 h-5 md:w-7 md:h-7 text-white/80 group-hover:text-white group-hover:scale-110 transition-transform duration-500 relative z-10" />
+        {services.map((service, i) => {
+          const [isActive, setIsActive] = React.useState(false);
+
+          return (
+            <motion.div
+              key={i}
+              variants={itemVariants}
+              onHoverStart={() => setIsActive(true)}
+              onHoverEnd={() => setIsActive(false)}
+              onClick={() => setIsActive(!isActive)}
+              animate={isActive ? { y: -8, scale: 1.02 } : { y: 0, scale: 1 }}
+              transition={{ duration: 0.3 }}
+              className={`relative bg-[#0A0D1A]/80 backdrop-blur-sm border rounded-xl md:rounded-2xl p-3 md:p-6 transition-all duration-500 cursor-pointer overflow-hidden z-10 ${isActive ? 'border-primary/50 shadow-[0_10px_40px_rgba(37,99,235,0.2)]' : 'border-white/5'}`}
+            >
+              {/* Animated Hover Gradient Background */}
+              <div className={`absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-transparent transition-opacity duration-700 pointer-events-none -z-10 ${isActive ? 'opacity-100' : 'opacity-0'}`}></div>
+              
+              <div className="relative z-10 flex flex-col items-center text-center gap-2 md:gap-4">
+                <div className={`w-10 h-10 md:w-16 md:h-16 rounded-full border flex items-center justify-center transition-colors duration-500 relative overflow-hidden ${isActive ? 'bg-primary/20 border-primary/50' : 'bg-white/5 border-white/10'}`}>
+                  {/* Ping animation on hover */}
+                  <span className={`absolute inset-0 rounded-full bg-primary/20 ${isActive ? 'animate-ping opacity-100' : 'opacity-0'}`}></span>
+                  <service.icon className={`w-5 h-5 md:w-7 md:h-7 transition-all duration-500 relative z-10 ${isActive ? 'text-white scale-110' : 'text-white/80'}`} />
+                </div>
+                <div>
+                  <h3 className={`text-[11px] md:text-lg font-bold mb-0.5 md:mb-1 transition-colors leading-tight ${isActive ? 'text-white' : 'text-white/90'}`}>{service.title}</h3>
+                  <p className={`text-[9px] md:text-sm transition-colors leading-tight ${isActive ? 'text-white/70' : 'text-white/50'}`}>{service.desc}</p>
+                </div>
               </div>
-              <div>
-                <h3 className="text-[11px] md:text-lg font-bold mb-0.5 md:mb-1 text-white/90 group-hover:text-white transition-colors leading-tight">{service.title}</h3>
-                <p className="text-[9px] md:text-sm text-white/50 group-hover:text-white/70 transition-colors leading-tight">{service.desc}</p>
-              </div>
-            </div>
-            
-            {/* Bottom Glow Line */}
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transform scale-x-0 group-hover:scale-x-100 transition-all duration-700"></div>
-          </motion.div>
-        ))}
+              
+              {/* Bottom Glow Line */}
+              <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent transform transition-all duration-700 ${isActive ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`}></div>
+            </motion.div>
+          );
+        })}
       </motion.div>
     </section>
   );
