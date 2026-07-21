@@ -96,21 +96,23 @@ const IntroAnimation = ({ onComplete }) => {
 
         offCtx.clearRect(0, 0, canvas.width, canvas.height);
 
-        // Target positioning logic (match navbar)
-        let paddingX = 24;
-        if (window.innerWidth >= 768) paddingX = 48;
-        if (window.innerWidth >= 1024) paddingX = 96; // 24 = px-6, 48 = px-12, 96 = px-24 
-
+        // Target positioning logic (match navbar exactly by measuring a hidden clone in the DOM)
+        const logoTarget = document.getElementById('logo-target-measure');
+        let logoX = 24;
+        let logoY = 24;
         const logoH = isMobile ? 64 : 80;
-        const logoW = (logo.width / logo.height) * logoH;
+        let logoW = (logo.width / logo.height) * logoH;
 
-        // py-6 means 24px top padding
-        const logoY = 24;
-
-        // Container mx-auto centering approximation
-        const maxContainer = 1536; // rough 2xl container max
-        const containerPaddingX = Math.max(paddingX, (window.innerWidth - maxContainer) / 2 + paddingX);
-        const logoX = containerPaddingX;
+        if (logoTarget) {
+          const rect = logoTarget.getBoundingClientRect();
+          logoX = rect.left;
+          logoY = rect.top;
+          logoW = rect.width || logoW; // use actual width if available
+        } else {
+          // Fallback if measurement fails
+          logoX = isMobile ? 24 : 96; 
+          logoY = 24;
+        }
 
         // Draw logo offscreen
         offCtx.drawImage(logo, logoX * dpr, logoY * dpr, logoW * dpr, logoH * dpr);
@@ -249,6 +251,13 @@ const IntroAnimation = ({ onComplete }) => {
 
   return (
     <div className="fixed inset-0 z-[100] bg-[#050816] flex items-center justify-center overflow-hidden pointer-events-none">
+
+      {/* Hidden replica of Navbar to measure perfect logo target coordinates */}
+      <div className="absolute top-0 left-0 right-0 opacity-0 pointer-events-none py-6">
+        <div className="container mx-auto px-6 md:px-12 lg:px-24 flex items-center justify-between">
+          <img id="logo-target-measure" src={logoImg} alt="Measure" className="h-16 md:h-20 object-contain" />
+        </div>
+      </div>
 
       {/* Background tiny blue particles */}
       <motion.div
