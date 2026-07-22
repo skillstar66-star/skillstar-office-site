@@ -2,22 +2,42 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Eye } from 'lucide-react';
 
-const categories = ['All', 'Healthcare', 'Education', 'Real Estate', 'Fashion', 'More'];
+import rokeaImg from '../assets/rokea.png';
+import seedsImg from '../assets/seedstherapy.png';
+import laCafeImg from '../assets/la cafe.png';
+import senthurImg from '../assets/senthur logo.png';
+import innerCompassImg from '../assets/inner compass yoga.jpeg';
+
+const categories = ['All', 'Website', 'Logo', 'Videos', 'Poster', 'Carousel'];
 
 const portfolioItems = [
-  { id: 1, category: 'Healthcare', img: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800', title: 'MedCare Plus' },
-  { id: 2, category: 'Education', img: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800', title: 'EduTech Pro' },
-  { id: 3, category: 'Real Estate', img: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800', title: 'Skyline Realty' },
-  { id: 4, category: 'Fashion', img: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=800', title: 'Vogue Trends' },
-  { id: 5, category: 'Food', img: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=800', title: 'Gourmet Bites' },
-  { id: 6, category: 'Travel', img: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=800', title: 'Wanderlust' },
+  // Website
+  { id: 1, category: 'Website', img: rokeaImg, title: 'Rokeabyrk' },
+  { id: 2, category: 'Website', img: seedsImg, title: 'Seeds Therapy Center' },
+  { id: 3, category: 'Website', img: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800', title: 'MedCare Plus' },
+
+  // Logo
+  { id: 4, category: 'Logo', img: senthurImg, title: 'Senthur' },
+  { id: 5, category: 'Logo', img: laCafeImg, title: 'La Cafe' },
+
+  // Videos
+  { id: 6, category: 'Videos', img: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800', title: 'Skyline Realty Tour' },
+  { id: 7, category: 'Videos', img: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800', title: 'EduTech Promo' },
+
+  // Poster
+  { id: 8, category: 'Poster', img: innerCompassImg, title: 'Inner Compass Yoga' },
+  { id: 9, category: 'Poster', img: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=800', title: 'Vogue Trends' },
+
+  // Carousel
+  { id: 10, category: 'Carousel', img: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=800', title: 'Gourmet Bites' },
+  { id: 11, category: 'Carousel', img: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=800', title: 'Wanderlust' },
 ];
 
 const Portfolio = () => {
   const [activeCat, setActiveCat] = useState('All');
 
-  const filteredItems = activeCat === 'All' 
-    ? portfolioItems 
+  const filteredItems = activeCat === 'All'
+    ? portfolioItems
     : portfolioItems.filter(item => item.category === activeCat);
 
   return (
@@ -31,9 +51,9 @@ const Portfolio = () => {
             Work That <span className="gradient-text">Speaks</span>
           </h2>
         </motion.div>
-        
+
         {/* Categories */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
           className="flex flex-wrap gap-2"
         >
@@ -41,11 +61,10 @@ const Portfolio = () => {
             <button
               key={i}
               onClick={() => setActiveCat(cat)}
-              className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 relative overflow-hidden ${
-                activeCat === cat 
-                  ? 'bg-primary text-white shadow-[0_0_15px_rgba(37,99,235,0.4)] scale-105' 
+              className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 relative overflow-hidden ${activeCat === cat
+                  ? 'bg-primary text-white shadow-[0_0_15px_rgba(37,99,235,0.4)] scale-105'
                   : 'bg-white/5 text-white/60 hover:bg-white/10 hover:text-white hover:scale-105 border border-white/5'
-              }`}
+                }`}
             >
               {activeCat === cat && (
                 <motion.span layoutId="activeCat" className="absolute inset-0 bg-primary -z-10 rounded-full" />
@@ -64,18 +83,29 @@ const Portfolio = () => {
               initial={{ opacity: 0, scale: 0.8, filter: 'blur(10px)' }}
               animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
               exit={{ opacity: 0, scale: 0.8, filter: 'blur(10px)' }}
+              whileHover={{ y: -10, scale: 1.03, transition: { type: "spring", stiffness: 400, damping: 25 } }}
               transition={{ duration: 0.4, type: "spring" }}
               key={item.id}
-              className="group relative rounded-2xl overflow-hidden aspect-[4/3] cursor-pointer shadow-lg hover:shadow-[0_15px_40px_rgba(37,99,235,0.2)]"
+              onClick={() => window.open('https://portfolio-pi-blush-99.vercel.app/', '_blank')}
+              className="group relative rounded-2xl overflow-hidden aspect-[4/3] cursor-pointer shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_40px_rgba(37,99,235,0.4)] border border-white/5 hover:border-primary/50 transition-colors z-10 hover:z-20"
             >
-              <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-110" />
-              
+              <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-125" />
+
+              {/* Card Hover Glow */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none mix-blend-overlay"></div>
+
               {/* Dynamic Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#050816] via-[#050816]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-2 md:p-6">
-                
+              <div className="absolute inset-0 bg-gradient-to-t from-[#050816] via-[#050816]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-2 md:p-6">
+
                 {/* Floating View Icon */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 md:w-14 md:h-14 bg-primary/90 text-white rounded-full flex items-center justify-center opacity-0 scale-50 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 ease-spring backdrop-blur-md">
-                   <Eye className="w-4 h-4 md:w-6 md:h-6" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <motion.div
+                    className="w-10 h-10 md:w-16 md:h-16 bg-primary/90 text-white rounded-full flex items-center justify-center opacity-0 scale-50 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 backdrop-blur-md shadow-[0_0_30px_rgba(37,99,235,0.6)]"
+                    animate={{ y: [0, -8, 0] }}
+                    transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                  >
+                    <Eye className="w-5 h-5 md:w-8 md:h-8 group-hover:animate-pulse" />
+                  </motion.div>
                 </div>
 
                 <div className="translate-y-2 md:translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
@@ -90,12 +120,13 @@ const Portfolio = () => {
           ))}
         </AnimatePresence>
       </motion.div>
-      
-      <motion.div 
+
+      <motion.div
         initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
         className="mt-10 flex justify-center"
       >
-        <motion.button 
+        <motion.button
+          onClick={() => window.open('https://portfolio-pi-blush-99.vercel.app/', '_blank')}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="group relative overflow-hidden bg-white/5 hover:bg-white/10 backdrop-blur-md border border-white/10 text-white px-8 py-3.5 rounded-full text-sm font-semibold flex items-center gap-3 transition-all duration-300 shadow-[0_0_15px_rgba(255,255,255,0.05)] hover:shadow-[0_0_25px_rgba(37,99,235,0.3)] hover:border-primary/50"

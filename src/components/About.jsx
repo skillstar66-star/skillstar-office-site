@@ -1,9 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Target, Zap, Users, CheckCircle2 } from 'lucide-react';
 import logoImg from '../assets/logo (2).png';
 
 const About = () => {
+  const navigate = useNavigate();
   const containerVariants = {
     hidden: { opacity: 0 },
     show: {
@@ -21,11 +23,11 @@ const About = () => {
     <section id="about" className="container mx-auto px-6 md:px-12 lg:px-24 py-16 lg:py-24 relative">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none -translate-y-1/2 -z-10"></div>
-      
+
       <div className="grid lg:grid-cols-2 gap-16 items-center">
-        
+
         {/* Left: Visuals / Logo */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -35,20 +37,20 @@ const About = () => {
           <div className="relative rounded-3xl overflow-hidden bg-[#0A0D1A]/40 backdrop-blur-md border border-white/10 aspect-[4/5] lg:aspect-square group flex items-center justify-center">
             {/* Glowing Orb behind logo */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-primary/40 rounded-full blur-[60px] group-hover:bg-primary/60 group-hover:scale-150 transition-all duration-700"></div>
-            
-            <img 
-              src={logoImg} 
-              alt="Skillstar Logo" 
+
+            <img
+              src={logoImg}
+              alt="Skillstar Logo"
               className="w-3/5 h-auto object-contain relative z-10 drop-shadow-[0_0_30px_rgba(37,99,235,0.5)] group-hover:scale-110 transition-transform duration-700 ease-out"
             />
-            
+
             <div className="absolute inset-0 bg-gradient-to-t from-[#050816] via-transparent to-transparent opacity-80"></div>
-            
+
           </div>
         </motion.div>
 
         {/* Right: Content */}
-        <motion.div 
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
@@ -59,16 +61,16 @@ const About = () => {
               <span className="w-8 h-px bg-primary"></span> About Us
             </span>
           </motion.div>
-          
+
           <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading text-white mb-6">
-            We Build Digital <br/>
+            We Build Digital <br />
             <span className="gradient-text">Experiences</span> That Matter
           </motion.h2>
-          
+
           <motion.p variants={itemVariants} className="text-white/70 text-base leading-relaxed mb-8">
             Skillstar is a premium digital agency focused on driving real, measurable growth for our clients. We combine data-driven strategies with stunning design to elevate your brand in the digital landscape.
           </motion.p>
-          
+
           <div className="grid sm:grid-cols-2 gap-6 mb-10">
             {[
               { icon: Target, title: 'Precision Strategy', desc: 'Data-backed marketing plans.' },
@@ -87,8 +89,9 @@ const About = () => {
               </motion.div>
             ))}
           </div>
-          
-          <motion.button 
+
+          <motion.button
+            onClick={() => navigate('/about-details')}
             variants={itemVariants}
             className="bg-primary hover:bg-primary-hover text-white px-8 py-3.5 rounded-full text-sm font-semibold transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.6)]"
           >

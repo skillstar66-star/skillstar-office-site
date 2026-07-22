@@ -110,7 +110,7 @@ const IntroAnimation = ({ onComplete }) => {
           logoW = rect.width || logoW; // use actual width if available
         } else {
           // Fallback if measurement fails
-          logoX = isMobile ? 24 : 96; 
+          logoX = isMobile ? 24 : 96;
           logoY = 24;
         }
 

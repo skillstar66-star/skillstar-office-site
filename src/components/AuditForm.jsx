@@ -57,9 +57,9 @@ const AuditForm = () => {
                 />
               </div>
               <div>
-                <label className="block text-xs font-medium text-white/60 mb-1.5 ml-1">Website URL</label>
+                <label className="block text-xs font-medium text-white/60 mb-1.5 ml-1">Website URL (Optional)</label>
                 <input 
-                  {...register('website', { required: true })}
+                  {...register('website')}
                   type="url" 
                   placeholder="https://yourwebsite.com" 
                   className="w-full bg-[#050816]/50 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/30 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all"
@@ -68,15 +68,19 @@ const AuditForm = () => {
             </div>
 
             <div>
-              <label className="block text-xs font-medium text-white/60 mb-1.5 ml-1">Business Type</label>
+              <label className="block text-xs font-medium text-white/60 mb-1.5 ml-1">Service Required</label>
               <div className="relative">
                 <select 
-                  {...register('businessType')}
+                  {...register('service')}
                   className="w-full bg-[#050816]/50 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all appearance-none"
                 >
-                  <option value="ecommerce">Ecommerce</option>
-                  <option value="b2b">B2B Services</option>
-                  <option value="local">Local Business</option>
+                  <option value="" disabled selected>Select a service</option>
+                  <option value="seo">SEO & GEO Optimization</option>
+                  <option value="web">Custom Websites & SaaS</option>
+                  <option value="ai">AI Chatbots & Automation</option>
+                  <option value="uiux">UI/UX Design</option>
+                  <option value="video">Video Editing & Motion Graphics</option>
+                  <option value="marketing">Performance Marketing</option>
                   <option value="other">Other</option>
                 </select>
                 <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-white/50">
@@ -85,6 +89,16 @@ const AuditForm = () => {
                   </svg>
                 </div>
               </div>
+            </div>
+
+            <div>
+              <label className="block text-xs font-medium text-white/60 mb-1.5 ml-1">Message (Optional)</label>
+              <textarea 
+                {...register('message')}
+                rows="4"
+                placeholder="Tell us more about your project or requirements..." 
+                className="w-full bg-[#050816]/50 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/30 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all resize-none"
+              ></textarea>
             </div>
 
             <button 

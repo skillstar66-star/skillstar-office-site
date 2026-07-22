@@ -32,7 +32,7 @@ const Navbar = () => {
     e.preventDefault();
     setActiveLink(link.name);
     setMobileMenuOpen(false);
-    
+
     const element = document.querySelector(link.href);
     if (element) {
       const offset = 100; // Account for fixed navbar height
@@ -50,9 +50,8 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-[#050816]/90 backdrop-blur-md border-b border-white/5 py-4' : 'bg-transparent py-6'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-[#050816]/90 backdrop-blur-md border-b border-white/5 py-4' : 'bg-transparent py-6'
+        }`}
     >
       <div className="container mx-auto px-6 md:px-12 lg:px-24 flex items-center justify-between">
         {/* Logo */}
@@ -72,7 +71,7 @@ const Navbar = () => {
               {link.name}
               {link.hasDropdown && (
                 <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               )}
             </a>

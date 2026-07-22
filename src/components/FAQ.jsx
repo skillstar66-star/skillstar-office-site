@@ -7,24 +7,24 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: "How long does it take to see results?",
-      answer: "Digital marketing is a long-term game, but with our data-driven approach, clients typically start seeing initial traction within 30-60 days. For SEO specifically, significant compounding growth usually happens between months 3 to 6."
+      question: "How long does SEO take to show results?",
+      answer: "SEO generally starts showing measurable improvements within 3–6 months depending on competition and industry."
     },
     {
-      question: "Do I have to commit to a long-term contract?",
-      answer: "No, we believe in earning your business every month. While we recommend a 3-6 month runway to let the strategies fully develop, we offer flexible month-to-month retainers for most of our services."
+      question: "What is GEO optimization?",
+      answer: "GEO (Generative Engine Optimization) helps businesses appear in AI-powered search engines like ChatGPT, Gemini, and Perplexity."
     },
     {
-      question: "How do you measure success and ROI?",
-      answer: "We set up clear KPIs during the discovery phase. You will have access to a live custom dashboard tracking traffic, leads, conversion rates, and exact cost-per-acquisition so you always know your exact ROI."
+      question: "What is AEO optimization?",
+      answer: "AEO (Answer Engine Optimization) structures content to appear in direct answers, featured snippets, and voice searches."
     },
     {
-      question: "Will I have a dedicated account manager?",
-      answer: "Yes! Every client is paired with a dedicated Account Manager and a Lead Strategist who will be your direct points of contact for weekly updates and monthly strategy reviews."
+      question: "Do you build custom websites?",
+      answer: "Yes. We develop fully customized websites, SaaS platforms, and scalable web applications."
     },
     {
-      question: "What makes Skillstar different from other agencies?",
-      answer: "We don't just run ads; we build growth engines. Our team combines premium creative, highly technical media buying, and conversion rate optimization (CRO) to ensure every click has the highest chance of converting."
+      question: "Do you provide AI-based solutions?",
+      answer: "Yes. We build AI chatbots, workflow automation systems, intelligent CRM tools, and custom AI applications."
     }
   ];
 
