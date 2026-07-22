@@ -78,9 +78,9 @@ function App() {
           {introComplete && (
             <motion.div
               key="main-app"
-              initial={{ opacity: 0, filter: 'blur(10px)', scale: 0.96 }}
-              animate={{ opacity: 1, filter: 'blur(0px)', scale: 1 }}
-              transition={{ duration: 1.2, ease: [0.25, 1, 0.5, 1] }} // smooth cinematic easing
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
             >
               <Navbar />
 

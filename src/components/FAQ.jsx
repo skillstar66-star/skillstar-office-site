@@ -35,27 +35,27 @@ const FAQ = () => {
         {/* Left Side: Header */}
         <div className="lg:w-1/3 sticky top-32">
           <motion.div 
-            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "300px" }}
             className="inline-flex items-center gap-2 bg-[#121420] border border-primary/20 rounded-full px-5 py-2 shadow-sm mb-6"
           >
             <span className="text-xs font-bold tracking-widest text-primary uppercase">FAQ</span>
           </motion.div>
           <motion.h2 
-            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "300px" }} transition={{ delay: 0.1 }}
             className="text-3xl md:text-5xl font-bold font-heading text-white mb-6 leading-tight"
           >
             Got Questions? <br />
             <span className="text-primary">We've Got Answers.</span>
           </motion.h2>
           <motion.p 
-            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "300px" }} transition={{ delay: 0.2 }}
             className="text-white/60 mb-8"
           >
             Everything you need to know about working with us and how we deliver exceptional growth.
           </motion.p>
           
           <motion.button 
-            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "300px" }} transition={{ delay: 0.3 }}
             className="text-white bg-white/5 hover:bg-white/10 border border-white/10 px-6 py-3 rounded-full text-sm font-semibold transition-all"
           >
             Ask a specific question
@@ -69,7 +69,7 @@ const FAQ = () => {
             return (
               <motion.div 
                 key={i}
-                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "300px" }} transition={{ delay: i * 0.1 }}
                 className={`border rounded-2xl overflow-hidden transition-colors duration-300 ${isOpen ? 'border-primary/50 bg-[#0A0D1A]' : 'border-white/10 bg-white/5 hover:border-white/20'}`}
               >
                 <button 

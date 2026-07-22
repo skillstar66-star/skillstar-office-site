@@ -170,7 +170,7 @@ const Clients = () => {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "300px" }}
           className="mb-20 text-center flex flex-col items-center"
         >
           {/* Badge */}
@@ -201,7 +201,7 @@ const Clients = () => {
         </motion.div>
 
         {/* Floating Cards Grid */}
-        <div className="flex overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none md:flex-wrap md:justify-center gap-6 md:gap-8 lg:gap-10 mt-4 md:mt-12 pb-12 md:pb-24 px-4 md:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+        <div className="flex overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none md:flex-wrap md:justify-center gap-6 md:gap-8 lg:gap-10 mt-4 md:mt-12 pt-6 pb-32 md:pb-24 px-4 md:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {clients.map((client, index) => (
             <div key={client.id} className="relative flex flex-col items-center shrink-0 snap-center md:snap-align-none w-[75vw] sm:w-[280px] md:w-[calc(50%-2rem)] lg:w-[calc(33.333%-2.5rem)] xl:w-[calc(20%-2.5rem)] min-w-[260px]">
 
@@ -221,7 +221,7 @@ const Clients = () => {
 
               {/* Glassmorphism Card */}
               <motion.div
-                animate={{ y: [0, -15, 0] }}
+                animate={typeof window !== 'undefined' && window.innerWidth > 768 ? { y: [0, -15, 0] } : { y: 0 }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: index * 0.2 }}
                 onClick={() => setSelectedClient(client)}
                 className={`relative z-10 w-full h-full min-h-[280px] md:min-h-[380px] bg-[#0A0D1A]/30 backdrop-blur-2xl border-t border-l border-r border-b border-white/5 rounded-[1.5rem] md:rounded-[2rem] p-5 md:p-8 flex flex-col items-center text-center cursor-pointer transition-all duration-500 group hover:-translate-y-2`}
@@ -280,7 +280,7 @@ const Clients = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "300px" }}
           className="mt-20 max-w-4xl mx-auto"
         >
           <div className="bg-[#0A1024]/60 backdrop-blur-xl border border-white/10 rounded-full px-8 py-6 flex flex-col md:flex-row items-center justify-around gap-8 md:gap-4 shadow-2xl">

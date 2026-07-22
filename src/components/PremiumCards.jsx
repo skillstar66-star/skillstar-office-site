@@ -54,7 +54,7 @@ const PremiumCards = () => {
             key={i}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "300px" }}
             transition={{ delay: i * 0.1, duration: 0.5 }}
             className="shrink-0 w-[75vw] max-w-[280px] md:max-w-none md:w-auto snap-center group relative bg-[#0F172A] border border-white/5 rounded-2xl p-5 hover:border-white/20 transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer h-40"
           >

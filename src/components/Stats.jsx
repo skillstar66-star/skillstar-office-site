@@ -29,7 +29,7 @@ const Stats = () => {
             key={i}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "300px" }}
             transition={{ delay: i * 0.15, duration: 0.5 }}
             className="flex flex-col items-center justify-center text-center px-4 group cursor-default relative z-10"
           >

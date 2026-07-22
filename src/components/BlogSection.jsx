@@ -901,7 +901,7 @@ const BlogSection = () => {
               key={post.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "300px" }}
               whileHover={{ y: -5 }}
               onClick={() => setSelectedPost(post)}
               className={`shrink-0 w-[75vw] max-w-[280px] md:max-w-none md:w-auto snap-center group relative bg-[#0F172A] border border-white/5 rounded-2xl p-5 cursor-pointer overflow-hidden flex flex-col justify-between h-56 transition-all duration-300 shadow-lg ${style.border} ${style.shadow}`}

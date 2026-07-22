@@ -43,7 +43,7 @@ const Portfolio = () => {
   return (
     <section id="portfolio" className="container mx-auto px-6 md:px-12 lg:px-24">
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-        <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+        <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "300px" }}>
           <h4 className="text-sm font-semibold tracking-wider text-primary uppercase mb-2 flex items-center gap-2">
             <span className="w-8 h-px bg-primary"></span> Our Portfolio
           </h4>
@@ -54,7 +54,7 @@ const Portfolio = () => {
 
         {/* Categories */}
         <motion.div
-          initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
+          initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "300px" }}
           className="flex flex-wrap gap-2"
         >
           {categories.map((cat, i) => (
@@ -122,7 +122,7 @@ const Portfolio = () => {
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+        initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "300px" }}
         className="mt-10 flex justify-center"
       >
         <motion.button

@@ -128,7 +128,7 @@ const Team = () => {
         {/* Header */}
         <div className="mb-20 text-center flex flex-col items-center">
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
+            initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true, margin: "300px" }}
             whileHover={{ scale: 1.05 }}
             className="inline-flex items-center gap-2 bg-transparent border border-white/10 rounded-full px-4 py-1.5 shadow-sm mb-6 cursor-default"
           >
@@ -137,14 +137,14 @@ const Team = () => {
           </motion.div>
 
           <motion.h2
-            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "300px" }} transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight"
           >
             Meet The Minds Behind <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">SkillStar</span>
           </motion.h2>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "300px" }} transition={{ delay: 0.2 }}
             className="text-base md:text-lg text-white/60 max-w-3xl mx-auto leading-relaxed"
           >
             A multidisciplinary team of strategists, designers, developers, AI specialists, and marketers engineering digital growth for ambitious brands.
@@ -424,7 +424,7 @@ const Team = () => {
 
         {/* Bottom Banner */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.6, type: "spring", stiffness: 40 }}
+          initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "300px" }} transition={{ delay: 0.6, type: "spring", stiffness: 40 }}
           className="group relative bg-[#0A0E1A]/80 backdrop-blur-xl border border-white/5 hover:border-blue-500/20 rounded-[24px] p-6 lg:p-8 flex flex-col xl:flex-row items-center justify-between gap-8 shadow-[0_0_40px_rgba(0,0,0,0.5)] transition-all duration-500 overflow-hidden"
         >
           {/* Shine effect */}

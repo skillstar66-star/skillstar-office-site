@@ -44,7 +44,7 @@ const CaseStudy = () => {
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, margin: "300px" }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                   >
                     <span className="inline-block text-xs font-bold tracking-widest text-blue-400 uppercase mb-6 py-1.5 px-4 bg-blue-500/10 rounded-full border border-blue-500/20">
@@ -62,7 +62,7 @@ const CaseStudy = () => {
                   <motion.div 
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, margin: "300px" }}
                     transition={{ duration: 0.5, delay: 0.4 }}
                     className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 border-y border-white/10 py-10"
                   >
@@ -91,7 +91,7 @@ const CaseStudy = () => {
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, margin: "300px" }}
                     transition={{ duration: 0.5, delay: 0.6 }}
                     className="flex justify-center lg:justify-start"
                   >
@@ -135,7 +135,7 @@ const CaseStudy = () => {
                         <motion.path 
                           initial={{ pathLength: 0, opacity: 0 }}
                           whileInView={{ pathLength: 1, opacity: 1 }}
-                          viewport={{ once: true }}
+                          viewport={{ once: true, margin: "300px" }}
                           transition={{ duration: 1.5, ease: "easeInOut", delay: 0.5 }}
                           d="M0,80 Q10,75 20,55 T40,45 T60,25 T80,15 T100,5" 
                           fill="none" 
@@ -147,7 +147,7 @@ const CaseStudy = () => {
                         <motion.path 
                           initial={{ opacity: 0 }}
                           whileInView={{ opacity: 0.15 }}
-                          viewport={{ once: true }}
+                          viewport={{ once: true, margin: "300px" }}
                           transition={{ duration: 1, delay: 1 }}
                           d="M0,100 L0,80 Q10,75 20,55 T40,45 T60,25 T80,15 T100,5 L100,100 Z" 
                           fill="url(#chartGrad)"
@@ -166,7 +166,7 @@ const CaseStudy = () => {
                           <motion.div 
                             initial={{ height: 0 }}
                             whileInView={{ height: `${h}%` }}
-                            viewport={{ once: true }}
+                            viewport={{ once: true, margin: "300px" }}
                             transition={{ duration: 0.8, delay: 0.2 + (i * 0.05), ease: "easeOut" }}
                             className="w-full bg-gradient-to-t from-blue-500/5 to-blue-500/20 group-hover:from-blue-500/10 group-hover:to-blue-500/40 rounded-t-sm transition-all duration-300 border-t border-blue-500/30 group-hover:border-blue-400 relative"
                           >

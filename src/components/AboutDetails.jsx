@@ -142,7 +142,7 @@ const AboutDetails = () => {
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "300px" }}
             className="text-3xl md:text-4xl font-bold font-heading text-center mb-16"
           >
             Why Businesses Grow Faster <br/>
