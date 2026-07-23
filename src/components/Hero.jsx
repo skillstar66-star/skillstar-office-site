@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Play, Info, X } from 'lucide-react';
 import CountUpPkg from 'react-countup';
-const heroBg = 'https://res.cloudinary.com/dgpkzmkxf/image/upload/v1784790806/hero-bg_tazlvy.png';
+const heroBg = 'https://res.cloudinary.com/dgpkzmkxf/image/upload/f_auto,q_auto/v1784790806/hero-bg_tazlvy.png';
 const CountUp = CountUpPkg.default ? CountUpPkg.default : CountUpPkg;
 
 const Hero = () => {
@@ -102,7 +102,7 @@ const Hero = () => {
             
             {/* Main Image */}
             <img 
-              src="https://res.cloudinary.com/dgpkzmkxf/image/upload/v1784795182/ChatGPT_Image_Jul_23__2026__01_53_50_PM-removebg-preview_eshcoc.png" 
+              src="https://res.cloudinary.com/dgpkzmkxf/image/upload/f_auto,q_auto/v1784795182/ChatGPT_Image_Jul_23__2026__01_53_50_PM-removebg-preview_eshcoc.png" 
               alt="AI Brain Concept"
               fetchPriority="high"
               loading="eager"
