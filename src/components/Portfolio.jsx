@@ -2,23 +2,19 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Eye } from 'lucide-react';
 
-import rokeaImg from '../assets/rokea.png';
-import seedsImg from '../assets/seedstherapy.png';
-import laCafeImg from '../assets/la cafe.png';
-import senthurImg from '../assets/senthur logo.png';
-import innerCompassImg from '../assets/inner compass yoga.jpeg';
+const rokeaImg = 'https://res.cloudinary.com/dgpkzmkxf/image/upload/v1784793510/rokea_acysbs.png';
+const seedsImg = 'https://res.cloudinary.com/dgpkzmkxf/image/upload/v1784790939/seedstherapy_pqhrpt.png';
+const laCafeImg = 'https://res.cloudinary.com/dgpkzmkxf/image/upload/v1784790823/la_cafe_x3ddld.png';
+const senthurImg = 'https://res.cloudinary.com/dgpkzmkxf/image/upload/v1784790815/senthur_logo_wpuq9p.png';
+const innerCompassImg = 'https://res.cloudinary.com/dgpkzmkxf/image/upload/v1784790821/inner_compass_yoga_iinuun.jpg';
 
-const categories = ['All', 'Website', 'Logo', 'Videos', 'Poster', 'Carousel'];
+const categories = ['All', 'Website', 'Videos', 'Poster'];
 
 const portfolioItems = [
   // Website
   { id: 1, category: 'Website', img: rokeaImg, title: 'Rokeabyrk' },
   { id: 2, category: 'Website', img: seedsImg, title: 'Seeds Therapy Center' },
   { id: 3, category: 'Website', img: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800', title: 'MedCare Plus' },
-
-  // Logo
-  { id: 4, category: 'Logo', img: senthurImg, title: 'Senthur' },
-  { id: 5, category: 'Logo', img: laCafeImg, title: 'La Cafe' },
 
   // Videos
   { id: 6, category: 'Videos', img: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800', title: 'Skyline Realty Tour' },
@@ -27,10 +23,6 @@ const portfolioItems = [
   // Poster
   { id: 8, category: 'Poster', img: innerCompassImg, title: 'Inner Compass Yoga' },
   { id: 9, category: 'Poster', img: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=800', title: 'Vogue Trends' },
-
-  // Carousel
-  { id: 10, category: 'Carousel', img: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=800', title: 'Gourmet Bites' },
-  { id: 11, category: 'Carousel', img: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=800', title: 'Wanderlust' },
 ];
 
 const Portfolio = () => {

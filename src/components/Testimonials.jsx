@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, Quote, ChevronRight, Users, Trophy, TrendingUp, Hexagon, Command, Flame, Triangle, Code, Boxes } from 'lucide-react';
-import innerCompassLogo from '../assets/inner compass yoga.jpeg';
-import laCafeLogo from '../assets/la cafe.png';
-import rokeaLogo from '../assets/rokea.png';
-import seedsTherapyLogo from '../assets/seedstherapy.png';
-import senthurLogo from '../assets/senthur logo.png';
+const innerCompassLogo = 'https://res.cloudinary.com/dgpkzmkxf/image/upload/v1784790821/inner_compass_yoga_iinuun.jpg';
+const laCafeLogo = 'https://res.cloudinary.com/dgpkzmkxf/image/upload/v1784790823/la_cafe_x3ddld.png';
+const rokeaLogo = 'https://res.cloudinary.com/dgpkzmkxf/image/upload/v1784793510/rokea_acysbs.png';
+const seedsTherapyLogo = 'https://res.cloudinary.com/dgpkzmkxf/image/upload/v1784790939/seedstherapy_pqhrpt.png';
+const senthurLogo = 'https://res.cloudinary.com/dgpkzmkxf/image/upload/v1784790815/senthur_logo_wpuq9p.png';
 
 const testimonials = [
   {

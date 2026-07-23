@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import logoImg from '../assets/logo (2).png';
+const logoImg = 'https://res.cloudinary.com/dgpkzmkxf/image/upload/v1784790841/logo_2_tuk1al.png';
 
 const IntroAnimation = ({ onComplete }) => {
   const [phase, setPhase] = useState(0); // 0: init, 1: type SKILLSTAR, 2: type Digital Solutions, 3: glow, 4: morph
@@ -91,6 +91,7 @@ const IntroAnimation = ({ onComplete }) => {
 
         // Load logo
         const logo = new Image();
+        logo.crossOrigin = 'Anonymous';
         logo.src = logoImg;
         await new Promise(resolve => { logo.onload = resolve; });
 

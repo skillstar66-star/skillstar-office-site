@@ -1,6 +1,6 @@
 import React from 'react';
 import { Facebook, Linkedin, Instagram, Twitter, Youtube } from 'lucide-react';
-import logoImg from '../assets/logo (2).png';
+const logoImg = 'https://res.cloudinary.com/dgpkzmkxf/image/upload/v1784790841/logo_2_tuk1al.png';
 const Footer = () => {
   return (
     <footer className="bg-[#050816] border-t border-white/5 pt-16 pb-8">
@@ -98,15 +98,7 @@ const Footer = () => {
           <p className="text-xs text-white/40">
             © 2025 Skillstar Digital Solution. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
-            <div className="flex items-center gap-3">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google Partner" className="w-8 h-8" />
-              <div>
-                <p className="text-sm font-semibold text-white">We're Google Partner</p>
-                <p className="text-[10px] text-white/50">Proud to be a Google Partner<br />Driving growth for businesses</p>
-              </div>
-            </div>
-          </div>
+
         </div>
 
       </div>

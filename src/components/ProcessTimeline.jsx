@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform, useSpring } from 'framer-motion';
 import { Search, Lightbulb, Target, Code, Rocket } from 'lucide-react';
-import logoImg from '../assets/logo (2).png';
+const logoImg = 'https://res.cloudinary.com/dgpkzmkxf/image/upload/v1784790835/image_dvon6r.png';
 
 const steps = [
   {
@@ -47,10 +47,6 @@ const NeuralNetworkBackground = () => {
       {/* Simulated neural paths using SVG */}
       <svg className="absolute inset-0 w-full h-full opacity-60" preserveAspectRatio="none">
         <defs>
-          <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-            <feGaussianBlur stdDeviation="4" result="blur" />
-            <feComposite in="SourceGraphic" in2="blur" operator="over" />
-          </filter>
           <linearGradient id="beam" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stopColor="transparent" />
             <stop offset="50%" stopColor="#60a5fa" stopOpacity="0.8" />
@@ -83,15 +79,14 @@ const NeuralNetworkBackground = () => {
               fill="none"
               stroke={i % 3 === 0 ? "rgba(167, 139, 250, 0.4)" : "rgba(59, 130, 246, 0.3)"}
               strokeWidth={Math.random() * 2 + 0.5}
-              filter="url(#glow)"
-              className="animate-pulse"
+              className="animate-pulse drop-shadow-md"
               style={{ animationDuration: `${Math.random() * 4 + 2}s`, animationDelay: `${Math.random() * 2}s` }}
             />
           );
         })}
 
         {/* Intense horizontal connection beam */}
-        <path d="M 0% 50% Q 25% 48%, 50% 50% T 100% 50%" fill="none" stroke="url(#beam)" strokeWidth="3" filter="url(#glow)" />
+        <path d="M 0% 50% Q 25% 48%, 50% 50% T 100% 50%" fill="none" stroke="url(#beam)" strokeWidth="3" className="drop-shadow-lg" />
       </svg>
 
       {/* Floating particles */}
@@ -137,7 +132,7 @@ const ProcessTimeline = () => {
   const currentStep = steps[activeStep];
 
   return (
-    <section id="process" className="relative min-h-screen bg-[#02040a] py-20 flex flex-col items-center justify-center overflow-hidden">
+    <section id="process" className="relative min-h-screen bg-[#02040a] py-20 flex flex-col items-center justify-center overflow-clip">
       <NeuralNetworkBackground />
 
       {/* Main Content Grid Wrapper */}

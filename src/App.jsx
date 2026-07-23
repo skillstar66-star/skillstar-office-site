@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import IntroAnimation from './components/IntroAnimation';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import Footer from './components/Footer';
+import Lenis from 'lenis';
+
 import TrustedBrands from './components/TrustedBrands';
 import About from './components/About';
 import AboutDetails from './components/AboutDetails';
@@ -15,18 +18,19 @@ import Portfolio from './components/Portfolio';
 import CaseStudy from './components/CaseStudy';
 import Testimonials from './components/Testimonials';
 import Team from './components/Team';
-
+import ProjectsSection from './components/ProjectsSection';
 import FAQ from './components/FAQ';
 import AuditForm from './components/AuditForm';
 import BlogSection from './components/BlogSection';
-import Footer from './components/Footer';
-import Lenis from 'lenis';
 
 function App() {
   const [introComplete, setIntroComplete] = useState(false);
 
   // Initialize smooth scrolling with Lenis
   useEffect(() => {
+    // Wait until intro is complete to calculate correct page height
+    if (!introComplete) return;
+    
     // Disable Lenis on mobile devices to prevent touch scrolling from getting stuck
     if (window.innerWidth <= 768) return;
 
@@ -42,17 +46,19 @@ function App() {
       infinite: false,
     });
 
+    let rafId;
     function raf(time) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf);
+    rafId = requestAnimationFrame(raf);
     
     return () => {
       lenis.destroy();
+      cancelAnimationFrame(rafId);
     }
-  }, []);
+  }, [introComplete]);
 
   // Scroll to top on load to prevent weird scroll jumps during intro
   useEffect(() => {
@@ -67,7 +73,7 @@ function App() {
         )}
       </AnimatePresence>
 
-      <div className={`relative min-h-screen bg-[var(--color-bg-base)] text-white overflow-hidden ${!introComplete ? 'h-screen overflow-hidden' : ''}`}>
+      <div className={`relative min-h-screen bg-[var(--color-bg-base)] text-white overflow-x-clip ${!introComplete ? 'h-screen overflow-hidden' : ''}`}>
 
         {/* Background Decorative Effects */}
         <div className="fixed top-[-20%] left-[-10%] w-[50%] h-[50%] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none -z-10 animate-float"></div>
@@ -92,24 +98,26 @@ function App() {
                       <TrustedBrands />
                     </div>
 
-                    <div className="flex flex-col gap-24 mt-24">
-                      <About />
-                      <Services />
-                      <Stats />
-                      <ProcessTimeline />
-                      <Clients />
-                      <Portfolio />
-                      <CaseStudy />
-                      <Testimonials />
-                      <Team />
-
-                      <FAQ />
-                      <AuditForm />
-                      <BlogSection />
-                    </div>
+                      <div className="flex flex-col gap-8 md:gap-24 mt-8 md:mt-24">
+                        <About />
+                        <Services />
+                        <Stats />
+                        <ProcessTimeline />
+                        <Clients />
+                        <ProjectsSection />
+                        <Portfolio />
+                        <CaseStudy />
+                        <Testimonials />
+                        <Team />
+                        <FAQ />
+                        <AuditForm />
+                        <BlogSection />
+                      </div>
                   </main>
                 } />
-                <Route path="/about-details" element={<AboutDetails />} />
+                <Route path="/about-details" element={
+                  <AboutDetails />
+                } />
               </Routes>
 
               <Footer />
@@ -138,4 +146,3 @@ function App() {
 }
 
 export default App;
-

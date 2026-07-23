@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Play, Info, X } from 'lucide-react';
 import CountUpPkg from 'react-countup';
-import heroBg from '../assets/hero-bg.png';
+const heroBg = 'https://res.cloudinary.com/dgpkzmkxf/image/upload/v1784790806/hero-bg_tazlvy.png';
 const CountUp = CountUpPkg.default ? CountUpPkg.default : CountUpPkg;
 
 const Hero = () => {
@@ -89,142 +89,28 @@ const Hero = () => {
 
         {/* Right Content */}
         <motion.div
-          className="relative w-full lg:w-[45%] h-auto grid grid-cols-2 gap-4"
+          className="relative w-full lg:w-[45%] flex items-center justify-center lg:h-full mt-10 lg:mt-0"
         >
-          {/* Total Revenue */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.4 }}
-            className="col-span-1 bg-[#0A0D1A]/80 backdrop-blur-md border border-white/10 p-3 sm:p-5 rounded-2xl flex flex-col justify-between animate-float-fast hover:border-primary/50 transition-colors shadow-2xl"
+            initial={{ opacity: 0, scale: 0.8 }} 
+            animate={{ opacity: 1, scale: 1 }} 
+            transition={{ duration: 1, delay: 0.4, type: "spring" }}
+            className="w-full max-w-[400px] lg:max-w-[500px] relative flex items-center justify-center group"
           >
-            <div>
-              <div className="flex justify-between items-center mb-2 sm:mb-4">
-                <div className="flex items-center gap-1 sm:gap-2">
-                  <h3 className="text-[10px] sm:text-xs font-semibold text-white/80">Total Revenue</h3>
-                  <Info size={10} className="text-white/30 hover:text-white transition-colors cursor-pointer sm:w-3 sm:h-3" />
-                </div>
-              </div>
-
-              <h2 className="text-xl sm:text-3xl font-bold font-heading text-white mb-1 sm:mb-2">
-                $<CountUp end={98765} duration={3} separator="," enableScrollSpy scrollSpyOnce />
-              </h2>
-              <span className="text-[#00C48C] text-[8px] sm:text-[10px] font-semibold flex items-center gap-1 bg-[#00C48C]/10 px-1 sm:px-2 py-0.5 rounded w-max">
-                ↑ 32.5% <span className="text-white/50 font-medium hidden lg:inline">vs last month</span>
-              </span>
-            </div>
-
-            <div className="w-full h-10 sm:h-16 mt-3 sm:mt-6 relative flex items-end overflow-hidden group">
-              <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none" viewBox="0 0 100 50">
-                <defs>
-                  <linearGradient id="curveGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#2563EB" stopOpacity="0.5" />
-                    <stop offset="100%" stopColor="#2563EB" stopOpacity="0" />
-                  </linearGradient>
-                </defs>
-                <path d="M0,50 L0,35 Q10,40 20,30 T40,25 T60,20 T80,10 L100,20 L100,50 Z" fill="url(#curveGrad)" className="opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
-                <motion.path
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{ duration: 2, ease: "easeInOut" }}
-                  d="M0,35 Q10,40 20,30 T40,25 T60,20 T80,10 L100,20"
-                  fill="none" stroke="#2563EB" strokeWidth="2.5" strokeLinecap="round"
-                  className="drop-shadow-[0_0_8px_rgba(37,99,235,0.8)]"
-                />
-                <circle cx="20" cy="30" r="2.5" fill="#2563EB" className="animate-pulse" />
-                <circle cx="40" cy="25" r="2.5" fill="#2563EB" className="animate-pulse" />
-                <circle cx="60" cy="20" r="2.5" fill="#2563EB" className="animate-pulse" />
-                <circle cx="80" cy="10" r="2.5" fill="#fff" className="drop-shadow-[0_0_5px_rgba(255,255,255,0.8)]" />
-                <circle cx="100" cy="20" r="2.5" fill="#2563EB" />
-              </svg>
-            </div>
+            {/* Glowing Orb Background */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[70%] bg-primary/40 rounded-full blur-[80px] group-hover:bg-primary/60 group-hover:scale-125 transition-all duration-700"></div>
+            
+            {/* Main Image */}
+            <img 
+              src="https://res.cloudinary.com/dgpkzmkxf/image/upload/v1784795182/ChatGPT_Image_Jul_23__2026__01_53_50_PM-removebg-preview_eshcoc.png" 
+              alt="AI Brain Concept"
+              fetchPriority="high"
+              loading="eager"
+              width="500"
+              height="500"
+              className="w-full h-auto object-contain relative z-10 drop-shadow-[0_0_40px_rgba(37,99,235,0.5)] group-hover:scale-110 group-hover:-translate-y-4 transition-all duration-700 ease-out animate-float"
+            />
           </motion.div>
-
-          {/* Traffic Growth */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.6 }}
-            className="col-span-1 bg-[#0A0D1A]/80 backdrop-blur-md border border-white/10 p-3 sm:p-5 rounded-2xl flex items-center justify-center relative overflow-hidden animate-float-fast hover:border-primary/50 transition-colors shadow-2xl"
-            style={{ animationDelay: '1s' }}
-          >
-            <div className="relative w-24 h-24 sm:w-32 sm:h-32 flex flex-col items-center justify-center">
-              <svg className="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="42" fill="none" stroke="#1A2035" strokeWidth="10" />
-                <motion.circle
-                  initial={{ strokeDashoffset: 264 }}
-                  animate={{ strokeDashoffset: 66 }}
-                  transition={{ duration: 2, ease: "easeOut", delay: 0.8 }}
-                  cx="50" cy="50" r="42" fill="none" stroke="#2563EB" strokeWidth="10" strokeDasharray="264" strokeLinecap="round"
-                  className="drop-shadow-[0_0_8px_rgba(37,99,235,0.6)]"
-                />
-              </svg>
-              <span className="text-[8px] sm:text-[10px] text-white/50 font-medium z-10 relative text-center leading-tight mt-2">Traffic Growth</span>
-              <span className="text-sm sm:text-xl font-bold z-10 relative mt-0.5 text-white">
-                +<CountUp end={450} duration={3} enableScrollSpy scrollSpyOnce />%
-              </span>
-            </div>
-          </motion.div>
-
-          {/* Leads Generated */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.8 }}
-            className="col-span-1 bg-[#0A0D1A]/80 backdrop-blur-md border border-white/10 p-3 sm:p-5 rounded-2xl flex flex-col justify-between hover:border-primary/50 transition-colors shadow-2xl group"
-          >
-            <div>
-              <div className="flex justify-between items-center mb-2 sm:mb-4">
-                <div className="flex items-center gap-1 sm:gap-2">
-                  <h3 className="text-[10px] sm:text-xs font-semibold text-white/80">Leads Generated</h3>
-                  <Info size={10} className="text-white/30 sm:w-3 sm:h-3" />
-                </div>
-              </div>
-
-              <div className="text-xl sm:text-3xl font-bold font-heading text-white mb-1 sm:mb-2">
-                <CountUp end={2879} duration={2.5} separator="," enableScrollSpy scrollSpyOnce />
-              </div>
-              <span className="text-[#00C48C] text-[8px] sm:text-[10px] font-semibold flex items-center gap-1 bg-[#00C48C]/10 px-1 sm:px-2 py-0.5 rounded w-max">
-                ↑ 24.8% <span className="text-white/50 font-medium hidden lg:inline">vs last month</span>
-              </span>
-            </div>
-
-            <div className="flex items-end gap-[2px] sm:gap-[6px] mt-3 sm:mt-6 h-8 sm:h-12">
-              {[15, 25, 20, 35, 25, 30, 45, 60, 40].map((h, i) => (
-                <motion.div
-                  initial={{ height: 0 }}
-                  animate={{ height: `${h}%` }}
-                  transition={{ duration: 1, delay: 1 + (i * 0.1) }}
-                  key={i}
-                  className={`w-full rounded-t-sm transition-all duration-300 group-hover:opacity-100 ${i === 7 ? 'bg-primary shadow-[0_0_10px_rgba(37,99,235,0.8)]' : 'bg-primary/20 opacity-70 hover:bg-primary/50'}`}
-                ></motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Top Channels */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1 }}
-            className="col-span-1 bg-[#0A0D1A]/80 backdrop-blur-md border border-white/10 p-3 sm:p-5 rounded-2xl hover:border-primary/50 transition-colors shadow-2xl"
-          >
-            <h3 className="text-[10px] sm:text-xs font-semibold text-white/80 mb-3 sm:mb-5">Top Channels</h3>
-            <div className="flex flex-col gap-2 sm:gap-4">
-              {[
-                { label: 'Organic', color: 'from-emerald-400 to-emerald-500', width: '48%' },
-                { label: 'Paid', color: 'bg-primary', width: '24%' },
-                { label: 'Social', color: 'bg-primary', width: '18%' },
-                { label: 'Direct', color: 'bg-white/40', width: '10%' }
-              ].map((channel, idx) => (
-                <div key={idx} className="flex items-center justify-between text-[8px] sm:text-[10px] font-medium text-white/80 group cursor-default">
-                  <span className="w-10 sm:w-16 group-hover:text-white transition-colors truncate">{channel.label}</span>
-                  <div className="flex-1 mx-1 sm:mx-2 h-1 sm:h-1.5 bg-[#161B33] rounded-full overflow-hidden">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      animate={{ width: channel.width }}
-                      transition={{ duration: 1.5, delay: 1.2 + (idx * 0.1) }}
-                      className={`h-full rounded-full ${channel.color.includes('bg-') ? channel.color : 'bg-gradient-to-r ' + channel.color}`}
-                    ></motion.div>
-                  </div>
-                  <span className="w-5 sm:w-6 text-right text-white font-bold">{channel.width}</span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
         </motion.div>
       </div>
     </section>

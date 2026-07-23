@@ -48,7 +48,7 @@ const PremiumCards = () => {
         </svg>
       </div>
 
-      <div className="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-5 gap-4 pb-4 snap-x snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
+      <div className="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-5 gap-4 pb-4 snap-x snap-mandatory md:snap-none scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
         {cards.map((card, i) => (
           <motion.div
             key={i}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import logoImg from '../assets/logo (2).png';
+const logoImg = 'https://res.cloudinary.com/dgpkzmkxf/image/upload/v1784790841/logo_2_tuk1al.png';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -23,7 +23,6 @@ const Navbar = () => {
     { name: 'Services', href: '#services', hasDropdown: true },
     { name: 'Process', href: '#process' },
     { name: 'Portfolio', href: '#portfolio' },
-    { name: 'Pricing', href: '#pricing' },
     { name: 'FAQ', href: '#faq' },
     { name: 'Contact', href: '#contact' },
   ];

@@ -6,13 +6,13 @@ import {
 } from 'lucide-react';
 import CountUpPkg from 'react-countup';
 
-import dhanushaImg from '../assets/dhanusha.png';
-import dineshImg from '../assets/dinesh.png';
-import hariniImg from '../assets/harini.png';
-import ramkumarImg from '../assets/ramkumar.png';
-import saravananImg from '../assets/saravanan.png';
-import sheebaImg from '../assets/sheeba.png';
-import skillstarLogo from '../assets/logo (2).png';
+const dhanushaImg = 'https://res.cloudinary.com/dgpkzmkxf/image/upload/v1784790785/dhanusha_w3h9ih.png';
+const dineshImg = 'https://res.cloudinary.com/dgpkzmkxf/image/upload/v1784790791/dinesh_ppwdan.png';
+const hariniImg = 'https://res.cloudinary.com/dgpkzmkxf/image/upload/v1784790800/harini_gdioqp.png';
+const ramkumarImg = 'https://res.cloudinary.com/dgpkzmkxf/image/upload/v1784790832/ramkumar_m7dhny.png';
+const saravananImg = 'https://res.cloudinary.com/dgpkzmkxf/image/upload/v1784790849/saravanan_bag5wj.png';
+const sheebaImg = 'https://res.cloudinary.com/dgpkzmkxf/image/upload/v1784790947/sheeba_kbu1zy.png';
+const skillstarLogo = 'https://res.cloudinary.com/dgpkzmkxf/image/upload/v1784790841/logo_2_tuk1al.png';
 
 const CountUp = CountUpPkg.default ? CountUpPkg.default : CountUpPkg;
 
@@ -171,10 +171,10 @@ const Team = () => {
           className="flex overflow-x-auto lg:overflow-visible snap-x snap-mandatory lg:snap-none pb-12 lg:pb-0 px-4 lg:px-0 -mx-4 lg:mx-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         >
           <div className="flex lg:flex-col gap-6 w-max lg:w-full">
-            {/* First Row: Rehan (2 cols) + Ram (1 col) + Dinesh (1 col) */}
+            {/* First Row: Rahannath P R (2 cols) + Ram (1 col) + Dinesh (1 col) */}
             <div className="flex flex-row lg:flex-row gap-6 lg:mb-6">
 
-              {/* Rehan - CEO & Founder */}
+              {/*Rahannath P R - CEO & Founder */}
               <motion.div
                 variants={itemVariants}
                 whileHover={{ y: -10, scale: 1.02, transition: { type: "spring", stiffness: 400, damping: 25 } }}
@@ -195,7 +195,7 @@ const Team = () => {
                         className="w-24 h-24 md:w-40 md:h-40 rounded-full p-1 bg-gradient-to-br from-blue-500 to-purple-500 shadow-[0_0_20px_rgba(59,130,246,0.3)] group-hover:shadow-[0_0_30px_rgba(168,85,247,0.5)] transition-shadow duration-500"
                       >
                         <div className="w-full h-full rounded-full overflow-hidden border-4 border-[#0A0E1A]">
-                          <img src={skillstarLogo} alt="Rehan" className="w-full h-full object-contain bg-[#0A0E1A] p-3 transition-transform duration-700 group-hover:scale-110" />
+                          <img src={skillstarLogo} alt="Rahannath P R" className="w-full h-full object-contain bg-[#0A0E1A] p-3 transition-transform duration-700 group-hover:scale-110" />
                         </div>
                       </motion.div>
                     </motion.div>
@@ -218,7 +218,7 @@ const Team = () => {
                         <span className="inline-block px-2 py-0.5 md:px-3 md:py-1 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[9px] md:text-[10px] font-bold uppercase tracking-wider rounded-full mb-2 md:mb-3 shadow-[0_0_10px_rgba(59,130,246,0.2)]">
                           CEO & FOUNDER
                         </span>
-                        <h3 className="text-xl md:text-3xl font-bold text-white mb-1 group-hover:text-blue-100 transition-colors">Rehan</h3>
+                        <h3 className="text-xl md:text-3xl font-bold text-white mb-1 group-hover:text-blue-100 transition-colors">Rahannath P R</h3>
                         <p className="text-blue-500 font-medium text-[11px] md:text-base mb-2 md:mb-4">CEO & Founder</p>
                       </div>
                     </div>

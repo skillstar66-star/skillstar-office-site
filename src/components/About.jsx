@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Target, Zap, Users, CheckCircle2 } from 'lucide-react';
-import logoImg from '../assets/logo (2).png';
+const logoImg = 'https://res.cloudinary.com/dgpkzmkxf/image/upload/v1784790835/image_dvon6r.png';
+const bgImage = 'https://res.cloudinary.com/dgpkzmkxf/image/upload/v1784790812/image_copy_ddrnvo.png';
 
 const About = () => {
   const navigate = useNavigate();
+  const [isHovered, setIsHovered] = useState(false);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     show: {
@@ -34,17 +37,35 @@ const About = () => {
           transition={{ duration: 0.8 }}
           className="relative"
         >
-          <div className="relative rounded-3xl overflow-hidden bg-[#0A0D1A]/40 backdrop-blur-md border border-white/10 aspect-[4/5] lg:aspect-square group flex items-center justify-center">
-            {/* Glowing Orb behind logo */}
+          <div 
+            className="relative rounded-3xl overflow-hidden bg-[#0A0D1A]/40 backdrop-blur-md border border-white/10 aspect-[4/5] lg:aspect-square group flex items-center justify-center cursor-pointer"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            
+            {/* Glowing Orb */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-primary/40 rounded-full blur-[60px] group-hover:bg-primary/60 group-hover:scale-150 transition-all duration-700"></div>
 
+            {/* Hover Background Image (Nerves) */}
+            <div 
+              className={`absolute inset-0 transition-all duration-700 ease-out z-0 flex items-center justify-center ${isHovered ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`}
+              style={{ mixBlendMode: 'screen' }}
+            >
+              <img 
+                src={bgImage} 
+                alt="Brain Circuit Background" 
+                className="w-[150%] h-[150%] max-w-none object-cover opacity-80"
+              />
+            </div>
+
+            {/* Main Brain Logo */}
             <img
               src={logoImg}
               alt="Skillstar Logo"
               className="w-3/5 h-auto object-contain relative z-10 drop-shadow-[0_0_30px_rgba(37,99,235,0.5)] group-hover:scale-110 transition-transform duration-700 ease-out"
             />
 
-            <div className="absolute inset-0 bg-gradient-to-t from-[#050816] via-transparent to-transparent opacity-80"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#050816] via-transparent to-transparent opacity-80 z-20 pointer-events-none"></div>
 
           </div>
         </motion.div>

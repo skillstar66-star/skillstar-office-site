@@ -33,7 +33,7 @@ const FAQ = () => {
       <div className="flex flex-col lg:flex-row gap-16 items-start">
         
         {/* Left Side: Header */}
-        <div className="lg:w-1/3 sticky top-32">
+        <div className="lg:w-1/3 relative lg:sticky lg:top-32 mb-10 lg:mb-0">
           <motion.div 
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "300px" }}
             className="inline-flex items-center gap-2 bg-[#121420] border border-primary/20 rounded-full px-5 py-2 shadow-sm mb-6"
