@@ -138,7 +138,7 @@ const Navbar = () => {
           </a>
           
           <a 
-            href="https://wa.me/919876543210" 
+            href="https://wa.me/918925845871?text=Hello%20SkillStar%20Digital%20Solutions,%20I%20would%20like%20to%20know%20more%20about%20your%20services." 
             target="_blank"
             rel="noopener noreferrer"
             className="flex flex-col items-center gap-1.5 transition-colors text-white/50 hover:text-[#25D366]"

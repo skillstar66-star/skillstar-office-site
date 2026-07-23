@@ -72,7 +72,7 @@ const Footer = () => {
             <h4 className="text-sm font-semibold text-white mb-6">Contact Info</h4>
             <ul className="flex flex-col gap-4 text-sm text-white/60 mb-6">
               <li className="flex items-center gap-3">
-                <span className="text-white/40">📞</span> <a href="tel:+918925845871" className="hover:text-primary transition-colors">+91 8925845871</a>
+                <span className="text-white/40">📞</span> <a href="https://wa.me/918925845871?text=Hello%20SkillStar%20Digital%20Solutions,%20I%20would%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">+91 8925845871</a>
               </li>
               <li className="flex items-center gap-3 break-all">
                 <span className="text-white/40">✉️</span> <a href="mailto:skillstardigitalsolutions@gmail.com" className="hover:text-primary transition-colors">skillstardigitalsolutions@gmail.com</a>
