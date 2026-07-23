@@ -19,9 +19,10 @@
   }
   html, body {
     -webkit-tap-highlight-color: transparent;
+    -webkit-overflow-scrolling: touch;
   }
   body {
-    @apply bg-[var(--color-bg-base)] text-[var(--color-text-main)] font-body antialiased selection:bg-primary/30 selection:text-white overflow-x-hidden;
+    @apply bg-[var(--color-bg-base)] text-[var(--color-text-main)] font-body antialiased selection:bg-primary/30 selection:text-white;
   }
   button, a, img {
     -webkit-user-select: none;
