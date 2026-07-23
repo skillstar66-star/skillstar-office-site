@@ -46,7 +46,7 @@ const avatars = [
 ];
 
 const stats = [
-  { value: '250+', label: 'Happy Clients', icon: Users },
+  { value: '100+', label: 'Happy Clients', icon: Users },
   { value: '4.9/5', label: 'Client Rating', icon: Star },
   { value: '98%', label: 'Satisfaction Rate', icon: Trophy },
   { value: '250%', label: 'Average Growth', icon: TrendingUp },
@@ -181,7 +181,7 @@ const Testimonials = () => {
               </div>
               <div>
                 <div className="text-white font-semibold text-base md:text-lg">Excellent Reviews</div>
-                <div className="text-white/50 text-sm">Based on 250+ clients</div>
+                <div className="text-white/50 text-sm">Based on 100+ clients</div>
               </div>
             </div>
 

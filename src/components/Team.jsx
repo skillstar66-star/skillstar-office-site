@@ -267,7 +267,7 @@ const Team = () => {
                     </div>
                     <div>
                       <div className="text-white font-bold flex items-baseline">
-                        <CountUp end={30} duration={2.5} enableScrollSpy scrollSpyOnce />+
+                        <CountUp end={100} duration={2.5} enableScrollSpy scrollSpyOnce />+
                       </div>
                       <div className="text-white/50 text-[11px] uppercase tracking-wider group-hover/stat:text-blue-400 transition-colors">Happy Clients</div>
                     </div>
