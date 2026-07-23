@@ -31,9 +31,6 @@ function App() {
     // Wait until intro is complete to calculate correct page height
     if (!introComplete) return;
     
-    // Disable Lenis on mobile devices to prevent touch scrolling from getting stuck
-    if (window.innerWidth <= 768) return;
-
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -41,7 +38,7 @@ function App() {
       gestureOrientation: 'vertical',
       smoothWheel: true,
       wheelMultiplier: 1,
-      smoothTouch: false,
+      smoothTouch: true,
       touchMultiplier: 2,
       infinite: false,
     });
