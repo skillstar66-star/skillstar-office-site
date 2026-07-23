@@ -125,12 +125,12 @@ function App() {
           )}
         </AnimatePresence>
       </div>
-      {/* Floating WhatsApp Button */}
+      {/* Floating WhatsApp Button (Hidden on Mobile) */}
       <a
         href="https://wa.me/918925845871?text=Hello%20SkillStar%20Digital%20Solutions,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-[9999] bg-[#25D366] text-white p-4 rounded-full shadow-[0_4px_14px_0_rgba(37,211,102,0.39)] hover:shadow-[0_6px_20px_rgba(37,211,102,0.23)] hover:-translate-y-1 transition-all duration-300 flex items-center justify-center group"
+        className="hidden lg:flex fixed bottom-6 right-6 z-[9999] bg-[#25D366] text-white p-4 rounded-full shadow-[0_4px_14px_0_rgba(37,211,102,0.39)] hover:shadow-[0_6px_20px_rgba(37,211,102,0.23)] hover:-translate-y-1 transition-all duration-300 items-center justify-center group"
       >
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="w-8 h-8" />
 
