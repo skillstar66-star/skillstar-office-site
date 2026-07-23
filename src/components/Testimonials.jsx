@@ -173,7 +173,7 @@ const Testimonials = () => {
             <div className="flex items-center gap-6 mb-12">
               <div className="flex -space-x-3">
                 {avatars.map((avatar, i) => (
-                  <img key={i} src={avatar} alt="Client" className="w-12 h-12 rounded-full border-2 border-[#02040f] object-contain bg-white p-1 relative" style={{ zIndex: 4 - i }} />
+                  <img key={i} src={avatar} alt="Client" loading="lazy" className="w-12 h-12 rounded-full border-2 border-[#02040f] object-contain bg-white p-1 relative" style={{ zIndex: 4 - i }} />
                 ))}
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center border-2 border-[#02040f] relative z-0 shadow-[0_0_15px_rgba(59,130,246,0.5)]">
                   <span className="text-white font-bold text-sm flex items-center">4.9<Star className="w-3 h-3 ml-0.5 fill-white" /></span>
@@ -221,7 +221,7 @@ const Testimonials = () => {
                   <div className="w-full h-px bg-gradient-to-r from-white/10 via-white/5 to-transparent mb-6"></div>
 
                   <div className="flex items-center gap-4">
-                    <img src={currentTest.avatar} alt={currentTest.name} className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/20 object-contain bg-white p-1" />
+                    <img src={currentTest.avatar} alt={currentTest.name} loading="lazy" className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/20 object-contain bg-white p-1" />
                     <div>
                       <h4 className="text-white font-bold text-sm md:text-base font-heading">{currentTest.name}</h4>
                       <p className="text-blue-500 text-[10px] md:text-xs mt-0.5 tracking-wide">{currentTest.role}</p>
@@ -233,6 +233,7 @@ const Testimonials = () => {
               {/* Navigation Button */}
               <button
                 onClick={nextTestimonial}
+                aria-label="Next Testimonial"
                 className="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 rounded-full bg-[#0a0d1a] border border-blue-500/50 flex items-center justify-center text-white hover:bg-blue-600 hover:scale-110 hover:shadow-[0_0_20px_rgba(37,99,235,0.8)] transition-all duration-300 group z-20 shadow-[0_0_15px_rgba(59,130,246,0.3)]"
               >
                 <ChevronRight className="w-5 h-5 md:w-8 md:h-8 group-hover:translate-x-0.5 transition-transform" />
@@ -268,7 +269,7 @@ const Testimonials = () => {
               <div key={i} className="flex items-center gap-3 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer">
                 {brand.logo ? (
                   <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center p-1 overflow-hidden shrink-0">
-                    <img src={brand.logo} alt={brand.name} className="w-full h-full object-contain" />
+                    <img src={brand.logo} alt={brand.name} loading="lazy" className="w-full h-full object-contain" />
                   </div>
                 ) : (
                   <brand.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
@@ -283,4 +284,4 @@ const Testimonials = () => {
   );
 };
 
-export default Testimonials;
+export default React.memo(Testimonials);

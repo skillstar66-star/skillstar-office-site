@@ -195,7 +195,7 @@ const Team = () => {
                         className="w-24 h-24 md:w-40 md:h-40 rounded-full p-1 bg-gradient-to-br from-blue-500 to-purple-500 shadow-[0_0_20px_rgba(59,130,246,0.3)] group-hover:shadow-[0_0_30px_rgba(168,85,247,0.5)] transition-shadow duration-500"
                       >
                         <div className="w-full h-full rounded-full overflow-hidden border-4 border-[#0A0E1A]">
-                          <img src={skillstarLogo} alt="Rahannath P R" className="w-full h-full object-contain bg-[#0A0E1A] p-3 transition-transform duration-700 group-hover:scale-110" />
+                          <img src={skillstarLogo} alt="Rahannath P R" loading="lazy" className="w-full h-full object-contain bg-[#0A0E1A] p-3 transition-transform duration-700 group-hover:scale-110" />
                         </div>
                       </motion.div>
                     </motion.div>
@@ -299,7 +299,7 @@ const Team = () => {
                           className={`w-14 h-14 md:w-20 md:h-20 rounded-full p-[2px] bg-gradient-to-br from-${member.color}-500 to-transparent opacity-80 group-hover:opacity-100 transition-opacity shadow-[0_0_15px_rgba(0,0,0,0.2)]`}
                         >
                           <div className="w-full h-full rounded-full overflow-hidden border-2 border-[#0A0E1A]">
-                            <img src={member.img} alt={member.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                            <img src={member.img} alt={member.name} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                           </div>
                         </motion.div>
                         {/* Floating Icon */}
@@ -372,7 +372,7 @@ const Team = () => {
                           className={`w-14 h-14 md:w-20 md:h-20 rounded-full p-[2px] bg-gradient-to-br from-${member.color}-500 to-transparent opacity-80 group-hover:opacity-100 transition-opacity shadow-[0_0_15px_rgba(0,0,0,0.2)]`}
                         >
                           <div className="w-full h-full rounded-full overflow-hidden border-2 border-[#0A0E1A]">
-                            <img src={member.img} alt={member.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                            <img src={member.img} alt={member.name} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                           </div>
                         </motion.div>
                         {/* Floating Icon */}
@@ -409,8 +409,8 @@ const Team = () => {
 
                       <div className="flex items-center gap-2 md:gap-3 justify-center pt-4 md:pt-6 border-t border-white/5">
                         {[Linkedin, Twitter, Mail].map((Icon, i) => (
-                          <a key={i} href="#" className={`w-8 h-8 rounded-full bg-white/5 hover:${colors.bg} border border-white/5 flex items-center justify-center text-white/40 hover:${colors.text} transition-all duration-300 hover:-translate-y-1`}>
-                            <Icon size={14} />
+                          <a key={i} href="#" aria-label={`Contact on platform ${i}`} className={`w-8 h-8 rounded-full bg-white/5 hover:${colors.bg} border border-white/5 flex items-center justify-center text-white/40 hover:${colors.text} transition-all duration-300 hover:-translate-y-1`}>
+                            <Icon size={14} aria-hidden="true" />
                           </a>
                         ))}
                       </div>
@@ -485,4 +485,4 @@ const Team = () => {
   );
 };
 
-export default Team;
+export default React.memo(Team);

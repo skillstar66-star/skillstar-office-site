@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Block AI scrapers (optional, but good for some sites to prevent unauthorized scraping of proprietary content)
+User-agent: GPTBot
+Disallow: /
+User-agent: ChatGPT-User
+Disallow: /
+
+Sitemap: https://skillstardigitalsolutions.com/sitemap.xml

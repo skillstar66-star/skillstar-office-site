@@ -37,19 +37,19 @@ const Footer = () => {
               We help businesses grow with data-driven digital marketing solutions that deliver real results.
             </p>
             <div className="flex items-center gap-3">
-              <a href="#" className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-white/70 hover:text-white hover:bg-primary hover:scale-110 transition-all duration-300">
+              <a href="#" aria-label="Facebook" className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-white/70 hover:text-white hover:bg-primary hover:scale-110 transition-all duration-300">
                 <Facebook size={16} />
               </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-white/70 hover:text-white hover:bg-primary hover:scale-110 transition-all duration-300">
+              <a href="#" aria-label="LinkedIn" className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-white/70 hover:text-white hover:bg-primary hover:scale-110 transition-all duration-300">
                 <Linkedin size={16} />
               </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-white/70 hover:text-white hover:bg-primary hover:scale-110 transition-all duration-300">
+              <a href="#" aria-label="Instagram" className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-white/70 hover:text-white hover:bg-primary hover:scale-110 transition-all duration-300">
                 <Instagram size={16} />
               </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-white/70 hover:text-white hover:bg-primary hover:scale-110 transition-all duration-300">
+              <a href="#" aria-label="Twitter" className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-white/70 hover:text-white hover:bg-primary hover:scale-110 transition-all duration-300">
                 <Twitter size={16} />
               </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-white/70 hover:text-white hover:bg-primary hover:scale-110 transition-all duration-300">
+              <a href="#" aria-label="YouTube" className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-white/70 hover:text-white hover:bg-primary hover:scale-110 transition-all duration-300">
                 <Youtube size={16} />
               </a>
             </div>

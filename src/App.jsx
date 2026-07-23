@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
 import Lenis from 'lenis';
+import SEO from './components/SEO';
 
 import TrustedBrands from './components/TrustedBrands';
 const About = lazy(() => import('./components/About'));
@@ -92,6 +93,27 @@ function App() {
               <Routes>
                 <Route path="/" element={
                   <main className="flex flex-col pb-24">
+                    <SEO
+                      title="AI Digital Marketing Agency | SkillStar Digital Solutions"
+                      description="SkillStar Digital Solutions is a premium AI-driven digital marketing and web development agency. We deliver high-performance websites and growth strategies."
+                      keywords="AI digital marketing, web development, SEO agency, React development, Vercel experts"
+                      schema={{
+                        "@context": "https://schema.org",
+                        "@type": "LocalBusiness",
+                        "name": "SkillStar Digital Solutions",
+                        "image": "https://res.cloudinary.com/dgpkzmkxf/image/upload/v1784790806/hero-bg_tazlvy.png",
+                        "@id": "https://skillstardigitalsolutions.com",
+                        "url": "https://skillstardigitalsolutions.com",
+                        "telephone": "+918925845871",
+                        "address": {
+                          "@type": "PostalAddress",
+                          "streetAddress": "India",
+                          "addressLocality": "India",
+                          "addressRegion": "India",
+                          "addressCountry": "IN"
+                        }
+                      }}
+                    />
                     <div className="flex flex-col">
                       <Hero />
                       <TrustedBrands />
@@ -118,6 +140,11 @@ function App() {
                 } />
                 <Route path="/about-details" element={
                   <Suspense fallback={<div className="min-h-screen" />}>
+                    <SEO
+                      title="About SkillStar Digital Solutions | Our Mission & Team"
+                      description="Learn about SkillStar Digital Solutions. We are a team of expert developers and marketers dedicated to growing your business with AI and cutting-edge technology."
+                      keywords="about SkillStar, digital marketing team, web development experts"
+                    />
                     <AboutDetails />
                   </Suspense>
                 } />
