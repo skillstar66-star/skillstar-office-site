@@ -66,15 +66,17 @@ const Hero = () => {
           </motion.div>
 
           <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4 mt-6">
-            <motion.button
+            <motion.a
+              href="#contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="group bg-primary hover:bg-primary-hover text-white px-7 py-3.5 rounded-xl text-sm font-semibold flex items-center gap-2 transition-all duration-300 shadow-[0_0_20px_rgba(37,99,235,0.5)] hover:shadow-[0_0_35px_rgba(37,99,235,0.7)] relative overflow-hidden"
             >
               <span className="absolute inset-0 w-full h-full bg-white/20 -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"></span>
               Get Free Consultation <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </motion.button>
-            <motion.button
+            </motion.a>
+            <motion.a
+              href="#projects"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="group bg-transparent hover:bg-white/5 border border-white/20 hover:border-white/40 text-white px-7 py-3.5 rounded-xl text-sm font-medium flex items-center gap-3 transition-all duration-300"
@@ -83,7 +85,7 @@ const Hero = () => {
               <div className="w-5 h-5 rounded-full border border-white/40 group-hover:border-white/80 group-hover:bg-white/10 flex items-center justify-center transition-all">
                 <Play size={10} fill="currentColor" className="ml-0.5 group-hover:text-primary transition-colors" />
               </div>
-            </motion.button>
+            </motion.a>
           </motion.div>
         </motion.div>
 
