@@ -15,7 +15,7 @@
 
 @layer base {
   html {
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; removed to prevent conflict with Lenis */
   }
   html, body {
     -webkit-tap-highlight-color: transparent;

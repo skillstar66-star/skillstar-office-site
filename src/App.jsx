@@ -9,20 +9,20 @@ import Lenis from 'lenis';
 import SEO from './components/SEO';
 
 import TrustedBrands from './components/TrustedBrands';
-const About = lazy(() => import('./components/About'));
-const AboutDetails = lazy(() => import('./components/AboutDetails'));
-const Services = lazy(() => import('./components/Services'));
-const Stats = lazy(() => import('./components/Stats'));
-const ProcessTimeline = lazy(() => import('./components/ProcessTimeline'));
-const Clients = lazy(() => import('./components/Clients'));
-const Portfolio = lazy(() => import('./components/Portfolio'));
-const CaseStudy = lazy(() => import('./components/CaseStudy'));
-const Testimonials = lazy(() => import('./components/Testimonials'));
-const Team = lazy(() => import('./components/Team'));
-const ProjectsSection = lazy(() => import('./components/ProjectsSection'));
-const FAQ = lazy(() => import('./components/FAQ'));
-const AuditForm = lazy(() => import('./components/AuditForm'));
-const BlogSection = lazy(() => import('./components/BlogSection'));
+import About from './components/About';
+import AboutDetails from './components/AboutDetails';
+import Services from './components/Services';
+import Stats from './components/Stats';
+import ProcessTimeline from './components/ProcessTimeline';
+import Clients from './components/Clients';
+import Portfolio from './components/Portfolio';
+import CaseStudy from './components/CaseStudy';
+import Testimonials from './components/Testimonials';
+import Team from './components/Team';
+import ProjectsSection from './components/ProjectsSection';
+import FAQ from './components/FAQ';
+import AuditForm from './components/AuditForm';
+import BlogSection from './components/BlogSection';
 
 function App() {
   const [introComplete, setIntroComplete] = useState(false);
@@ -36,15 +36,11 @@ function App() {
     if (window.innerWidth <= 768) return;
 
     const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: 'vertical',
-      gestureOrientation: 'vertical',
-      smoothWheel: true,
+      lerp: 0.08, // Buttery smooth interpolation (lower is smoother)
       wheelMultiplier: 1,
+      smoothWheel: true,
       smoothTouch: false,
-      touchMultiplier: 2,
-      infinite: false,
+      syncTouch: true,
     });
 
     let rafId;

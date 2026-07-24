@@ -186,7 +186,7 @@ const Clients = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className={`shrink-0 w-[85vw] max-w-[320px] md:max-w-none md:w-auto relative flex flex-col bg-[#0A0B14] border ${client.theme.border} rounded-3xl overflow-hidden transition-all duration-300 ${client.theme.hoverBorder} group`}
+              className={`shrink-0 w-[85vw] max-w-[320px] md:max-w-none md:w-auto relative flex flex-col bg-[#0A0B14] border ${client.theme.border} rounded-3xl overflow-hidden transition-colors duration-300 ${client.theme.hoverBorder} group`}
               style={{ boxShadow: `0 10px 40px -10px ${client.theme.shadow}` }}
             >
               {/* Featured Tag */}

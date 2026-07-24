@@ -72,9 +72,9 @@ const Portfolio = () => {
           {filteredItems.map((item) => (
             <motion.div
               layout
-              initial={{ opacity: 0, scale: 0.8, filter: 'blur(10px)' }}
-              animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
-              exit={{ opacity: 0, scale: 0.8, filter: 'blur(10px)' }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
               whileHover={{ y: -10, scale: 1.03, transition: { type: "spring", stiffness: 400, damping: 25 } }}
               transition={{ duration: 0.4, type: "spring" }}
               key={item.id}

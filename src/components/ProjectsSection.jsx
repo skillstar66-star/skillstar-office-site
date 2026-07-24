@@ -125,7 +125,7 @@ const ProjectsSection = () => {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 onClick={() => setSelectedCategory(project.category)}
-                className="shrink-0 w-[85vw] max-w-[320px] md:max-w-none md:w-auto group relative rounded-[24px] bg-[#0F1528] border border-white/5 overflow-hidden cursor-pointer hover:border-blue-500/50 transition-all shadow-lg hover:shadow-[0_10px_40px_rgba(37,99,235,0.2)]"
+                className="shrink-0 w-[85vw] max-w-[320px] md:max-w-none md:w-auto group relative rounded-[24px] bg-[#0F1528] border border-white/5 overflow-hidden cursor-pointer hover:border-blue-500/50 transition-colors shadow-lg hover:shadow-[0_10px_40px_rgba(37,99,235,0.2)]"
               >
                 {/* Image Container */}
                 <div className="relative h-56 overflow-hidden">
