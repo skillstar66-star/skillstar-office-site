@@ -54,12 +54,13 @@ const FAQ = () => {
             Everything you need to know about working with us and how we deliver exceptional growth.
           </motion.p>
           
-          <motion.button 
+          <motion.a 
+            href="#contact"
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "300px" }} transition={{ delay: 0.3 }}
-            className="text-white bg-white/5 hover:bg-white/10 border border-white/10 px-6 py-3 rounded-full text-sm font-semibold transition-all"
+            className="inline-block text-white bg-white/5 hover:bg-white/10 border border-white/10 px-6 py-3 rounded-full text-sm font-semibold transition-all"
           >
             Ask a specific question
-          </motion.button>
+          </motion.a>
         </div>
 
         {/* Right Side: Accordion */}

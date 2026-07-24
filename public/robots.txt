@@ -1,10 +1,22 @@
 User-agent: *
 Allow: /
 
-# Block AI scrapers (optional, but good for some sites to prevent unauthorized scraping of proprietary content)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
 User-agent: GPTBot
-Disallow: /
+Allow: /
+
 User-agent: ChatGPT-User
-Disallow: /
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
 
 Sitemap: https://skillstardigitalsolutions.com/sitemap.xml

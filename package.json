@@ -36,6 +36,7 @@
     "svgo": "^4.0.2",
     "vite": "^8.1.1",
     "vite-plugin-compression": "^0.5.1",
-    "vite-plugin-image-optimizer": "^2.0.3"
+    "vite-plugin-image-optimizer": "^2.0.3",
+    "vite-plugin-sitemap": "^0.8.2"
   }
 }

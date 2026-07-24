@@ -322,6 +322,12 @@ const Services = () => {
             </motion.div>
           ))}
         </div>
+
+        <div className="flex justify-center mt-12 relative z-20">
+          <a href="#portfolio" className="text-blue-400 hover:text-white font-semibold text-sm transition-colors border-b border-blue-400/30 hover:border-white/50 pb-1">
+            Explore our Portfolio Projects →
+          </a>
+        </div>
       </div>
 
       {/* Modal / Expanded Card Overlay */}

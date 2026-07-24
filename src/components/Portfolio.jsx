@@ -115,20 +115,32 @@ const Portfolio = () => {
 
       <motion.div
         initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "300px" }}
-        className="mt-10 flex justify-center"
+        className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6"
       >
-        <motion.button
-          onClick={() => window.open('https://portfolio-pi-blush-99.vercel.app/', '_blank')}
+        <motion.a
+          href="https://portfolio-pi-blush-99.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="group relative overflow-hidden bg-white/5 hover:bg-white/10 backdrop-blur-md border border-white/10 text-white px-8 py-3.5 rounded-full text-sm font-semibold flex items-center gap-3 transition-all duration-300 shadow-[0_0_15px_rgba(255,255,255,0.05)] hover:shadow-[0_0_25px_rgba(37,99,235,0.3)] hover:border-primary/50"
         >
           <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-primary/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] pointer-events-none"></span>
-          <span className="relative z-10">View Portfolio</span>
+          <span className="relative z-10">View Full Portfolio</span>
           <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary transition-colors relative z-10">
-            <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
+            <Eye size={14} className="group-hover:scale-110 transition-transform" />
           </div>
-        </motion.button>
+        </motion.a>
+
+        <motion.a
+          href="#contact"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="group relative overflow-hidden bg-primary hover:bg-primary-hover text-white px-8 py-3.5 rounded-full text-sm font-semibold flex items-center gap-3 transition-all duration-300 shadow-[0_0_20px_rgba(37,99,235,0.4)]"
+        >
+          <span className="relative z-10">Start Your Project</span>
+          <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+        </motion.a>
       </motion.div>
     </section>
   );

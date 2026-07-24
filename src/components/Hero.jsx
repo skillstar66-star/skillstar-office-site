@@ -76,12 +76,12 @@ const Hero = () => {
               Get Free Consultation <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </motion.a>
             <motion.a
-              href="#projects"
+              href="#services"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="group bg-transparent hover:bg-white/5 border border-white/20 hover:border-white/40 text-white px-7 py-3.5 rounded-xl text-sm font-medium flex items-center gap-3 transition-all duration-300"
             >
-              View Our Work
+              View Our Services
               <div className="w-5 h-5 rounded-full border border-white/40 group-hover:border-white/80 group-hover:bg-white/10 flex items-center justify-center transition-all">
                 <Play size={10} fill="currentColor" className="ml-0.5 group-hover:text-primary transition-colors" />
               </div>
