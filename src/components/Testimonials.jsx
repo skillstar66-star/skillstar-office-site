@@ -80,7 +80,7 @@ const GlowingGlobe = () => {
               {[...Array(24)].map((_, i) => (
                 <ellipse
                   key={`long-${i}`}
-                  cx="50" cy="50" rx={50 * Math.cos((i * 7.5 * Math.PI) / 180)} ry="50"
+                  cx="50" cy="50" rx={Math.abs(50 * Math.cos((i * 7.5 * Math.PI) / 180))} ry="50"
                   fill="none"
                   stroke="#3b82f6"
                   strokeWidth="0.2"
@@ -91,12 +91,12 @@ const GlowingGlobe = () => {
               {/* Latitude lines */}
               {[...Array(24)].map((_, i) => {
                 const angle = ((i - 11.5) * 7.5 * Math.PI) / 180;
-                const radius = 50 * Math.cos(angle);
+                const radius = Math.abs(50 * Math.cos(angle));
                 const yOffset = 50 * Math.sin(angle);
                 return (
                   <ellipse
                     key={`lat-${i}`}
-                    cx="50" cy={50 + yOffset} rx={radius} ry={radius * 0.2}
+                    cx="50" cy={50 + yOffset} rx={radius} ry={Math.abs(radius * 0.2)}
                     fill="none"
                     stroke="#8b5cf6"
                     strokeWidth="0.2"

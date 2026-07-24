@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, Home, Layers, LayoutGrid, Phone } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 const AuditForm = React.lazy(() => import('./AuditForm'));
@@ -18,6 +19,29 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (location.pathname === '/' && location.hash) {
+      setTimeout(() => {
+        const element = document.querySelector(location.hash);
+        if (element) {
+          const offset = 100;
+          const bodyRect = document.body.getBoundingClientRect().top;
+          const elementRect = element.getBoundingClientRect().top;
+          const elementPosition = elementRect - bodyRect;
+          const offsetPosition = elementPosition - offset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
+    }
+  }, [location]);
+
   const [activeLink, setActiveLink] = useState('Home');
 
   const navLinks = [
@@ -35,18 +59,22 @@ const Navbar = () => {
     setActiveLink(link.name);
     setMobileMenuOpen(false);
 
-    const element = document.querySelector(link.href);
-    if (element) {
-      const offset = 100; // Account for fixed navbar height
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
+    if (location.pathname !== '/') {
+      navigate('/' + link.href);
+    } else {
+      const element = document.querySelector(link.href);
+      if (element) {
+        const offset = 100; // Account for fixed navbar height
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = element.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
     }
   };
 

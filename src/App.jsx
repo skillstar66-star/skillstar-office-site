@@ -23,7 +23,8 @@ import ProjectsSection from './components/ProjectsSection';
 import FAQ from './components/FAQ';
 import AuditForm from './components/AuditForm';
 import BlogSection from './components/BlogSection';
-
+import ClientCaseStudiesPage from './components/ClientCaseStudiesPage';
+import TeamMembersPage from './components/TeamMembersPage';
 function App() {
   const [introComplete, setIntroComplete] = useState(false);
 
@@ -267,6 +268,26 @@ function App() {
                       keywords="about SkillStar, digital marketing team, web development experts"
                     />
                     <AboutDetails />
+                  </Suspense>
+                } />
+                <Route path="/case-studies" element={
+                  <Suspense fallback={<div className="min-h-screen" />}>
+                    <SEO
+                      title="Client Case Studies | SkillStar Digital Solutions"
+                      description="Explore our success stories and see how we have empowered brands to achieve digital growth and transformation."
+                      keywords="case studies, digital marketing success, web development portfolio"
+                    />
+                    <ClientCaseStudiesPage />
+                  </Suspense>
+                } />
+                <Route path="/team-members" element={
+                  <Suspense fallback={<div className="min-h-screen" />}>
+                    <SEO
+                      title="Our Team | SkillStar Digital Solutions"
+                      description="Meet the multidisciplinary team of strategists, designers, developers, AI specialists, and marketers engineering digital growth."
+                      keywords="team, digital marketing experts, AI developers, UI UX designers"
+                    />
+                    <TeamMembersPage />
                   </Suspense>
                 } />
               </Routes>
