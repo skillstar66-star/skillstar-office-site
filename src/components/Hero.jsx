@@ -105,7 +105,7 @@ const Hero = () => {
             {/* Main Image */}
             <img 
               src="https://res.cloudinary.com/dgpkzmkxf/image/upload/f_auto,q_auto/v1784795182/ChatGPT_Image_Jul_23__2026__01_53_50_PM-removebg-preview_eshcoc.png" 
-              alt="AI Brain Concept"
+              alt="SkillStar Digital Solutions - AI Powered Marketing Brain Concept"
               fetchPriority="high"
               loading="eager"
               width="500"

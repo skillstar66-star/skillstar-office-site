@@ -30,8 +30,8 @@ const Footer = () => {
 
           {/* Brand Col */}
           <div>
-            <div className="mb-6">
-              <img src={logoImg} alt="Skillstar Logo" className="h-16 md:h-24 object-contain" />
+            <div className="mb-8 md:mb-0 w-full md:w-1/3 flex justify-center md:justify-start">
+              <img src={logoImg} alt="SkillStar Digital Solutions Footer Logo" className="h-16 md:h-24 object-contain" />
             </div>
             <p className="text-sm text-white/60 mb-6 leading-relaxed">
               We help businesses grow with data-driven digital marketing solutions that deliver real results.
@@ -87,7 +87,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#25D366]/10 text-[#25D366] hover:bg-[#25D366]/20 px-4 py-2 rounded-lg text-sm font-medium transition-colors border border-[#25D366]/20"
             >
-              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="w-4 h-4" /> WhatsApp Us
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Contact SkillStar via WhatsApp" className="w-4 h-4" /> WhatsApp Us
             </a>
           </div>
 

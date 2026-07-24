@@ -893,7 +893,7 @@ const BlogSection = () => {
       </div>
 
       {/* Grid of Blog Cards */}
-      <div className="flex overflow-x-auto md:grid md:grid-cols-3 lg:grid-cols-5 gap-4 pb-4 snap-x snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
+      <div className="flex overflow-x-auto md:grid md:grid-cols-3 lg:grid-cols-5 gap-4 pb-4 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
         {blogPosts.map((post, index) => {
           const style = hoverStyles[index % hoverStyles.length];
           return (

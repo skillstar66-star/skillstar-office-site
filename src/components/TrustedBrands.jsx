@@ -44,7 +44,7 @@ const TrustedBrands = () => {
 
               <img
                 src={brand.icon}
-                alt={brand.name}
+                alt={`${brand.name} - SkillStar Trusted Brand Partner`}
                 className={`h-12 md:h-14 object-contain max-w-[120px] drop-shadow-[0_10px_15px_rgba(255,255,255,0.05)] group-hover:drop-shadow-[0_25px_35px_rgba(37,99,235,0.8)] transition-all duration-500 ease-out rounded-md grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100`}
               />
             </div>
@@ -61,7 +61,7 @@ const TrustedBrands = () => {
 
               <img
                 src={brand.icon}
-                alt={brand.name}
+                alt={`${brand.name} - SkillStar Trusted Brand Partner`}
                 className={`h-12 md:h-14 object-contain max-w-[120px] drop-shadow-[0_10px_15px_rgba(255,255,255,0.05)] group-hover:drop-shadow-[0_25px_35px_rgba(37,99,235,0.8)] transition-all duration-500 ease-out rounded-md grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100`}
               />
             </div>

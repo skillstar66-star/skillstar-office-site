@@ -116,7 +116,7 @@ const ProjectsSection = () => {
           </div>
 
           {/* Projects Grid */}
-          <div className="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 pb-4 md:pb-0 snap-x snap-mandatory md:snap-none scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
+          <div className="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 pb-4 md:pb-0 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
             {projects.map((project, idx) => (
               <motion.div
                 key={project.id}
@@ -125,14 +125,14 @@ const ProjectsSection = () => {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 onClick={() => setSelectedCategory(project.category)}
-                className="shrink-0 w-[85vw] max-w-[320px] md:max-w-none md:w-auto snap-center group relative rounded-[24px] bg-[#0F1528] border border-white/5 overflow-hidden cursor-pointer hover:border-blue-500/50 transition-all shadow-lg hover:shadow-[0_10px_40px_rgba(37,99,235,0.2)]"
+                className="shrink-0 w-[85vw] max-w-[320px] md:max-w-none md:w-auto group relative rounded-[24px] bg-[#0F1528] border border-white/5 overflow-hidden cursor-pointer hover:border-blue-500/50 transition-all shadow-lg hover:shadow-[0_10px_40px_rgba(37,99,235,0.2)]"
               >
                 {/* Image Container */}
                 <div className="relative h-56 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0F1528] to-transparent z-10"></div>
                   <img 
                     src={project.image} 
-                    alt={project.title} 
+                    alt={`${project.title} - Digital Solution Project by SkillStar`} 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   
@@ -226,7 +226,7 @@ const ProjectsSection = () => {
                           {item.type === 'video' ? (
                             <video src={item.url} autoPlay muted loop playsInline className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                           ) : (
-                            <img src={item.image} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                            <img src={item.image} alt={`${item.title} - SkillStar Portfolio Showcase`} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                           )}
                           
                           {/* Overlay */}

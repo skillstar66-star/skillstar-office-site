@@ -59,7 +59,7 @@ const Navbar = () => {
       <div className="container mx-auto px-6 md:px-12 lg:px-24 flex items-center justify-between">
         {/* Logo */}
         <a href="#home" onClick={(e) => handleNavClick(e, navLinks[0])} className="flex items-center">
-          <img src={logoImg} alt="Skillstar Logo" className="h-16 md:h-20 object-contain" />
+          <img src={logoImg} alt="SkillStar Digital Solutions Official Logo" className="h-16 md:h-20 object-contain" />
         </a>
 
         {/* Desktop Links */}

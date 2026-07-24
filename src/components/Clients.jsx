@@ -108,13 +108,12 @@ const Clients = () => {
   // Lock body scroll when modal is open
   useEffect(() => {
     if (selectedClient) {
+      const originalStyle = window.getComputedStyle(document.body).overflow;
       document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
+      return () => {
+        document.body.style.overflow = originalStyle;
+      };
     }
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
   }, [selectedClient]);
 
   return (
@@ -179,7 +178,7 @@ const Clients = () => {
         </div>
 
         {/* Cards Grid */}
-        <div className="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 pb-4 md:pb-0 snap-x snap-mandatory md:snap-none scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
+        <div className="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 pb-4 md:pb-0 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
           {clients.map((client, index) => (
             <motion.div 
               key={client.id}
@@ -187,7 +186,7 @@ const Clients = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className={`shrink-0 w-[85vw] max-w-[320px] md:max-w-none md:w-auto snap-center relative flex flex-col bg-[#0A0B14] border ${client.theme.border} rounded-3xl overflow-hidden transition-all duration-300 ${client.theme.hoverBorder} group`}
+              className={`shrink-0 w-[85vw] max-w-[320px] md:max-w-none md:w-auto relative flex flex-col bg-[#0A0B14] border ${client.theme.border} rounded-3xl overflow-hidden transition-all duration-300 ${client.theme.hoverBorder} group`}
               style={{ boxShadow: `0 10px 40px -10px ${client.theme.shadow}` }}
             >
               {/* Featured Tag */}
@@ -200,7 +199,7 @@ const Clients = () => {
               {/* Top Image */}
               <div className="relative h-48 w-full overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A0B14] via-[#0A0B14]/40 to-transparent z-10"></div>
-                <img src={client.image} alt={client.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img src={client.image} alt={`${client.name} - Case Study by SkillStar`} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 
                 {/* Text overlay on image (simulating website header) */}
                 <div className="absolute inset-0 z-10 p-6 flex flex-col justify-center">
@@ -211,7 +210,7 @@ const Clients = () => {
               {/* Overlapping Logo */}
               <div className="relative z-20 flex justify-center -mt-12 mb-4">
                 <div className={`w-24 h-24 rounded-full bg-white border-4 border-[#0A0B14] flex items-center justify-center p-3 shadow-xl overflow-hidden`}>
-                  <img src={client.logo} alt={client.name} className="w-full h-full object-contain" />
+                  <img src={client.logo} alt={`${client.name} Brand Logo`} className="w-full h-full object-contain" />
                 </div>
               </div>
 
@@ -335,7 +334,7 @@ const Clients = () => {
                 <div className="p-6 md:p-8 bg-gradient-to-b from-white/5 to-transparent border-b border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 relative overflow-hidden">
                   <div className="flex items-center gap-5 relative z-10">
                     <div className={`w-16 h-16 rounded-2xl bg-white border border-white/10 flex items-center justify-center shrink-0 overflow-hidden`}>
-                       <img src={selectedClient.logo} alt={selectedClient.name} className="w-full h-full object-contain p-1.5" />
+                       <img src={selectedClient.logo} alt={`${selectedClient.name} Brand Logo`} className="w-full h-full object-contain p-1.5" />
                     </div>
                     <div>
                       <h3 className="text-2xl sm:text-3xl font-bold text-white font-heading leading-tight mb-1">{selectedClient.name}</h3>

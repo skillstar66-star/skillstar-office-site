@@ -168,7 +168,7 @@ const Team = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-100px" }}
-          className="flex overflow-x-auto lg:overflow-visible snap-x snap-mandatory lg:snap-none pb-12 lg:pb-0 px-4 lg:px-0 -mx-4 lg:mx-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+          className="flex overflow-x-auto lg:overflow-visible pb-12 lg:pb-0 px-4 lg:px-0 -mx-4 lg:mx-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         >
           <div className="flex lg:flex-col gap-6 w-max lg:w-full">
             {/* First Row: Rahannath P R (2 cols) + Ram (1 col) + Dinesh (1 col) */}
@@ -194,8 +194,8 @@ const Team = () => {
                         whileHover={{ rotate: 5, scale: 1.05 }}
                         className="w-24 h-24 md:w-40 md:h-40 rounded-full p-1 bg-gradient-to-br from-blue-500 to-purple-500 shadow-[0_0_20px_rgba(59,130,246,0.3)] group-hover:shadow-[0_0_30px_rgba(168,85,247,0.5)] transition-shadow duration-500"
                       >
-                        <div className="w-full h-full rounded-full overflow-hidden border-4 border-[#0A0E1A]">
-                          <img src={skillstarLogo} alt="Rahannath P R" loading="lazy" className="w-full h-full object-contain bg-[#0A0E1A] p-3 transition-transform duration-700 group-hover:scale-110" />
+                        <div className="absolute inset-0 bg-white group-hover:bg-[#0A0E1A] transition-colors duration-500 z-10 flex items-center justify-center p-6 rounded-full">
+                          <img src={skillstarLogo} alt="Rahannath P R - Founder of SkillStar Digital Solutions" loading="lazy" className="w-full h-full object-contain bg-[#0A0E1A] p-3 transition-transform duration-700 group-hover:scale-110" />
                         </div>
                       </motion.div>
                     </motion.div>

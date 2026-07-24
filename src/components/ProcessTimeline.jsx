@@ -236,7 +236,7 @@ const ProcessTimeline = () => {
 
                 {/* Center Hub Logo Container */}
                 <div className="w-full h-full rounded-full flex flex-col items-center justify-center z-10 relative">
-                  <img src={logoImg} alt="Skillstar Digital Solutions" className="w-96 object-contain drop-shadow-[0_0_25px_rgba(255,255,255,0.6)]" />
+                  <img src={logoImg} alt="SkillStar Digital Solutions - AI Marketing & Web Development Agency" className="w-96 object-contain drop-shadow-[0_0_25px_rgba(255,255,255,0.6)]" />
                 </div>
 
                 {/* Lightning AI nerve connection to right card */}
@@ -289,52 +289,54 @@ const ProcessTimeline = () => {
             </div>
 
             {/* Right: Active Step Card */}
-            <div className="flex items-center justify-end relative h-full w-full py-10">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeStep}
-                  initial={{ opacity: 0, x: 20, filter: 'blur(10px)' }}
-                  animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
-                  exit={{ opacity: 0, x: -20, filter: 'blur(10px)' }}
-                  transition={{ duration: 0.4, ease: "easeOut" }}
-                  className="bg-[#0b0e1a]/70 backdrop-blur-3xl border border-blue-500/30 rounded-3xl p-12 w-full max-w-md shadow-[0_30px_60px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.1)] relative overflow-hidden"
-                >
-                  {/* Top border intense glow */}
-                  <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-blue-600 via-indigo-400 to-transparent opacity-100"></div>
+            <div className="flex items-center justify-end relative h-[550px] w-full py-6">
+              <div className="relative w-full max-w-md h-full">
+                <AnimatePresence>
+                  <motion.div
+                    key={activeStep}
+                    initial={{ opacity: 0, x: 20, filter: 'blur(10px)' }}
+                    animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+                    exit={{ opacity: 0, x: -20, filter: 'blur(10px)' }}
+                    transition={{ duration: 0.4, ease: "easeOut" }}
+                    className="absolute inset-0 bg-[#0b0e1a]/70 backdrop-blur-3xl border border-blue-500/30 rounded-3xl p-10 w-full shadow-[0_30px_60px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.1)] overflow-hidden flex flex-col"
+                  >
+                    {/* Top border intense glow */}
+                    <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-blue-600 via-indigo-400 to-transparent opacity-100"></div>
 
-                  <div className="relative z-10">
-                    <div className="flex items-center gap-3 mb-6">
-                      <span className="text-white/60 text-xs font-bold tracking-[0.2em] uppercase">Step</span>
-                      <span className="text-blue-400 text-sm font-bold tracking-widest">{currentStep.id}</span>
+                    <div className="relative z-10 flex flex-col h-full">
+                      <div className="flex items-center gap-3 mb-6 shrink-0">
+                        <span className="text-white/60 text-xs font-bold tracking-[0.2em] uppercase">Step</span>
+                        <span className="text-blue-400 text-sm font-bold tracking-widest">{currentStep.id}</span>
+                      </div>
+
+                      <h3 className="text-3xl font-bold text-white mb-8 font-heading leading-tight shrink-0">
+                        {currentStep.title}
+                      </h3>
+
+                      {/* Glowing Icon Box */}
+                      <div className="w-20 h-20 rounded-2xl bg-transparent border-2 border-blue-500/50 flex items-center justify-center mb-8 shadow-[0_0_30px_rgba(59,130,246,0.3),inset_0_0_20px_rgba(59,130,246,0.2)] relative group shrink-0">
+                        <div className="absolute inset-0 rounded-2xl bg-blue-500/10 group-hover:bg-blue-500/20 transition-colors"></div>
+                        <currentStep.icon className="w-8 h-8 text-blue-400 relative z-10 filter drop-shadow-[0_0_8px_rgba(96,165,250,0.8)]" />
+                      </div>
+
+                      <p className="text-white/70 text-lg leading-relaxed flex-1">
+                        {currentStep.desc}
+                      </p>
+
+                      {/* Slide indicators (dashes) */}
+                      <div className="flex gap-2 shrink-0 mt-4">
+                        {steps.map((_, idx) => (
+                          <div
+                            key={idx}
+                            className={`h-1.5 rounded-full transition-all duration-500 cursor-pointer ${idx === activeStep ? 'w-8 bg-blue-500 shadow-[0_0_10px_#3b82f6]' : 'w-2 bg-white/20 hover:bg-white/40'}`}
+                            onClick={() => setActiveStep(idx)}
+                          ></div>
+                        ))}
+                      </div>
                     </div>
-
-                    <h3 className="text-4xl font-bold text-white mb-10 font-heading leading-tight">
-                      {currentStep.title}
-                    </h3>
-
-                    {/* Glowing Icon Box */}
-                    <div className="w-24 h-24 rounded-2xl bg-transparent border-2 border-blue-500/50 flex items-center justify-center mb-10 shadow-[0_0_30px_rgba(59,130,246,0.3),inset_0_0_20px_rgba(59,130,246,0.2)] relative group">
-                      <div className="absolute inset-0 rounded-2xl bg-blue-500/10 group-hover:bg-blue-500/20 transition-colors"></div>
-                      <currentStep.icon className="w-10 h-10 text-blue-400 relative z-10 filter drop-shadow-[0_0_8px_rgba(96,165,250,0.8)]" />
-                    </div>
-
-                    <p className="text-white/70 text-lg leading-relaxed mb-12 min-h-[80px]">
-                      {currentStep.desc}
-                    </p>
-
-                    {/* Slide indicators (dashes) */}
-                    <div className="flex gap-2">
-                      {steps.map((_, idx) => (
-                        <div
-                          key={idx}
-                          className={`h-1.5 rounded-full transition-all duration-500 cursor-pointer ${idx === activeStep ? 'w-8 bg-blue-500 shadow-[0_0_10px_#3b82f6]' : 'w-2 bg-white/20 hover:bg-white/40'}`}
-                          onClick={() => setActiveStep(idx)}
-                        ></div>
-                      ))}
-                    </div>
-                  </div>
-                </motion.div>
-              </AnimatePresence>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
             </div>
           </div>
 
@@ -348,7 +350,7 @@ const ProcessTimeline = () => {
               <div className="absolute inset-4 rounded-full border-2 border-indigo-400/20 animate-[spin_15s_linear_infinite_reverse]"></div>
               <div className="absolute inset-8 rounded-full border-[3px] border-blue-500/80 shadow-[0_0_40px_rgba(59,130,246,0.8),inset_0_0_20px_rgba(59,130,246,0.5)]"></div>
               <div className="w-full h-full rounded-full flex flex-col items-center justify-center z-10 relative">
-                <img src={logoImg} alt="Skillstar Digital Solutions" className="w-48 object-contain drop-shadow-[0_0_25px_rgba(255,255,255,0.6)]" />
+                <img src={logoImg} alt="SkillStar Digital Solutions - AI Marketing & Web Development Agency" className="w-48 object-contain drop-shadow-[0_0_25px_rgba(255,255,255,0.6)]" />
               </div>
             </div>
 

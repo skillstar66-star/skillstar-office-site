@@ -97,22 +97,147 @@ function App() {
                       title="AI Digital Marketing Agency | SkillStar Digital Solutions"
                       description="SkillStar Digital Solutions is a premium AI-driven digital marketing and web development agency. We deliver high-performance websites and growth strategies."
                       keywords="AI digital marketing, web development, SEO agency, React development, Vercel experts"
-                      schema={{
-                        "@context": "https://schema.org",
-                        "@type": "LocalBusiness",
-                        "name": "SkillStar Digital Solutions",
-                        "image": "https://res.cloudinary.com/dgpkzmkxf/image/upload/v1784790806/hero-bg_tazlvy.png",
-                        "@id": "https://skillstardigitalsolutions.com",
-                        "url": "https://skillstardigitalsolutions.com",
-                        "telephone": "+918925845871",
-                        "address": {
-                          "@type": "PostalAddress",
-                          "streetAddress": "India",
-                          "addressLocality": "India",
-                          "addressRegion": "India",
-                          "addressCountry": "IN"
+                      schema={[
+                        {
+                          "@context": "https://schema.org",
+                          "@type": "Organization",
+                          "name": "SkillStar Digital Solutions",
+                          "url": "https://skillstardigitalsolutions.com",
+                          "logo": "https://res.cloudinary.com/dgpkzmkxf/image/upload/v1784790841/logo_2_tuk1al.png",
+                          "email": "contact@skillstardigitalsolutions.com",
+                          "telephone": "+918925845871",
+                          "sameAs": [
+                            "https://www.linkedin.com/company/skillstar-digital-solutions",
+                            "https://www.instagram.com/skillstardigitalsolutions",
+                            "https://www.facebook.com/skillstardigitalsolutions"
+                          ]
+                        },
+                        {
+                          "@context": "https://schema.org",
+                          "@type": "ProfessionalService",
+                          "@id": "https://skillstardigitalsolutions.com/#localbusiness",
+                          "name": "SkillStar Digital Solutions",
+                          "image": "https://res.cloudinary.com/dgpkzmkxf/image/upload/v1784790806/hero-bg_tazlvy.png",
+                          "url": "https://skillstardigitalsolutions.com",
+                          "telephone": "+918925845871",
+                          "priceRange": "$$",
+                          "address": {
+                            "@type": "PostalAddress",
+                            "addressLocality": "Coimbatore",
+                            "addressRegion": "Tamil Nadu",
+                            "addressCountry": "IN"
+                          },
+                          "areaServed": {
+                            "@type": "Country",
+                            "name": "India"
+                          },
+                          "openingHoursSpecification": {
+                            "@type": "OpeningHoursSpecification",
+                            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                            "opens": "09:00",
+                            "closes": "18:00"
+                          }
+                        },
+                        {
+                          "@context": "https://schema.org",
+                          "@type": "WebSite",
+                          "name": "SkillStar Digital Solutions",
+                          "url": "https://skillstardigitalsolutions.com",
+                          "potentialAction": {
+                            "@type": "SearchAction",
+                            "target": "https://skillstardigitalsolutions.com/?q={search_term_string}",
+                            "query-input": "required name=search_term_string"
+                          }
+                        },
+                        {
+                          "@context": "https://schema.org",
+                          "@type": "Service",
+                          "serviceType": "Digital Marketing & Web Development",
+                          "provider": {
+                            "@type": "Organization",
+                            "name": "SkillStar Digital Solutions"
+                          },
+                          "hasOfferCatalog": {
+                            "@type": "OfferCatalog",
+                            "name": "Digital Services",
+                            "itemListElement": [
+                              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Digital Marketing" } },
+                              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO Services" } },
+                              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Social Media Marketing" } },
+                              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Google Ads" } },
+                              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Meta Ads" } },
+                              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Development" } },
+                              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "UI/UX Design" } },
+                              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Branding" } },
+                              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Performance Marketing" } }
+                            ]
+                          }
+                        },
+                        {
+                          "@context": "https://schema.org",
+                          "@type": "BreadcrumbList",
+                          "itemListElement": [
+                            {
+                              "@type": "ListItem",
+                              "position": 1,
+                              "name": "Home",
+                              "item": "https://skillstardigitalsolutions.com"
+                            },
+                            {
+                              "@type": "ListItem",
+                              "position": 2,
+                              "name": "About",
+                              "item": "https://skillstardigitalsolutions.com/about-details"
+                            }
+                          ]
+                        },
+                        {
+                          "@context": "https://schema.org",
+                          "@type": "FAQPage",
+                          "mainEntity": [
+                            {
+                              "@type": "Question",
+                              "name": "How long does SEO take to show results?",
+                              "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "SEO generally starts showing measurable improvements within 3–6 months depending on competition and industry."
+                              }
+                            },
+                            {
+                              "@type": "Question",
+                              "name": "What is GEO optimization?",
+                              "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "GEO (Generative Engine Optimization) helps businesses appear in AI-powered search engines like ChatGPT, Gemini, and Perplexity."
+                              }
+                            },
+                            {
+                              "@type": "Question",
+                              "name": "What is AEO optimization?",
+                              "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "AEO (Answer Engine Optimization) structures content to appear in direct answers, featured snippets, and voice searches."
+                              }
+                            },
+                            {
+                              "@type": "Question",
+                              "name": "Do you build custom websites?",
+                              "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Yes. We develop fully customized websites, SaaS platforms, and scalable web applications."
+                              }
+                            },
+                            {
+                              "@type": "Question",
+                              "name": "Do you provide AI-based solutions?",
+                              "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Yes. We build AI chatbots, workflow automation systems, intelligent CRM tools, and custom AI applications."
+                              }
+                            }
+                          ]
                         }
-                      }}
+                      ]}
                     />
                     <div className="flex flex-col">
                       <Hero />

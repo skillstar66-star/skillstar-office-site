@@ -256,7 +256,7 @@ const IntroAnimation = ({ onComplete }) => {
       {/* Hidden replica of Navbar to measure perfect logo target coordinates */}
       <div className="absolute top-0 left-0 right-0 opacity-0 pointer-events-none py-6">
         <div className="container mx-auto px-6 md:px-12 lg:px-24 flex items-center justify-between">
-          <img id="logo-target-measure" src={logoImg} alt="Measure" className="h-16 md:h-20 object-contain" />
+          <img id="logo-target-measure" src={logoImg} alt="SkillStar Digital Solutions Loading Logo" className="h-16 md:h-20 object-contain" />
         </div>
       </div>
 

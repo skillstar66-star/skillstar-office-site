@@ -53,7 +53,7 @@ const About = () => {
             >
               <img 
                 src={bgImage} 
-                alt="Brain Circuit Background" 
+                alt="SkillStar Digital Solutions - AI Brain Circuit Background" 
                 className="w-[150%] h-[150%] max-w-none object-cover opacity-80"
               />
             </div>
@@ -61,7 +61,7 @@ const About = () => {
             {/* Main Brain Logo */}
             <img
               src={logoImg}
-              alt="Skillstar Logo"
+              alt="SkillStar Digital Solutions - AI Agency Brain Logo"
               className="w-3/5 h-auto object-contain relative z-10 drop-shadow-[0_0_30px_rgba(37,99,235,0.5)] group-hover:scale-110 transition-transform duration-700 ease-out"
             />
 
