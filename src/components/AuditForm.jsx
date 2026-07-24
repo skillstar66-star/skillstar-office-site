@@ -5,8 +5,9 @@ const AuditForm = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = (data) => {
-    console.log('Form data:', data);
-    alert('Audit Request Submitted Successfully! (Mock)');
+    const message = `Hello SkillStar Digital Solutions,%0A%0A*New Audit Request*%0A%0A*Name:* ${data.name}%0A*Phone:* ${data.phone}%0A*Email:* ${data.email}%0A*Website:* ${data.website || 'N/A'}%0A*Service Required:* ${data.service || 'Not specified'}%0A*Message:* ${data.message || 'N/A'}`;
+    const whatsappUrl = `https://wa.me/918925845871?text=${message}`;
+    window.open(whatsappUrl, '_blank');
   };
 
   return (
