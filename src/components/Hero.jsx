@@ -31,14 +31,15 @@ const Hero = () => {
               <span className="text-sm text-gray-200 font-medium tracking-wide">Innovative • Creative • Results Driven</span>
             </div>
 
-            <h1 className="text-5xl lg:text-6xl font-display font-extrabold tracking-tight leading-tight mb-6 text-white drop-shadow-lg">
-              We're creative <br />
-              <span className="bg-gradient-to-r from-[#A855F7] to-[#D946EF] bg-clip-text text-transparent">digital marketing</span> <br />
-              agency
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold tracking-tight leading-tight mb-6 text-white drop-shadow-lg">
+              Where Businesses Find <br />
+              <span className="bg-gradient-to-r from-[#00C6FF] via-[#A855F7] to-[#D946EF] bg-clip-text text-transparent">
+                Trusted Digital Solutions.
+              </span>
             </h1>
 
-            <p className="text-lg text-gray-200 mb-10 max-w-lg leading-relaxed drop-shadow-md">
-              Building powerful brands with data-driven strategies, creative ideas and technology.
+            <p className="text-base sm:text-lg text-gray-200 mb-10 max-w-xl leading-relaxed drop-shadow-md">
+              We provide innovative digital solutions including SEO, digital marketing, web development, AI automation, branding, and more to help businesses grow. We are based in Coimbatore.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-5">

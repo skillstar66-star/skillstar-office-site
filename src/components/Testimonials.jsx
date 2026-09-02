@@ -1,154 +1,263 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Star, Quote, Sparkles, CheckCircle2 } from 'lucide-react';
 
 const testimonials = [
   {
     id: 1,
-    content: "The team is amazing! They understood our brand and delivered beyond our expectations. Our digital presence has never looked this good.",
-    name: "Jason Smith",
-    role: "CEO, Fashion Days",
-    image: "https://i.pravatar.cc/150?img=11"
+    name: "Keerthana",
+    role: "Founder, Rokeaby RK",
+    company: "Rokeaby RK",
+    logo: "/rokea.png",
+    fallbackLetter: "RK",
+    color: "from-[#8B5CF6] to-[#D946EF]",
+    glowColor: "rgba(217, 70, 239, 0.4)",
+    content: "SkillStar Digital Solutions designed a beautiful, modern website for us, along with complete SEO, AEO, and GEO optimization. Their video editing is super attractive, creative, and engaging. Thank you team!",
+    services: "Website Dev • SEO/AEO/GEO • Video Editing"
   },
   {
     id: 2,
-    content: "Our ROI increased significantly after working with this incredible team. Highly recommended for any business looking to scale online.",
-    name: "Sarah Johnson",
-    role: "Marketing Head, TechWave",
-    image: "https://i.pravatar.cc/150?img=44"
+    name: "Dr. Saran Kumar",
+    role: "Founder, Seeds Therapy",
+    company: "Seeds Therapy",
+    logo: "/seedstherapy.png",
+    fallbackLetter: "ST",
+    color: "from-[#00C6FF] to-[#00E676]",
+    glowColor: "rgba(0, 230, 118, 0.4)",
+    content: "SkillStar designed a wonderful website for Seeds Therapy with strategic SEO, AEO, and GEO services that significantly increased our patient appointments. Their attractive video editing is exceptional. Thank you!",
+    services: "Website Dev • SEO/AEO/GEO • Video Editing"
   },
   {
     id: 3,
-    content: "Professional, creative and result-driven. They are now our long-term growth partners. Exceptional communication throughout.",
-    name: "Michael Brown",
-    role: "Founder, HealthPlus",
-    image: "https://i.pravatar.cc/150?img=33"
+    name: "Yuvaraj",
+    role: "Founder, La Caffe",
+    company: "La Caffe",
+    logo: "/la cafe.png",
+    fallbackLetter: "LC",
+    color: "from-[#F59E0B] to-[#EF4444]",
+    glowColor: "rgba(245, 158, 11, 0.4)",
+    content: "SkillStar creates attractive trending video editing and viral reels for us, while handling our social media management exceptionally well. We have seen great footfall and brand reach. Thank you!",
+    services: "Trending Video Editing • Social Media Management"
   },
   {
     id: 4,
-    content: "They transformed our outdated website into a modern, high-converting masterpiece. The user experience is simply unmatched.",
-    name: "Emma Davis",
-    role: "Director, EduTech",
-    image: "https://i.pravatar.cc/150?img=47"
+    name: "A.K. Samy",
+    role: "Managing Director, Senthur Automobiles",
+    company: "Senthur Automobiles",
+    logo: "/senthur logo.png",
+    fallbackLetter: "SA",
+    color: "from-[#00C6FF] to-[#3B82F6]",
+    glowColor: "rgba(59, 130, 246, 0.4)",
+    content: "SkillStar delivers attractive trending video editing and handles our social media marketing and lead generation with outstanding consistency. We get steady service enquiries every day. Thank you!",
+    services: "Trending Video Editing • Social Media Handling"
   }
 ];
 
 const Testimonials = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % (testimonials.length - 2)); // Showing 3 at a time on desktop
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? testimonials.length - 3 : prevIndex - 1));
-  };
+  // Duplicated list for seamless infinite horizontal marquee on mobile
+  const marqueeTestimonials = [...testimonials, ...testimonials, ...testimonials];
 
   return (
     <section id="testimonials" className="py-24 bg-[#050716] relative overflow-hidden">
       
       {/* Abstract Background Glows */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#00C6FF]/5 to-transparent blur-[100px] rounded-full pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-[#D946EF]/5 to-transparent blur-[100px] rounded-full pointer-events-none"></div>
+      <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-gradient-to-bl from-[#00C6FF]/10 via-[#8B5CF6]/10 to-transparent blur-[160px] rounded-full pointer-events-none"></div>
+      <div className="absolute bottom-0 left-10 w-[500px] h-[500px] bg-gradient-to-tr from-[#D946EF]/10 to-transparent blur-[150px] rounded-full pointer-events-none"></div>
 
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
         
         {/* Header Section */}
-        <div className="mb-16">
-          <motion.h4 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-[10px] font-bold tracking-widest text-gray-500 uppercase mb-4"
-          >
-            TESTIMONIALS
-          </motion.h4>
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-display font-bold text-white leading-tight"
-          >
-            What our clients <br />
-            <span className="bg-gradient-to-r from-[#00C6FF] to-[#D946EF] bg-clip-text text-transparent">say about us</span>
-          </motion.h2>
+        <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-4 backdrop-blur-md">
+            <Sparkles className="w-3.5 h-3.5 text-[#00C6FF]" />
+            <span className="text-xs uppercase font-bold tracking-widest text-gray-300">Client Reviews</span>
+          </div>
+          
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-white leading-tight mb-4">
+            What Our Clients <br />
+            <span className="bg-gradient-to-r from-[#00C6FF] via-[#8B5CF6] to-[#D946EF] bg-clip-text text-transparent">
+              Say About Working With Us
+            </span>
+          </h2>
+          <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
+            Real feedback from growing businesses that trust SkillStar Digital Solutions for their technology and marketing growth.
+          </p>
         </div>
 
-        {/* Carousel Container */}
-        <div className="relative flex items-center">
-          
-          {/* Left Arrow */}
-          <button 
-            onClick={prevSlide}
-            className="hidden md:flex absolute -left-4 lg:-left-12 z-20 w-12 h-12 rounded-full border border-white/10 bg-[#0B1021]/80 hover:bg-[#00C6FF]/10 hover:border-[#00C6FF]/30 backdrop-blur-md items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg group"
-          >
-            <ChevronLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-          </button>
-
-          {/* Cards Wrapper */}
-          <div className="w-full overflow-hidden px-2 py-8">
+        {/* ================= DESKTOP VIEW: 4 CARDS GRID (lg+) ================= */}
+        <div className="hidden lg:grid grid-cols-4 gap-6">
+          {testimonials.map((testimonial, idx) => (
             <motion.div 
-              className="flex gap-6 transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(calc(-${currentIndex * (100 / 3)}%))` }}
+              key={testimonial.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ delay: idx * 0.15, duration: 0.6 }}
+              className="bg-[#0A0F24]/80 backdrop-blur-xl rounded-2xl p-7 border border-white/10 hover:border-white/25 relative group flex flex-col justify-between shadow-xl transition-all duration-500 hover:-translate-y-2 overflow-hidden"
             >
-              {testimonials.map((testimonial, idx) => (
-                <div key={testimonial.id} className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] flex-shrink-0">
-                  <motion.div 
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: idx * 0.15, duration: 0.6 }}
-                    className="h-full bg-[#090D1C] rounded-2xl p-8 border border-white/5 relative group cursor-pointer hover:-translate-y-2 transition-transform duration-500"
-                  >
-                    {/* Hover Glow Effect */}
-                    <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-white/10 transition-colors duration-500 pointer-events-none"></div>
-                    <div className="absolute inset-x-10 bottom-0 h-[1px] bg-gradient-to-r from-transparent via-[#00C6FF]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 shadow-[0_0_15px_#00C6FF]"></div>
-                    
-                    {/* Quote Icon Background */}
-                    <Quote className="absolute top-6 right-6 w-12 h-12 text-white/5 group-hover:text-white/10 transition-colors duration-500 rotate-180" />
+              {/* Top Card Ambient Glow */}
+              <div 
+                className="absolute top-0 right-0 w-32 h-32 blur-3xl opacity-20 group-hover:opacity-40 transition-opacity pointer-events-none rounded-full"
+                style={{ backgroundColor: testimonial.glowColor }}
+              ></div>
+              
+              {/* Quote Background Watermark */}
+              <Quote className="absolute top-6 right-6 w-10 h-10 text-white/5 group-hover:text-white/10 transition-colors duration-500 rotate-180 pointer-events-none" />
 
-                    {/* Stars */}
-                    <div className="flex gap-1 mb-6">
-                      {[1, 2, 3, 4, 5].map((star) => (
-                        <Star key={star} className="w-4 h-4 fill-[#FACC15] text-[#FACC15]" />
-                      ))}
+              <div>
+                {/* Header: Logo + Stars */}
+                <div className="flex items-center justify-between gap-4 mb-6">
+                  {/* Client Logo Frame */}
+                  <div className="w-14 h-14 rounded-xl bg-[#060A1A] border border-white/15 p-2 flex items-center justify-center relative shadow-md group-hover:scale-105 transition-transform duration-300">
+                    <img 
+                      src={testimonial.logo} 
+                      alt={`${testimonial.company} Logo`} 
+                      className="max-h-full max-w-full object-contain"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                        e.currentTarget.nextElementSibling.style.display = 'flex';
+                      }}
+                    />
+                    <div 
+                      style={{ display: 'none' }}
+                      className={`w-full h-full items-center justify-center font-display font-extrabold text-sm bg-gradient-to-r ${testimonial.color} bg-clip-text text-transparent`}
+                    >
+                      {testimonial.fallbackLetter}
                     </div>
+                  </div>
 
-                    {/* Review Content */}
-                    <p className="text-gray-300 text-sm leading-relaxed mb-8 relative z-10 group-hover:text-white transition-colors duration-300">
-                      "{testimonial.content}"
-                    </p>
-
-                    {/* User Info */}
-                    <div className="flex items-center gap-4 mt-auto">
-                      <img 
-                        src={testimonial.image} 
-                        alt={testimonial.name} 
-                        className="w-12 h-12 rounded-full border border-white/20"
-                      />
-                      <div>
-                        <h4 className="text-white font-bold text-sm">{testimonial.name}</h4>
-                        <p className="text-gray-500 text-xs mt-0.5">{testimonial.role}</p>
-                      </div>
-                    </div>
-
-                  </motion.div>
+                  {/* 5 Rating Stars */}
+                  <div className="flex gap-1">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <Star key={star} className="w-3.5 h-3.5 fill-[#FACC15] text-[#FACC15]" />
+                    ))}
+                  </div>
                 </div>
-              ))}
+
+                {/* Services Badge */}
+                <div className="mb-4">
+                  <span className="px-2.5 py-1 text-[10px] font-semibold text-gray-300 bg-white/5 border border-white/5 rounded-md inline-block">
+                    {testimonial.services}
+                  </span>
+                </div>
+
+                {/* Review Content */}
+                <p className="text-gray-300 text-xs sm:text-[13px] leading-relaxed mb-6 relative z-10 font-normal group-hover:text-white transition-colors duration-300">
+                  "{testimonial.content}"
+                </p>
+              </div>
+
+              {/* Reviewer / Client Info */}
+              <div className="pt-4 border-t border-white/10 mt-auto flex items-center justify-between">
+                <div>
+                  <h4 className="text-white font-bold text-sm group-hover:text-[#00C6FF] transition-colors">
+                    {testimonial.name}
+                  </h4>
+                  <p className="text-gray-400 text-xs mt-0.5 font-medium">
+                    {testimonial.role}
+                  </p>
+                </div>
+                
+                <div className="w-6 h-6 rounded-full bg-[#00E676]/10 flex items-center justify-center">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#00E676]" />
+                </div>
+              </div>
+
+              {/* Bottom Gradient Line */}
+              <div className={`absolute bottom-0 left-[10%] right-[10%] h-[2px] bg-gradient-to-r ${testimonial.color} opacity-40 group-hover:opacity-100 shadow-[0_0_15px_currentColor] transition-all duration-500`}></div>
             </motion.div>
-          </div>
+          ))}
+        </div>
 
-          {/* Right Arrow */}
-          <button 
-            onClick={nextSlide}
-            className="hidden md:flex absolute -right-4 lg:-right-12 z-20 w-12 h-12 rounded-full border border-white/10 bg-[#0B1021]/80 hover:bg-[#D946EF]/10 hover:border-[#D946EF]/30 backdrop-blur-md items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg group"
-          >
-            <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </button>
+      </div>
 
+      {/* ================= MOBILE & TABLET VIEW: INFINITE HORIZONTAL MARQUEE (< lg) ================= */}
+      <div className="lg:hidden relative w-full overflow-hidden py-4">
+        {/* Left & Right Edge Gradient Fade Overlays */}
+        <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-16 bg-gradient-to-r from-[#050716] via-[#050716]/80 to-transparent z-20 pointer-events-none"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-16 bg-gradient-to-l from-[#050716] via-[#050716]/80 to-transparent z-20 pointer-events-none"></div>
+
+        {/* Continuous Marquee Track */}
+        <div className="flex gap-4 sm:gap-6 animate-marquee whitespace-nowrap min-w-max hover:[animation-play-state:paused] px-4">
+          {marqueeTestimonials.map((testimonial, idx) => (
+            <div 
+              key={`${testimonial.id}-${idx}`}
+              className="w-[300px] sm:w-[340px] flex-shrink-0 whitespace-normal bg-[#0A0F24]/90 backdrop-blur-xl rounded-2xl p-6 border border-white/10 relative flex flex-col justify-between shadow-2xl overflow-hidden transition-all duration-300"
+            >
+              {/* Top Ambient Glow */}
+              <div 
+                className="absolute top-0 right-0 w-28 h-28 blur-3xl opacity-20 pointer-events-none rounded-full"
+                style={{ backgroundColor: testimonial.glowColor }}
+              ></div>
+              
+              {/* Quote Background Watermark */}
+              <Quote className="absolute top-5 right-5 w-8 h-8 text-white/5 rotate-180 pointer-events-none" />
+
+              <div>
+                {/* Header: Logo + Stars */}
+                <div className="flex items-center justify-between gap-3 mb-4">
+                  {/* Client Logo Frame */}
+                  <div className="w-12 h-12 rounded-xl bg-[#060A1A] border border-white/15 p-1.5 flex items-center justify-center relative shadow-md flex-shrink-0">
+                    <img 
+                      src={testimonial.logo} 
+                      alt={`${testimonial.company} Logo`} 
+                      className="max-h-full max-w-full object-contain"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                        e.currentTarget.nextElementSibling.style.display = 'flex';
+                      }}
+                    />
+                    <div 
+                      style={{ display: 'none' }}
+                      className={`w-full h-full items-center justify-center font-display font-extrabold text-xs bg-gradient-to-r ${testimonial.color} bg-clip-text text-transparent`}
+                    >
+                      {testimonial.fallbackLetter}
+                    </div>
+                  </div>
+
+                  {/* 5 Rating Stars */}
+                  <div className="flex gap-0.5">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <Star key={star} className="w-3 h-3 fill-[#FACC15] text-[#FACC15]" />
+                    ))}
+                  </div>
+                </div>
+
+                {/* Services Badge */}
+                <div className="mb-3">
+                  <span className="px-2 py-0.5 text-[9px] font-semibold text-gray-300 bg-white/5 border border-white/5 rounded-md inline-block">
+                    {testimonial.services}
+                  </span>
+                </div>
+
+                {/* Review Content */}
+                <p className="text-gray-300 text-xs leading-relaxed mb-5 relative z-10 font-normal">
+                  "{testimonial.content}"
+                </p>
+              </div>
+
+              {/* Reviewer / Client Info */}
+              <div className="pt-3 border-t border-white/10 mt-auto flex items-center justify-between">
+                <div>
+                  <h4 className="text-white font-bold text-xs">
+                    {testimonial.name}
+                  </h4>
+                  <p className="text-gray-400 text-[10px] mt-0.5 font-medium">
+                    {testimonial.role}
+                  </p>
+                </div>
+                
+                <div className="w-5 h-5 rounded-full bg-[#00E676]/10 flex items-center justify-center">
+                  <CheckCircle2 className="w-3 h-3 text-[#00E676]" />
+                </div>
+              </div>
+
+              {/* Bottom Gradient Line */}
+              <div className={`absolute bottom-0 left-[10%] right-[10%] h-[2px] bg-gradient-to-r ${testimonial.color} opacity-70 shadow-[0_0_15px_currentColor]`}></div>
+            </div>
+          ))}
         </div>
       </div>
+
     </section>
   );
 };

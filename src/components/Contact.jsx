@@ -65,23 +65,34 @@ const Contact = () => {
                     </div>
                     <div>
                       <h5 className="text-sm font-bold text-white mb-1">Address</h5>
-                      <p className="text-gray-400 text-xs leading-relaxed">
-                        Saibaba Colony,<br />
-                        Coimbatore, Tamil Nadu
+                      <p className="text-gray-300 text-xs leading-relaxed">
+                        11/4, Bharathi Park 4th Cross Rd,<br />
+                        Jawahar Nagar, Saibaba Colony,<br />
+                        Coimbatore, Tamil Nadu - 641011
                       </p>
                     </div>
                   </div>
                   
-                  {/* Phone */}
+                  {/* Phone & WhatsApp */}
                   <div className="flex gap-4">
-                    <div className="w-10 h-10 rounded-xl border border-white/5 bg-white/5 flex items-center justify-center flex-shrink-0 group-hover:border-[#8B5CF6]/30 transition-colors">
-                      <Phone className="w-5 h-5 text-[#8B5CF6]" />
+                    <div className="w-10 h-10 rounded-xl border border-white/5 bg-white/5 flex items-center justify-center flex-shrink-0 group-hover:border-[#00C6FF]/30 transition-colors">
+                      <Phone className="w-5 h-5 text-[#00C6FF]" />
                     </div>
                     <div>
-                      <h5 className="text-sm font-bold text-white mb-1">Phone</h5>
-                      <p className="text-gray-400 text-xs leading-relaxed">
-                        +91 98765 43210
-                      </p>
+                      <h5 className="text-sm font-bold text-white mb-1">Phone & WhatsApp</h5>
+                      <div className="flex flex-wrap items-center gap-3">
+                        <a href="tel:+918925845871" className="text-gray-300 text-xs font-semibold hover:text-[#00C6FF] transition-colors">
+                          +91 89258 45871
+                        </a>
+                        <a 
+                          href="https://wa.me/918925845871?text=Hi%20SkillStar%20Digital%20Solutions%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services." 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#00E676]/15 border border-[#00E676]/30 text-[#00E676] text-[10px] font-bold hover:bg-[#00E676]/25 transition-all shadow-sm"
+                        >
+                          <span>WhatsApp Us</span>
+                        </a>
+                      </div>
                     </div>
                   </div>
                   
@@ -92,21 +103,21 @@ const Contact = () => {
                     </div>
                     <div>
                       <h5 className="text-sm font-bold text-white mb-1">Email</h5>
-                      <p className="text-gray-400 text-xs leading-relaxed">
-                        hello@skillstar.com
-                      </p>
+                      <a href="mailto:contact@skillstardigitalsolutions.com" className="text-gray-400 text-xs hover:text-white transition-colors">
+                        contact@skillstardigitalsolutions.com
+                      </a>
                     </div>
                   </div>
                   
                   {/* Working Hours */}
                   <div className="flex gap-4">
-                    <div className="w-10 h-10 rounded-xl border border-white/5 bg-white/5 flex items-center justify-center flex-shrink-0 group-hover:border-[#8B5CF6]/30 transition-colors">
-                      <Clock className="w-5 h-5 text-[#8B5CF6]" />
+                    <div className="w-10 h-10 rounded-xl border border-white/5 bg-white/5 flex items-center justify-center flex-shrink-0 group-hover:border-[#D946EF]/30 transition-colors">
+                      <Clock className="w-5 h-5 text-[#D946EF]" />
                     </div>
                     <div>
                       <h5 className="text-sm font-bold text-white mb-1">Working Hours</h5>
                       <p className="text-gray-400 text-xs leading-relaxed">
-                        Mon - Fri: 9:00 AM - 6:00 PM
+                        Mon - Sat: 9:00 AM - 7:00 PM
                       </p>
                     </div>
                   </div>

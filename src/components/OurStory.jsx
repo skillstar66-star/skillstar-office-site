@@ -1,13 +1,14 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Star, Users, Volume2, VolumeX } from 'lucide-react';
-import { useState } from 'react';
+import { Star, Users, Volume2, VolumeX, ChevronLeft, ChevronRight, Play, Sparkles } from 'lucide-react';
 
 const OurStory = () => {
   const sectionRef = useRef(null);
   const videoRef = useRef(null);
+  const scrollContainerRef = useRef(null);
   const isInView = useInView(sectionRef, { amount: 0.3 });
   const [isMuted, setIsMuted] = useState(true);
+  const [activeSlide, setActiveSlide] = useState(0);
 
   const videoSrc = "/Creating_digital_design_brand_video_202608271210 (online-video-cutter.com).mp4";
 
@@ -30,6 +31,26 @@ const OurStory = () => {
     }
   };
 
+  const scrollToSlide = (index) => {
+    if (scrollContainerRef.current) {
+      const slideWidth = scrollContainerRef.current.clientWidth;
+      scrollContainerRef.current.scrollTo({
+        left: index * slideWidth,
+        behavior: 'smooth'
+      });
+      setActiveSlide(index);
+    }
+  };
+
+  const handleScroll = () => {
+    if (scrollContainerRef.current) {
+      const scrollLeft = scrollContainerRef.current.scrollLeft;
+      const slideWidth = scrollContainerRef.current.clientWidth;
+      const index = Math.round(scrollLeft / slideWidth);
+      setActiveSlide(Math.min(Math.max(index, 0), 1));
+    }
+  };
+
   return (
     <section ref={sectionRef} id="story" className="py-24 md:py-32 bg-[#020516] relative overflow-hidden">
       
@@ -37,17 +58,56 @@ const OurStory = () => {
       <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-[#00C6FF]/10 to-[#8B5CF6]/20 blur-[140px] rounded-full pointer-events-none"></div>
       <div className="absolute bottom-10 left-10 w-[400px] h-[400px] bg-gradient-to-tr from-[#D946EF]/10 to-transparent blur-[120px] rounded-full pointer-events-none"></div>
 
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
         
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+        {/* Mobile Swipe Guide & Controls */}
+        <div className="lg:hidden flex items-center justify-between mb-6 px-2">
+          <div className="inline-flex items-center gap-1.5 text-xs text-[#00C6FF] font-semibold bg-[#0A0F24]/80 px-3 py-1 rounded-full border border-[#00C6FF]/30">
+            <Sparkles className="w-3 h-3 text-[#D946EF]" />
+            <span>Swipe for Video & Story</span>
+          </div>
+
+          <div className="flex gap-2">
+            <button
+              onClick={() => scrollToSlide(0)}
+              className={`w-8 h-8 rounded-full border flex items-center justify-center transition-all ${
+                activeSlide === 0 
+                  ? 'bg-gradient-to-r from-[#00C6FF] to-[#3B82F6] text-white border-transparent' 
+                  : 'bg-[#0A0F24] text-gray-400 border-white/10'
+              }`}
+              aria-label="Previous Slide"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+            <button
+              onClick={() => scrollToSlide(1)}
+              className={`w-8 h-8 rounded-full border flex items-center justify-center transition-all ${
+                activeSlide === 1 
+                  ? 'bg-gradient-to-r from-[#8B5CF6] to-[#D946EF] text-white border-transparent' 
+                  : 'bg-[#0A0F24] text-gray-400 border-white/10'
+              }`}
+              aria-label="Next Slide"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+
+        {/* Swiper Container on Mobile (< lg), Side-by-Side on Desktop (lg+) */}
+        <div 
+          ref={scrollContainerRef}
+          onScroll={handleScroll}
+          className="flex lg:flex-row items-center gap-8 lg:gap-16 overflow-x-auto lg:overflow-visible snap-x snap-mandatory pb-4 lg:pb-0 scrollbar-none [-ms-overflow-style:none] [scrollbar-width:none]"
+          style={{ WebkitOverflowScrolling: 'touch' }}
+        >
           
-          {/* Left Text Content */}
-          <div className="w-full lg:w-[45%] flex flex-col items-start relative z-20">
+          {/* Slide 1: Brand Story Info */}
+          <div className="w-full lg:w-[45%] flex-shrink-0 lg:flex-shrink snap-center flex flex-col items-start relative z-20">
             <motion.div 
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-md"
+              className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6 sm:mb-8 backdrop-blur-md"
             >
               <div className="w-2.5 h-2.5 rounded-full bg-[#00C6FF] mr-2 animate-pulse"></div>
               <span className="text-[11px] uppercase font-bold tracking-widest text-gray-300">Our Brand Story</span>
@@ -58,7 +118,7 @@ const OurStory = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-white leading-[1.1] mb-6 tracking-tight"
+              className="text-3xl sm:text-5xl lg:text-6xl font-display font-extrabold text-white leading-[1.15] mb-6 tracking-tight"
             >
               Creating Digital <br />
               <span className="relative inline-block mt-1">
@@ -76,7 +136,7 @@ const OurStory = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-gray-300 text-base sm:text-lg mb-8 max-w-md leading-relaxed"
+              className="text-gray-300 text-sm sm:text-lg mb-8 max-w-md leading-relaxed"
             >
               Take a look inside our creative process. We blend high-impact video, digital design, and branding strategies to help businesses grow.
             </motion.p>
@@ -86,40 +146,40 @@ const OurStory = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="flex items-center gap-6"
+              className="flex items-center gap-5 sm:gap-6"
             >
-              <div className="flex -space-x-3">
+              <div className="flex -space-x-2.5 sm:-space-x-3">
                 {[1, 2, 3, 4].map((i) => (
                   <div 
                     key={i} 
-                    className="w-11 h-11 rounded-full border-2 border-[#020516] bg-gray-800 bg-cover bg-center shadow-md" 
+                    className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border-2 border-[#020516] bg-gray-800 bg-cover bg-center shadow-md" 
                     style={{ backgroundImage: `url('https://i.pravatar.cc/100?img=${i + 15}')` }}
                   ></div>
                 ))}
               </div>
               <div>
                 <div className="flex items-center gap-1 text-yellow-400 mb-1">
-                  <Star className="w-4 h-4 fill-yellow-400" />
-                  <Star className="w-4 h-4 fill-yellow-400" />
-                  <Star className="w-4 h-4 fill-yellow-400" />
-                  <Star className="w-4 h-4 fill-yellow-400" />
-                  <Star className="w-4 h-4 fill-yellow-400" />
+                  <Star className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-yellow-400" />
+                  <Star className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-yellow-400" />
+                  <Star className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-yellow-400" />
+                  <Star className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-yellow-400" />
+                  <Star className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-yellow-400" />
                 </div>
                 <div className="text-xs text-gray-400 font-medium">Loved by 500+ global brands</div>
               </div>
             </motion.div>
           </div>
           
-          {/* Right Video Content (Autoplay Video Container) */}
-          <div className="w-full lg:w-[55%] relative">
+          {/* Slide 2: Video Player & Glass Badges */}
+          <div className="w-full lg:w-[55%] flex-shrink-0 lg:flex-shrink snap-center relative">
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="relative w-full aspect-[16/9] rounded-[2rem] p-2 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 backdrop-blur-2xl border border-white/10 shadow-[0_25px_60px_rgba(0,0,0,0.8)] group overflow-hidden"
+              className="relative w-full aspect-[16/9] rounded-2xl sm:rounded-[2rem] p-1.5 sm:p-2 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 backdrop-blur-2xl border border-white/10 shadow-[0_25px_60px_rgba(0,0,0,0.8)] group overflow-hidden"
             >
-              <div className="relative w-full h-full rounded-[1.6rem] overflow-hidden bg-[#0A0F24]">
+              <div className="relative w-full h-full rounded-xl sm:rounded-[1.6rem] overflow-hidden bg-[#0A0F24]">
                 
                 {/* HTML5 Video Element */}
                 <video
@@ -129,54 +189,75 @@ const OurStory = () => {
                   loop
                   playsInline
                   controls
-                  className="w-full h-full object-cover rounded-[1.6rem]"
+                  className="w-full h-full object-cover rounded-xl sm:rounded-[1.6rem]"
                 />
 
                 {/* Mute/Unmute Audio Button Overlay */}
                 <button 
                   onClick={toggleMute}
-                  className="absolute bottom-4 right-4 z-30 p-3 rounded-full bg-black/60 hover:bg-black/80 text-white border border-white/20 backdrop-blur-md transition-all shadow-lg flex items-center justify-center"
+                  className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 z-30 p-2.5 sm:p-3 rounded-full bg-black/70 hover:bg-black/90 text-white border border-white/20 backdrop-blur-md transition-all shadow-lg flex items-center justify-center"
                   title={isMuted ? "Unmute Audio" : "Mute Audio"}
                 >
-                  {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5 text-cyan-400" />}
+                  {isMuted ? <VolumeX className="w-4 h-4 sm:w-5 sm:h-5" /> : <Volume2 className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400" />}
                 </button>
               </div>
             </motion.div>
 
-            {/* Floating Glass Stat Badges */}
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="absolute -bottom-6 -left-6 bg-gradient-to-br from-[#10193A]/90 to-[#0A0F24]/90 backdrop-blur-xl border border-white/10 rounded-2xl p-4 shadow-2xl flex items-center gap-3.5"
-            >
-              <div className="w-10 h-10 rounded-xl bg-[#00C6FF]/20 flex items-center justify-center border border-[#00C6FF]/30 text-[#00C6FF]">
-                <Users className="w-5 h-5" />
-              </div>
-              <div>
-                <div className="text-xl font-bold text-white leading-none">100+</div>
-                <div className="text-[11px] text-gray-400 mt-1">Creative Projects</div>
-              </div>
-            </motion.div>
+            {/* Glass Stat Badges (Side-by-side below video on Mobile, Floating on Desktop) */}
+            <div className="grid grid-cols-2 gap-3 mt-4 lg:mt-0 lg:block">
+              {/* Badge 1 */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+                className="lg:absolute lg:-bottom-6 lg:-left-6 bg-gradient-to-br from-[#10193A]/90 to-[#0A0F24]/90 backdrop-blur-xl border border-white/10 rounded-2xl p-3.5 sm:p-4 shadow-xl flex items-center gap-3"
+              >
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#00C6FF]/20 flex items-center justify-center border border-[#00C6FF]/30 text-[#00C6FF] flex-shrink-0">
+                  <Users className="w-4 h-4 sm:w-5 sm:h-5" />
+                </div>
+                <div>
+                  <div className="text-lg sm:text-xl font-bold text-white leading-none">100+</div>
+                  <div className="text-[10px] sm:text-[11px] text-gray-400 mt-1">Creative Projects</div>
+                </div>
+              </motion.div>
 
-            <motion.div 
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
-              className="absolute -top-6 -right-6 bg-gradient-to-br from-[#10193A]/90 to-[#0A0F24]/90 backdrop-blur-xl border border-white/10 rounded-2xl p-4 shadow-2xl flex items-center gap-3.5"
-            >
-              <div className="w-10 h-10 rounded-xl bg-[#D946EF]/20 flex items-center justify-center border border-[#D946EF]/30 text-[#D946EF]">
-                <Star className="w-5 h-5" />
-              </div>
-              <div>
-                <div className="text-xl font-bold text-white leading-none">4.9/5</div>
-                <div className="text-[11px] text-gray-400 mt-1">Client Rating</div>
-              </div>
-            </motion.div>
+              {/* Badge 2 */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 }}
+                className="lg:absolute lg:-top-6 lg:-right-6 bg-gradient-to-br from-[#10193A]/90 to-[#0A0F24]/90 backdrop-blur-xl border border-white/10 rounded-2xl p-3.5 sm:p-4 shadow-xl flex items-center gap-3"
+              >
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#D946EF]/20 flex items-center justify-center border border-[#D946EF]/30 text-[#D946EF] flex-shrink-0">
+                  <Star className="w-4 h-4 sm:w-5 sm:h-5" />
+                </div>
+                <div>
+                  <div className="text-lg sm:text-xl font-bold text-white leading-none">4.9/5</div>
+                  <div className="text-[10px] sm:text-[11px] text-gray-400 mt-1">Client Rating</div>
+                </div>
+              </motion.div>
+            </div>
 
           </div>
+
+        </div>
+
+        {/* Mobile Slide Indicator Dots */}
+        <div className="flex lg:hidden justify-center items-center gap-2 mt-6">
+          {[0, 1].map((idx) => (
+            <button 
+              key={idx}
+              onClick={() => scrollToSlide(idx)}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                activeSlide === idx 
+                  ? 'w-7 bg-gradient-to-r from-[#00C6FF] to-[#D946EF]' 
+                  : 'w-2 bg-white/20'
+              }`}
+              aria-label={`Go to slide ${idx + 1}`}
+            />
+          ))}
         </div>
 
       </div>

@@ -1,55 +1,64 @@
 import { motion } from 'framer-motion';
 import { Search, TrendingUp, Monitor, Layers, Palette, Cpu, Code, Video, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const services = [
   {
     title: 'SEO, GEO & AEO Optimization',
     desc: 'Search & AI Visibility',
     icon: Search,
-    theme: 'cyan'
+    theme: 'cyan',
+    link: '/seo'
   },
   {
     title: 'Performance Marketing & Lead Gen',
     desc: 'AI-Powered Ads & Leads',
     icon: TrendingUp,
-    theme: 'purple'
+    theme: 'purple',
+    link: '/performance-marketing'
   },
   {
     title: 'Enterprise Website Development',
     desc: 'Scalable Web Platforms',
     icon: Monitor,
-    theme: 'magenta'
+    theme: 'magenta',
+    link: '/web-development'
   },
   {
     title: 'UI / UX Experience Design',
     desc: 'Intuitive Digital Journeys',
     icon: Layers,
-    theme: 'cyan'
+    theme: 'cyan',
+    link: '/ui-ux-design'
   },
   {
     title: 'Branding & Creative Solutions',
     desc: 'Memorable Brand Identities',
     icon: Palette,
-    theme: 'purple'
+    theme: 'purple',
+    link: '/branding'
   },
   {
     title: 'AI & Intelligent Automation',
     desc: 'Smart Business Automation',
     icon: Cpu,
-    theme: 'magenta'
+    theme: 'magenta',
+    link: '/ai-automation'
   },
   {
     title: 'Custom Software Development',
     desc: 'Tailored Software Ecosystems',
     icon: Code,
-    theme: 'cyan'
+    theme: 'cyan',
+    link: '/custom-software'
   },
   {
     title: 'Video Editing & Graphic Design',
     desc: 'Engaging Visual Content',
     icon: Video,
-    theme: 'purple'
-  }
+    theme: 'purple',
+    link: '/video-editing-graphic-design'
+  },
 ];
 
 const Services = () => {
@@ -67,15 +76,14 @@ const Services = () => {
           </p>
         </div>
         
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Cards Grid: 2 columns on mobile (4 on top, 4 below), 4 columns on desktop */}
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 lg:gap-6">
           {services.map((service, idx) => {
             const Icon = service.icon;
             
             // Define styling based on theme
             const isCyan = service.theme === 'cyan';
             const isPurple = service.theme === 'purple';
-            const isMagenta = service.theme === 'magenta';
             
             let cardBg = '';
             let borderColor = '';
@@ -107,47 +115,57 @@ const Services = () => {
               hoverBorder = 'group-hover:border-[#D946EF]/60';
             }
 
-            return (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: (idx % 4) * 0.1, duration: 0.5 }}
-                className={`relative rounded-3xl p-6 ${cardBg} border ${borderColor} ${hoverBorder} ${shadowHover} backdrop-blur-2xl transition-all duration-500 group overflow-hidden cursor-pointer hover:-translate-y-2`}
-              >
-                {/* Animated Glass Sheen (Shine effect on hover) */}
-                <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:animate-[shimmer_1.5s_ease-in-out_forwards] pointer-events-none"></div>
+            const CardWrapper = service.link ? Link : 'div';
+            const wrapperProps = service.link ? { to: service.link } : {};
 
-                {/* Glow behind icon (Glassy light source) */}
-                <div className={`absolute -top-4 -left-4 w-28 h-28 rounded-full blur-[40px] pointer-events-none opacity-40 group-hover:opacity-70 transition-opacity duration-500 ${iconGlow}`}></div>
-                
-                {/* Inner Border Highlight for glass effect */}
-                <div className="absolute inset-0 rounded-3xl border border-white/5 pointer-events-none"></div>
-                
-                <div className="relative z-10 flex flex-col h-full">
-                  {/* Icon */}
-                  <div className={`mb-6 text-white bg-white/5 w-12 h-12 flex items-center justify-center rounded-xl border border-white/10 backdrop-blur-md shadow-[0_4px_10px_rgba(0,0,0,0.5)] group-hover:scale-110 transition-transform duration-500`}>
-                    <Icon className="w-6 h-6" />
-                  </div>
+            return (
+              <CardWrapper
+                key={idx}
+                {...wrapperProps}
+                className="block no-underline"
+              >
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ delay: (idx % 4) * 0.08, duration: 0.5 }}
+                  className={`relative rounded-2xl sm:rounded-3xl p-4 sm:p-6 ${cardBg} border ${borderColor} ${hoverBorder} ${shadowHover} backdrop-blur-2xl transition-all duration-500 group overflow-hidden cursor-pointer hover:-translate-y-2 h-full flex flex-col justify-between`}
+                >
+                  {/* Animated Glass Sheen */}
+                  <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:animate-[shimmer_1.5s_ease-in-out_forwards] pointer-events-none"></div>
+
+                  {/* Glow behind icon */}
+                  <div className={`absolute -top-4 -left-4 w-20 sm:w-28 h-20 sm:h-28 rounded-full blur-[30px] sm:blur-[40px] pointer-events-none opacity-40 group-hover:opacity-70 transition-opacity duration-500 ${iconGlow}`}></div>
                   
-                  {/* Text Content */}
-                  <div className="flex-1">
-                    <h3 className="text-white font-bold text-base lg:text-lg mb-2 tracking-wide leading-tight group-hover:text-white transition-colors duration-300">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-400 text-xs leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
-                      {service.desc}
-                    </p>
-                  </div>
+                  {/* Inner Border Highlight */}
+                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border border-white/5 pointer-events-none"></div>
                   
-                  {/* Arrow Icon at bottom right (Simulating "Explore") */}
-                  <div className={`mt-6 self-start flex items-center gap-2 ${textColor} group-hover:translate-x-2 transition-transform duration-500`}>
-                    <span className="text-xs font-bold uppercase tracking-wider">Explore</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                  <div className="relative z-10 flex flex-col h-full">
+                    {/* Icon */}
+                    <div className="mb-3 sm:mb-6 text-white bg-white/5 w-9 h-9 sm:w-12 sm:h-12 flex items-center justify-center rounded-lg sm:rounded-xl border border-white/10 backdrop-blur-md shadow-[0_4px_10px_rgba(0,0,0,0.5)] group-hover:scale-110 transition-transform duration-500">
+                      <Icon className="w-4 h-4 sm:w-6 sm:h-6" />
+                    </div>
+                    
+                    {/* Text Content */}
+                    <div className="flex-1">
+                      <h3 className="text-white font-bold text-xs sm:text-base lg:text-lg mb-1 sm:mb-2 tracking-tight sm:tracking-wide leading-snug group-hover:text-white transition-colors duration-300 line-clamp-2">
+                        {service.title}
+                      </h3>
+                      <p className="text-gray-400 text-[10px] sm:text-xs leading-relaxed group-hover:text-gray-300 transition-colors duration-300 line-clamp-2">
+                        {service.desc}
+                      </p>
+                    </div>
+                    
+                    {/* Arrow Icon at bottom right */}
+                    <div className={`mt-3 sm:mt-6 self-start flex items-center gap-1 sm:gap-2 ${textColor} group-hover:translate-x-1 sm:group-hover:translate-x-2 transition-transform duration-500`}>
+                      <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider">
+                        {service.link ? 'View' : 'Explore'}
+                      </span>
+                      <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                    </div>
                   </div>
-                </div>
-              </motion.div>
+                </motion.div>
+              </CardWrapper>
             );
           })}
         </div>
