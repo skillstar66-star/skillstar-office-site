@@ -56,9 +56,9 @@ const Preloader = ({ onComplete }) => {
             {/* Glowing background aura */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#00C6FF] to-[#D946EF] blur-[80px] opacity-20"></div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-display font-extrabold text-white tracking-tight relative z-10">
+            <div className="text-4xl md:text-5xl lg:text-7xl font-display font-extrabold text-white tracking-tight relative z-10">
               Skill<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00C6FF] to-[#8B5CF6]">Star</span>
-            </h1>
+            </div>
             <p className="text-lg md:text-xl text-gray-400 mt-4 tracking-widest uppercase font-bold relative z-10">
               Digital Solution
             </p>

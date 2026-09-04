@@ -31,15 +31,15 @@ const Hero = () => {
               <span className="text-sm text-gray-200 font-medium tracking-wide">Innovative • Creative • Results Driven</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold tracking-tight leading-tight mb-6 text-white drop-shadow-lg">
-              Where Businesses Find <br />
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight leading-tight mb-6 text-white drop-shadow-lg">
+              Best Digital Marketing & <br />
               <span className="bg-gradient-to-r from-[#00C6FF] via-[#A855F7] to-[#D946EF] bg-clip-text text-transparent">
-                Trusted Digital Solutions.
+                Digital Solutions Company
               </span>
             </h1>
 
-            <p className="text-base sm:text-lg text-gray-200 mb-10 max-w-xl leading-relaxed drop-shadow-md">
-              We provide innovative digital solutions including SEO, digital marketing, web development, AI automation, branding, and more to help businesses grow. We are based in Coimbatore.
+            <p className="text-sm sm:text-base text-gray-200 mb-10 max-w-xl leading-relaxed drop-shadow-md">
+              At SkillStar Digital Solutions, we help businesses turn digital challenges into growth opportunities through creativity, technology, and strategy. Our services include SEO, AEO & GEO, digital marketing, performance marketing, web development, UI/UX, branding, AI automation, and custom software development. Based in Coimbatore, Tamil Nadu, we create practical digital solutions that strengthen online presence, reach the right customers, and drive measurable growth.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-5">

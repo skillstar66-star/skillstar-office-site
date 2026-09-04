@@ -63,7 +63,7 @@ const Navbar = () => {
           <a href="#home" onClick={(e) => handleNavClick(e, 'home')} className="flex items-center gap-2 sm:gap-3 cursor-pointer group">
             <img 
               src="/logo (2).png" 
-              alt="SkillStar Logo" 
+              alt="SkillStar Digital Solutions - Digital Marketing & Digital Solutions Company" 
               className="h-10 sm:h-16 lg:h-20 w-auto object-contain drop-shadow-[0_0_15px_rgba(59,130,246,0.7)] group-hover:scale-105 transition-all duration-300" 
             />
           </a>

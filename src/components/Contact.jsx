@@ -127,7 +127,7 @@ const Contact = () => {
                 <div className="flex-1 relative rounded-xl overflow-hidden border border-white/10 bg-[#03050F] min-h-[250px] shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
                   <img 
                     src="/image copy 2.png" 
-                    alt="SkillStar Location Map" 
+                    alt="SkillStar Digital Solutions office location in Coimbatore, Tamil Nadu" 
                     className="w-full h-full object-cover min-h-[250px]"
                   />
                 </div>

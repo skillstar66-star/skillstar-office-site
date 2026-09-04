@@ -69,10 +69,10 @@ const Services = () => {
         {/* Heading Section */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-3">
-            Our Premium <span className="bg-gradient-to-r from-[#00C6FF] to-[#D946EF] bg-clip-text text-transparent">Digital Services</span>
+            Our Digital Marketing & <span className="bg-gradient-to-r from-[#00C6FF] to-[#D946EF] bg-clip-text text-transparent">Digital Solutions</span>
           </h2>
           <p className="text-gray-400 text-sm md:text-base">
-            End-to-end digital solutions for modern businesses
+            Digital solutions that help businesses grow with measurable results
           </p>
         </div>
         

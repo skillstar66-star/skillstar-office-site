@@ -38,7 +38,7 @@ const Brands = () => {
                   <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-white/10 p-1 flex items-center justify-center overflow-hidden flex-shrink-0">
                     <img 
                       src={brand.logo} 
-                      alt={`${brand.name} logo`} 
+                      alt={`${brand.name} client partner`} 
                       className="max-h-full max-w-full object-contain filter group-hover:brightness-110 transition-all"
                     />
                   </div>

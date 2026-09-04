@@ -110,7 +110,7 @@ const Testimonials = () => {
                   <div className="w-14 h-14 rounded-xl bg-[#060A1A] border border-white/15 p-2 flex items-center justify-center relative shadow-md group-hover:scale-105 transition-transform duration-300">
                     <img 
                       src={testimonial.logo} 
-                      alt={`${testimonial.company} Logo`} 
+                      alt={`${testimonial.name}, ${testimonial.company} - Client review`} 
                       className="max-h-full max-w-full object-contain"
                       onError={(e) => {
                         e.currentTarget.style.display = 'none';
@@ -199,7 +199,7 @@ const Testimonials = () => {
                   <div className="w-12 h-12 rounded-xl bg-[#060A1A] border border-white/15 p-1.5 flex items-center justify-center relative shadow-md flex-shrink-0">
                     <img 
                       src={testimonial.logo} 
-                      alt={`${testimonial.company} Logo`} 
+                      alt={`${testimonial.name}, ${testimonial.company} - Client review`} 
                       className="max-h-full max-w-full object-contain"
                       onError={(e) => {
                         e.currentTarget.style.display = 'none';

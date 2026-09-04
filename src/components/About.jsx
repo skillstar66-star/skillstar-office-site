@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { 
   ArrowRight, 
   MapPin, 
@@ -10,16 +11,16 @@ import {
 
 const About = () => {
   const servicesList = [
-    'SEO Optimization',
-    'Local SEO Services',
-    'Answer Engine Optimization',
-    'Performance Marketing',
-    'Social Media Marketing',
-    'UI/UX Design Services',
-    'Branding & Marketing',
-    'AI Marketing',
-    'Web Development',
-    'Custom Software Development'
+    { name: 'SEO Optimization', path: '/seo' },
+    { name: 'Local SEO Services', path: '/blog/how-local-seo-helps-businesses' },
+    { name: 'Answer Engine Optimization', path: '/seo' },
+    { name: 'Performance Marketing', path: '/performance-marketing' },
+    { name: 'Social Media Marketing', path: '/performance-marketing' },
+    { name: 'UI/UX Design Services', path: '/ui-ux-design' },
+    { name: 'Branding & Marketing', path: '/branding' },
+    { name: 'AI Marketing', path: '/ai-automation' },
+    { name: 'Web Development', path: '/web-development' },
+    { name: 'Custom Software Development', path: '/custom-software' }
   ];
 
   const highlights = [
@@ -84,12 +85,13 @@ const About = () => {
             </p>
             <div className="flex flex-wrap gap-2 sm:gap-2.5">
               {servicesList.map((service, index) => (
-                <span
+                <Link
                   key={index}
-                  className="px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl text-[11px] sm:text-sm font-medium text-gray-200 bg-[#070B1F] border border-white/10 hover:border-[#8B5CF6]/50 hover:bg-[#8B5CF6]/15 hover:text-white transition-all duration-200"
+                  to={service.path}
+                  className="px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl text-[11px] sm:text-sm font-medium text-gray-200 bg-[#070B1F] border border-white/10 hover:border-[#8B5CF6]/50 hover:bg-[#8B5CF6]/15 hover:text-white transition-all duration-200 no-underline inline-block"
                 >
-                  {service}
-                </span>
+                  {service.name}
+                </Link>
               ))}
             </div>
           </div>

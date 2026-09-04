@@ -190,7 +190,7 @@ const CaseStudies = () => {
                       <div className={`absolute inset-0 rounded-2xl bg-gradient-to-tr ${item.color} opacity-20 group-hover:opacity-40 transition-opacity duration-500`}></div>
                       <img 
                         src={item.logo} 
-                        alt={`${item.client} Logo`} 
+                        alt={`${item.client} - ${item.title}`} 
                         className="max-h-full max-w-full object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.4)] relative z-10"
                         onError={(e) => {
                           e.currentTarget.style.display = 'none';
