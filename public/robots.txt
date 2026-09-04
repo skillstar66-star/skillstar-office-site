@@ -1,9 +1,4 @@
-# https://www.skillstardigitalsolutions.com/robots.txt
 User-agent: *
 Allow: /
 
-# Host
-Host: https://www.skillstardigitalsolutions.com
-
-# Sitemaps
 Sitemap: https://www.skillstardigitalsolutions.com/sitemap.xml
