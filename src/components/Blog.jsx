@@ -149,7 +149,7 @@ const Blog = () => {
           style={{ WebkitOverflowScrolling: 'touch' }}
         >
           {blogs.map((blog, idx) => (
-            <motion.div 
+            <motion.article 
               key={idx}
               variants={cardVariants}
               className="w-[84vw] sm:w-[360px] md:w-auto flex-shrink-0 md:flex-shrink snap-center group rounded-3xl bg-[#0A0F24]/80 backdrop-blur-md border border-white/10 overflow-hidden hover:border-white/25 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)] flex flex-col"
@@ -159,7 +159,10 @@ const Blog = () => {
                 <div className="w-full h-[180px] sm:h-[220px] relative overflow-hidden flex-shrink-0">
                   <img 
                     src={blog.image} 
-                    alt={blog.title} 
+                    alt={`${blog.title} - SkillStar article`} 
+                    loading="lazy"
+                    width="400"
+                    height="220"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
                   />
                   
@@ -208,7 +211,7 @@ const Blog = () => {
                   </div>
                 </div>
               </Link>
-            </motion.div>
+            </motion.article>
           ))}
         </motion.div>
 

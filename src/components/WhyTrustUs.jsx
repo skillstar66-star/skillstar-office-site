@@ -16,32 +16,32 @@ import {
 const features = [
   {
     num: '01',
-    title: 'RESULTS-DRIVEN APPROACH',
-    desc: 'We focus on measurable growth through SEO Optimization, Local SEO Services, and Performance Marketing, helping businesses improve visibility, attract qualified customers, and increase conversions.',
+    title: 'STRATEGY-DRIVEN DIGITAL GROWTH',
+    desc: 'We craft comprehensive digital growth roadmaps tailored to your industry. By aligning SEO, local search presence, and performance marketing, we help your business capture market share and attract high-intent clients.',
     icon: TrendingUp,
     color: 'from-[#00C6FF] to-[#3B82F6]',
     gradientStops: { start: '#00C6FF', end: '#3B82F6' }
   },
   {
     num: '02',
-    title: 'COMPLETE DIGITAL EXPERTISE',
-    desc: 'Our expertise brings Web Development, UI/UX Design Services, Branding and Marketing, Social Media Marketing, and AI Marketing together to create a stronger digital presence.',
+    title: 'SEO & SEARCH VISIBILITY MASTERY',
+    desc: 'From technical Google optimization and local Coimbatore SEO to next-generation AEO and GEO for AI search engines, we ensure your brand ranks prominently across all modern search discovery platforms.',
     icon: Layers,
     color: 'from-[#3B82F6] to-[#8B5CF6]',
     gradientStops: { start: '#3B82F6', end: '#8B5CF6' }
   },
   {
     num: '03',
-    title: 'SMART & FUTURE-READY',
-    desc: 'We combine data, creativity, AEO AND GEO Services with AI-powered strategies to help businesses adapt to changing search behavior and digital trends.',
+    title: 'CONVERSION-FOCUSED WEBSITES & AI AUTOMATION',
+    desc: 'We engineer lightning-fast websites and custom software integrated with AI automation tools. Our user experience design transforms website visitors into paying customers while streamlining your operations.',
     icon: Cpu,
     color: 'from-[#8B5CF6] to-[#D946EF]',
     gradientStops: { start: '#8B5CF6', end: '#D946EF' }
   },
   {
     num: '04',
-    title: 'BUILT FOR LONG-TERM GROWTH',
-    desc: "We don't stop at launching a campaign or website. We continuously analyze, improve, and optimize your digital performance to create sustainable business growth.",
+    title: 'DATA-DRIVEN & LONG-TERM GROWTH STRATEGY',
+    desc: 'We leverage analytics, conversion tracking, and ongoing performance optimization to build scalable, sustainable digital advantages with predictable return on investment over the long term.',
     icon: LineChart,
     color: 'from-[#D946EF] to-[#F43F5E]',
     gradientStops: { start: '#D946EF', end: '#F43F5E' }
@@ -117,11 +117,11 @@ const WhyChooseUs = () => {
           </div>
           
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-white mb-5 leading-tight tracking-tight">
-            WHY BUSINESSES <span className="bg-gradient-to-r from-[#00C6FF] via-[#8B5CF6] to-[#D946EF] bg-clip-text text-transparent">CHOOSE US</span>
+            Why Choose <span className="bg-gradient-to-r from-[#00C6FF] via-[#8B5CF6] to-[#D946EF] bg-clip-text text-transparent">SkillStar Digital Solutions?</span>
           </h2>
           
           <p className="text-gray-300 max-w-2xl text-sm sm:text-base leading-relaxed">
-            We partner with businesses to build sustainable digital advantage through data, innovation, and dedicated execution.
+            We partner with businesses in Coimbatore and globally to build sustainable digital advantage through strategy-driven execution, transparent reviews, and measurable ROI.
           </p>
         </motion.div>
 

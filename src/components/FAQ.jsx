@@ -6,28 +6,28 @@ import { Link } from 'react-router-dom';
 const allFaqs = [
   {
     num: '01',
-    question: 'What is the best digital marketing solution for businesses in Coimbatore and Tamil Nadu?',
-    answer: "The best digital marketing solution depends on a business's goals, target audience, industry, and growth objectives. SkillStar Digital Solutions provides complete digital marketing solutions including SEO, AEO, GEO, performance marketing, website development, UI/UX design, branding, graphic design, video editing, AI automation, and custom software development. Our integrated approach helps businesses improve online visibility, attract relevant audiences, and generate measurable growth."
+    question: 'What digital marketing services does SkillStar Digital Solutions provide?',
+    answer: "SkillStar Digital Solutions provides a comprehensive suite of digital growth services including SEO, AEO (Answer Engine Optimization), GEO (Generative Engine Optimization), performance marketing, website development, UI/UX design, branding, AI automation, video editing, and custom software development. Our integrated approach helps businesses improve online visibility and drive measurable revenue."
   },
   {
     num: '02',
-    question: 'Which is the best digital marketing company in Coimbatore?',
-    answer: 'A good digital marketing company should combine SEO, AEO, GEO, content strategy, performance marketing, website optimization, and conversion-focused digital solutions. SkillStar Digital Solutions provides end-to-end digital marketing and technology solutions for businesses looking to build a stronger online presence and increase visibility across search engines and AI-powered search platforms.'
+    question: 'Does SkillStar provide SEO services in Coimbatore?',
+    answer: "Yes, SkillStar Digital Solutions provides dedicated SEO services in Coimbatore and across Tamil Nadu. Our SEO strategies include technical SEO audits, keyword research, on-page optimization, local Google Business Profile optimization, entity-based SEO, high-quality content strategy, and authority link acquisition to achieve top Google rankings."
   },
   {
     num: '03',
-    question: 'What are the best SEO services for improving Google rankings?',
-    answer: 'Effective SEO services include technical SEO, keyword research, on-page SEO, content optimization, internal linking, website performance optimization, structured data, local SEO, and authority-building strategies. SkillStar Digital Solutions develops customized SEO strategies designed to improve organic search visibility, website rankings, relevant traffic, and long-term search performance.'
+    question: 'Does SkillStar build business websites?',
+    answer: "Yes, SkillStar builds custom, high-performance, and mobile-responsive business websites. We specialize in modern web frameworks, fast-loading architecture, SEO-friendly coding standards, intuitive UI/UX design, and conversion-focused landing pages designed to turn visitors into paying customers."
   },
   {
     num: '04',
-    question: 'What is AEO and how can Answer Engine Optimization help my business?',
-    answer: 'AEO (Answer Engine Optimization) is the process of optimizing website content so that search engines, answer engines, and AI-powered platforms can understand and use the information to provide relevant answers. SkillStar Digital Solutions creates question-based content, structured information, FAQ content, entity-focused content, and clear answers to improve a business\'s visibility in answer-driven search experiences.'
+    question: 'Does SkillStar provide AI automation solutions?',
+    answer: "Yes, SkillStar develops tailored AI automation solutions and intelligent workflow integrations. We help businesses automate customer communication, lead qualification, repetitive data processes, and marketing workflows to save time, reduce operational costs, and boost team productivity."
   },
   {
     num: '05',
-    question: 'What is GEO and how can Generative Engine Optimization improve AI search visibility?',
-    answer: 'GEO (Generative Engine Optimization) focuses on improving how a business, brand, products, and services are understood and represented in AI-generated search results. SkillStar Digital Solutions uses clear factual content, topical authority, entity optimization, structured information, authoritative references, and helpful content to improve brand visibility across modern generative search experiences.'
+    question: 'How can SkillStar help improve online visibility?',
+    answer: "SkillStar improves online visibility through a multi-channel strategy combining traditional SEO, local map optimization, Answer Engine Optimization (AEO), Generative Engine Optimization (GEO) for AI search engines, targeted performance marketing, and engaging social branding. This ensures your business appears prominently wherever prospective clients search."
   },
   {
     num: '06',

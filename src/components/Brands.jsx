@@ -39,6 +39,9 @@ const Brands = () => {
                     <img 
                       src={brand.logo} 
                       alt={`${brand.name} client partner`} 
+                      loading="lazy"
+                      width="32"
+                      height="32"
                       className="max-h-full max-w-full object-contain filter group-hover:brightness-110 transition-all"
                     />
                   </div>

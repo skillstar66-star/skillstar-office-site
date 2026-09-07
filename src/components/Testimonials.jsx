@@ -111,6 +111,9 @@ const Testimonials = () => {
                     <img 
                       src={testimonial.logo} 
                       alt={`${testimonial.name}, ${testimonial.company} - Client review`} 
+                      loading="lazy"
+                      width="48"
+                      height="48"
                       className="max-h-full max-w-full object-contain"
                       onError={(e) => {
                         e.currentTarget.style.display = 'none';
@@ -200,6 +203,9 @@ const Testimonials = () => {
                     <img 
                       src={testimonial.logo} 
                       alt={`${testimonial.name}, ${testimonial.company} - Client review`} 
+                      loading="lazy"
+                      width="48"
+                      height="48"
                       className="max-h-full max-w-full object-contain"
                       onError={(e) => {
                         e.currentTarget.style.display = 'none';

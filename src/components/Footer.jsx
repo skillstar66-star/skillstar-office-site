@@ -21,15 +21,15 @@ const Footer = () => {
   ];
 
   const quickLinks = [
-    { name: 'About Us', href: '/#about', isInternal: true },
-    { name: 'Our Process', href: '/#process', isInternal: true },
-    { name: 'Our Work (Case Studies)', href: '/#work', isInternal: true },
+    { name: 'Home', href: '/#home', isInternal: true },
+    { name: 'Services', href: '/#services', isInternal: true },
+    { name: 'Portfolio', href: '/#work', isInternal: true },
+    { name: 'About', href: '/#about', isInternal: true },
+    { name: 'Process', href: '/#process', isInternal: true },
+    { name: 'Contact', href: '/#contact', isInternal: true },
     { name: 'Live Portfolio', href: 'https://portfolio-pi-blush-99.vercel.app/', isExternal: true },
-    { name: 'Why Choose Us', href: '/#why-us', isInternal: true },
-    { name: 'Client Reviews', href: '/#testimonials', isInternal: true },
-    { name: 'FAQ', href: '/#faq', isInternal: true },
-    { name: 'Articles & Journal', href: '/#blog', isInternal: true },
-    { name: 'Contact Us', href: '/#contact', isInternal: true }
+    { name: 'Privacy Policy', href: '/#', isInternal: true },
+    { name: 'Terms & Conditions', href: '/#', isInternal: true }
   ];
 
   const articleLinks = [
@@ -55,16 +55,23 @@ const Footer = () => {
           
           {/* Brand & Bio (Full width 3-cols on Mobile, Spans 4 cols on Desktop) */}
           <div className="col-span-3 lg:col-span-4 flex flex-col xl:pr-8">
-            <Link to="/" className="inline-block mb-4 sm:mb-6 group">
+            <Link to="/" className="inline-block mb-3 sm:mb-4 group">
               <img 
                 src="/logo (2).png" 
-                alt="SkillStar Digital Solutions Logo" 
+                alt="SkillStar Digital Solutions logo" 
+                loading="lazy"
+                width="200"
+                height="56"
                 className="h-10 sm:h-14 w-auto object-contain drop-shadow-[0_0_15px_rgba(59,130,246,0.6)] group-hover:scale-105 transition-transform duration-300"
               />
             </Link>
 
+            <h3 className="text-xs sm:text-sm font-bold text-[#00C6FF] uppercase tracking-wider mb-3">
+              Digital Marketing & Digital Solutions Company in Coimbatore
+            </h3>
+
             <p className="text-gray-300 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 font-normal">
-              Where Businesses Find Trusted Digital Solutions. We provide innovative SEO, AEO, GEO, web engineering, AI automation, branding, and performance marketing to help businesses achieve sustainable growth.
+              Where Businesses Find Trusted Digital Solutions. We provide innovative SEO, AEO, GEO, web development, AI automation, branding, and performance marketing to help businesses achieve sustainable growth.
             </p>
 
             <div className="text-[11px] sm:text-xs text-gray-400 mb-5 flex items-start gap-2">

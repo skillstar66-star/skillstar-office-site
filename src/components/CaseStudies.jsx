@@ -7,7 +7,8 @@ const cases = [
     client: 'Rokeaby RK',
     tag: 'FASHION & RETAIL',
     title: 'Brand Growth & Digital Presence',
-    desc: 'Social media marketing, brand identity, and high-impact creative campaigns.',
+    services: 'Brand Identity, Social Media & Video Editing',
+    desc: 'End-to-end brand identity design, high-converting social media marketing, and creative video campaigns that rapidly scaled reach and engagement.',
     stat1: '+240%', stat1Label: 'Reach & Growth',
     stat2: '+190%', stat2Label: 'Customer Enquiries',
     logo: '/rokea.png',
@@ -20,7 +21,8 @@ const cases = [
     client: 'Seeds Therapy',
     tag: 'WELLNESS & HEALTHCARE',
     title: 'Local SEO & Patient Acquisition',
-    desc: 'Targeted local SEO, Google Business profile optimization, and trust-building.',
+    services: 'Local SEO, Website Dev & AEO/GEO',
+    desc: 'Targeted local SEO, Google Business profile optimization, and an accessible clinic website driving qualified patient consultation bookings.',
     stat1: '+310%', stat1Label: 'Organic Traffic',
     stat2: '+180%', stat2Label: 'Appointment Bookings',
     logo: '/seedstherapy.png',
@@ -33,7 +35,8 @@ const cases = [
     client: 'Senthur Automobiles',
     tag: 'AUTOMOTIVE & SERVICES',
     title: 'Lead Gen & Service Bookings',
-    desc: 'Performance ads, local search visibility, and customer conversion funnels.',
+    services: 'Performance Marketing & Lead Funnels',
+    desc: 'Performance ads, local search visibility in Coimbatore, and high-converting lead generation funnels for steady automotive service enquiries.',
     stat1: '+280%', stat1Label: 'Qualified Leads',
     stat2: '+160%', stat2Label: 'Service Enquiries',
     logo: '/senthur logo.png',
@@ -46,7 +49,8 @@ const cases = [
     client: 'La Caffe',
     tag: 'CAFE & HOSPITALITY',
     title: 'Footfall & Social Media Marketing',
-    desc: 'Viral Instagram Reels, food creatives, and local brand awareness campaigns.',
+    services: 'Viral Content, Video Production & Local Branding',
+    desc: 'Viral Instagram Reels, mouthwatering food creatives, and local brand awareness campaigns that drove record physical store footfall.',
     stat1: '+350%', stat1Label: 'Social Engagement',
     stat2: '+210%', stat2Label: 'Store Footfall',
     logo: '/la cafe.png',
@@ -109,16 +113,16 @@ const CaseStudies = () => {
             </div>
             
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-extrabold text-white leading-tight">
-              Our Work & <br />
+              Portfolio & <br />
               <span className="bg-gradient-to-r from-[#00C6FF] via-[#8B5CF6] to-[#D946EF] bg-clip-text text-transparent">
-                Client Success Stories
+                Client Case Studies
               </span>
             </h2>
           </div>
 
           <div className="flex flex-col md:items-end text-left md:text-right">
             <p className="text-gray-300 text-sm max-w-sm mb-4 sm:mb-6 leading-relaxed">
-              We partner with forward-thinking businesses and help them achieve measurable digital growth and real customer conversions.
+              Explore how SkillStar Digital Solutions helps startups, retail brands, and service businesses generate measurable digital growth and high ROI.
             </p>
             <a 
               href="https://portfolio-pi-blush-99.vercel.app/"
@@ -135,7 +139,7 @@ const CaseStudies = () => {
         {/* Mobile Swipe Guidance & Controls */}
         <div className="lg:hidden flex items-center justify-between mb-4 px-2">
           <div className="inline-flex items-center gap-1.5 text-xs text-[#00C6FF] font-semibold bg-[#0A0F24]/80 px-3 py-1 rounded-full border border-[#00C6FF]/30">
-            <span>👈 Swipe to view all 4 clients 👉</span>
+            <span>👈 Swipe to view all 4 case studies 👉</span>
           </div>
 
           <div className="flex gap-2">
@@ -165,7 +169,7 @@ const CaseStudies = () => {
         >
           {cases.map((item, idx) => {
             return (
-              <motion.div 
+              <motion.article 
                 key={idx}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -190,7 +194,10 @@ const CaseStudies = () => {
                       <div className={`absolute inset-0 rounded-2xl bg-gradient-to-tr ${item.color} opacity-20 group-hover:opacity-40 transition-opacity duration-500`}></div>
                       <img 
                         src={item.logo} 
-                        alt={`${item.client} - ${item.title}`} 
+                        alt={`${item.client} - ${item.title} portfolio case study`} 
+                        loading="lazy"
+                        width="80"
+                        height="60"
                         className="max-h-full max-w-full object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.4)] relative z-10"
                         onError={(e) => {
                           e.currentTarget.style.display = 'none';
@@ -226,9 +233,16 @@ const CaseStudies = () => {
                     </h3>
                     
                     {/* Project Title */}
-                    <p className="text-xs font-semibold text-[#8B5CF6] mb-3">
+                    <p className="text-xs font-semibold text-[#8B5CF6] mb-2">
                       {item.title}
                     </p>
+
+                    {/* Services Provided */}
+                    <div className="mb-3">
+                      <span className="text-[10px] font-medium text-gray-300 bg-white/5 px-2 py-0.5 rounded border border-white/5 inline-block">
+                        {item.services}
+                      </span>
+                    </div>
 
                     {/* Description */}
                     <p className="text-gray-300 text-xs leading-relaxed mb-6 font-normal">
@@ -255,6 +269,7 @@ const CaseStudies = () => {
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={`View ${item.client} case study details`}
                       className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-gradient-to-r group-hover:from-[#00C6FF] group-hover:to-[#D946EF] group-hover:border-transparent transition-all duration-300 flex-shrink-0"
                     >
                       <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-white group-hover:-rotate-45 transition-all duration-300" />
@@ -264,7 +279,7 @@ const CaseStudies = () => {
 
                 {/* Bottom Border Glow */}
                 <div className={`absolute bottom-0 left-[10%] right-[10%] h-[2px] bg-gradient-to-r ${item.color} opacity-40 group-hover:opacity-100 shadow-[0_0_15px_currentColor] transition-all duration-500`}></div>
-              </motion.div>
+              </motion.article>
             );
           })}
         </div>

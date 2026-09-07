@@ -50,9 +50,10 @@ const Contact = () => {
             
             <div className="relative z-10">
               <h4 className="text-[10px] font-bold tracking-widest text-[#8B5CF6] uppercase mb-4">Our Office</h4>
-              <h3 className="text-3xl font-bold text-white mb-4">SkillStar</h3>
-              <p className="text-gray-400 text-sm max-w-[280px] leading-relaxed mb-10">
-                We're a digital marketing agency focused on helping brands grow, scale and succeed in the digital world.
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">SkillStar Digital Solutions</h3>
+              <p className="text-[#00C6FF] text-xs font-semibold uppercase tracking-wider mb-4">Digital Marketing & Solutions Company in Coimbatore</p>
+              <p className="text-gray-400 text-sm max-w-[320px] leading-relaxed mb-8">
+                Ready to accelerate your search rankings, lead generation, and online growth? Contact our Coimbatore digital consultants today.
               </p>
               
               <div className="flex flex-col md:flex-row gap-8">
@@ -128,6 +129,9 @@ const Contact = () => {
                   <img 
                     src="/image copy 2.png" 
                     alt="SkillStar Digital Solutions office location in Coimbatore, Tamil Nadu" 
+                    loading="lazy"
+                    width="400"
+                    height="250"
                     className="w-full h-full object-cover min-h-[250px]"
                   />
                 </div>

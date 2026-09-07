@@ -28,24 +28,27 @@ const Hero = () => {
           >
             <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-[#0F172A]/80 border border-white/10 mb-8 shadow-[0_0_20px_rgba(0,0,0,0.5)] backdrop-blur-md">
               <Zap className="w-4 h-4 text-[#00C6FF] drop-shadow-[0_0_5px_rgba(0,198,255,0.8)]" />
-              <span className="text-sm text-gray-200 font-medium tracking-wide">Innovative • Creative • Results Driven</span>
+              <span className="text-sm text-gray-200 font-medium tracking-wide">Best Digital Solutions • Innovative • Results Driven</span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight leading-tight mb-6 text-white drop-shadow-lg">
-              Best Digital Marketing & <br />
+              Digital Marketing & <br />
               <span className="bg-gradient-to-r from-[#00C6FF] via-[#A855F7] to-[#D946EF] bg-clip-text text-transparent">
-                Digital Solutions Company
+                Digital Solutions Company in Coimbatore
               </span>
             </h1>
 
             <p className="text-sm sm:text-base text-gray-200 mb-10 max-w-xl leading-relaxed drop-shadow-md">
-              SkillStar Digital Solutions provides the best digital solutions for businesses, including SEO, AEO, GEO, web development, branding, AI automation, and performance marketing.
+              SkillStar Digital Solutions delivers the best digital solutions to help businesses grow online through SEO, AEO, GEO, web development, branding, AI automation and performance marketing.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-5">
-              <button className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-[#3B82F6] via-[#8B5CF6] to-[#D946EF] text-white font-semibold flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(139,92,246,0.4)] hover:shadow-[0_0_30px_rgba(217,70,239,0.6)] hover:scale-105 transition-all">
+              <a 
+                href="#contact" 
+                className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-[#3B82F6] via-[#8B5CF6] to-[#D946EF] text-white font-semibold flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(139,92,246,0.4)] hover:shadow-[0_0_30px_rgba(217,70,239,0.6)] hover:scale-105 transition-all cursor-pointer"
+              >
                 Get Free Quote <ArrowRight className="w-5 h-5" />
-              </button>
+              </a>
               <a
                 href="#story"
                 className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-[#050B20]/80 backdrop-blur-md border border-[#7C3AED]/50 text-white font-semibold flex items-center justify-center gap-3 hover:bg-[#7C3AED]/20 hover:border-[#7C3AED] shadow-[0_0_15px_rgba(124,58,237,0.2)] transition-all cursor-pointer"

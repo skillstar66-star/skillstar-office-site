@@ -51,9 +51,37 @@ const About = () => {
           </div>
 
           {/* Main Section Heading */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white text-center leading-tight mb-8 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white text-center leading-tight mb-6 tracking-tight">
             About <span className="bg-gradient-to-r from-[#00C6FF] via-[#8B5CF6] to-[#D946EF] bg-clip-text text-transparent">SkillStar Digital Solutions</span>
           </h2>
+
+          {/* About Intro Content (150-250 words) */}
+          <div className="w-full text-center max-w-3xl mb-8 sm:mb-10">
+            <p className="text-sm sm:text-base text-gray-300 leading-relaxed font-normal mb-4">
+              SkillStar Digital Solutions is recognized as the best digital solutions and digital marketing company in Coimbatore dedicated to accelerating business growth. We empower ambitious startups, enterprises, and local brands through full-spectrum digital engineering and marketing mastery. Our multidisciplinary expertise spans data-driven Search Engine Optimization (SEO), Answer Engine Optimization (AEO), and Generative Engine Optimization (GEO), high-converting enterprise website development, UI/UX design, custom software development, creative branding, AI-driven business automation, and ROI-focused performance marketing.
+            </p>
+            <p className="text-xs sm:text-sm text-gray-400 leading-relaxed font-normal">
+              By delivering the best digital solution customized to each client's unique goals, SkillStar helps modern businesses establish authority, capture top search engine positions, automate complex workflows, and transform online engagement into sustainable revenue and market leadership.
+            </p>
+          </div>
+
+          {/* Local SEO Coimbatore Feature Box */}
+          <div className="w-full p-5 sm:p-8 rounded-2xl sm:rounded-3xl bg-gradient-to-r from-[#071535]/90 to-[#120B24]/90 border border-[#00C6FF]/30 mb-6 sm:mb-8 shadow-xl backdrop-blur-md relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-48 h-48 bg-[#00C6FF]/15 blur-3xl rounded-full pointer-events-none"></div>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-br from-[#00C6FF] to-[#3B82F6] flex items-center justify-center text-white flex-shrink-0 shadow-[0_0_20px_rgba(0,198,255,0.4)]">
+                <MapPin className="w-6 h-6 sm:w-7 sm:h-7" />
+              </div>
+              <div className="flex-1">
+                <h3 className="text-lg sm:text-2xl font-bold text-white mb-2">
+                  Digital Marketing Company in Coimbatore
+                </h3>
+                <p className="text-xs sm:text-sm text-gray-300 leading-relaxed font-normal">
+                  SkillStar Digital Solutions is a Coimbatore-based digital growth company helping startups, local businesses and growing brands build stronger digital experiences and generate measurable online growth. Headquartered in Saibaba Colony, Coimbatore, Tamil Nadu, India, we provide localized search dominance, Google Business Profile optimization, and targeted digital marketing campaigns that connect local and global audiences with your brand.
+                </p>
+              </div>
+            </div>
+          </div>
 
           {/* Founder & CEO Highlight Box */}
           <div className="w-full p-5 sm:p-8 rounded-2xl sm:rounded-3xl bg-gradient-to-r from-[#0A0F24]/90 to-[#120B24]/80 border border-white/10 mb-6 sm:mb-8 shadow-xl backdrop-blur-md relative overflow-hidden">
