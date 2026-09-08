@@ -1,4 +1,4 @@
-﻿import { motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { 
   Video, 
   Film, 
@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
+import usePageMeta from '../hooks/usePageMeta';
 
 const videoGraphicFeatures = [
   {
@@ -69,6 +70,12 @@ const videoGraphicFeatures = [
 ];
 
 const VideoEditingGraphicDesign = () => {
+  usePageMeta({
+    title: 'Video Editing & Graphic Design Agency in Coimbatore | SkillStar',
+    description: 'Trending Instagram reels editing, commercial promo videos, motion graphics, and graphic design in Coimbatore by SkillStar Digital Solutions.',
+    canonical: 'https://www.skillstardigitalsolutions.com/video-editing-graphic-design'
+  });
+
   return (
     <div className="bg-[#020516] min-h-screen text-white font-sans overflow-x-hidden selection:bg-[#8B5CF6] selection:text-white">
       
@@ -130,7 +137,7 @@ const VideoEditingGraphicDesign = () => {
             >
               Video Editing & <br />
               <span className="bg-gradient-to-r from-[#00C6FF] via-[#8B5CF6] to-[#D946EF] bg-clip-text text-transparent">
-                Graphic Design Solutions
+                Graphic Design Services in Coimbatore
               </span>
             </motion.h1>
 
@@ -257,9 +264,9 @@ const VideoEditingGraphicDesign = () => {
                   <span>The SkillStar Visual Standard</span>
                 </div>
                 
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-white mb-4 tracking-tight">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-white mb-4 tracking-tight">
                   Stop the Scroll & Spark Customer Action
-                </h3>
+                </h2>
 
                 <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6">
                   In today's fast-moving digital world, high-quality video and design are the key to brand authority. We blend narrative pacing, sound design, color grading, and high-CTR graphic composition to give you an unbeatable visual edge.

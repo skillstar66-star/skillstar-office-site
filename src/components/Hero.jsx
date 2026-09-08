@@ -32,14 +32,14 @@ const Hero = () => {
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight leading-tight mb-6 text-white drop-shadow-lg">
-              Digital Marketing & <br />
+              Best Digital Solutions in Coimbatore <br />
               <span className="bg-gradient-to-r from-[#00C6FF] via-[#A855F7] to-[#D946EF] bg-clip-text text-transparent">
-                Digital Solutions Company in Coimbatore
+                for Brand Upscaling
               </span>
             </h1>
 
             <p className="text-sm sm:text-base text-gray-200 mb-10 max-w-xl leading-relaxed drop-shadow-md">
-              SkillStar Digital Solutions delivers the best digital solutions to help businesses grow online through SEO, AEO, GEO, web development, branding, AI automation and performance marketing.
+              SkillStar Digital Solutions offers digital solutions for business growth with SEO, AEO, GEO, web development, branding, AI automation and performance marketing.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-5">

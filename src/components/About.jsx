@@ -52,7 +52,7 @@ const About = () => {
 
           {/* Main Section Heading */}
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white text-center leading-tight mb-6 tracking-tight">
-            About <span className="bg-gradient-to-r from-[#00C6FF] via-[#8B5CF6] to-[#D946EF] bg-clip-text text-transparent">SkillStar Digital Solutions</span>
+            About <span className="bg-gradient-to-r from-[#00C6FF] via-[#8B5CF6] to-[#D946EF] bg-clip-text text-transparent">SkillStar Digital Solutions</span> – Digital Solutions Company in Coimbatore
           </h2>
 
           {/* About Intro Content (150-250 words) */}

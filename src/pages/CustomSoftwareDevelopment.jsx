@@ -1,4 +1,4 @@
-﻿import { motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { 
   Code, 
   Building2, 
@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
+import usePageMeta from '../hooks/usePageMeta';
 
 const softwareFeatures = [
   {
@@ -69,6 +70,12 @@ const softwareFeatures = [
 ];
 
 const CustomSoftwareDevelopment = () => {
+  usePageMeta({
+    title: 'Custom Software Development Company in Coimbatore | SkillStar',
+    description: 'Bespoke ERP systems, CRM platforms, SaaS products, native mobile applications, and secure API integrations built in Coimbatore by SkillStar Digital Solutions.',
+    canonical: 'https://www.skillstardigitalsolutions.com/custom-software'
+  });
+
   return (
     <div className="bg-[#020516] min-h-screen text-white font-sans overflow-x-hidden selection:bg-[#8B5CF6] selection:text-white">
       
@@ -130,7 +137,7 @@ const CustomSoftwareDevelopment = () => {
             >
               Custom Software <br />
               <span className="bg-gradient-to-r from-[#00C6FF] via-[#8B5CF6] to-[#D946EF] bg-clip-text text-transparent">
-                Development Solutions
+                Development Company in Coimbatore
               </span>
             </motion.h1>
 
@@ -257,9 +264,9 @@ const CustomSoftwareDevelopment = () => {
                   <span>The SkillStar Engineering Standard</span>
                 </div>
                 
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-white mb-4 tracking-tight">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-white mb-4 tracking-tight">
                   High-Performance Code, Security & Scalability
-                </h3>
+                </h2>
 
                 <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6">
                   We develop software using clean architectures (Microservices, Serverless, Cloud Native), comprehensive automated testing, and stringent cybersecurity protocols to guarantee reliable business execution.

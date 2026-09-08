@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://skillstardigitalsolutions.com/sitemap.xml
+Disallow: /admin/
+Disallow: /private/
+
+Sitemap: https://www.skillstardigitalsolutions.com/sitemap.xml

@@ -1,4 +1,17 @@
 {
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "skillstardigitalsolutions.com"
+        }
+      ],
+      "destination": "https://www.skillstardigitalsolutions.com/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
@@ -6,3 +19,4 @@
     }
   ]
 }
+

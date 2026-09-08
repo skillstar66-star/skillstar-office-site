@@ -1,4 +1,4 @@
-﻿import { motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { 
   TrendingUp, 
   Target, 
@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
+import usePageMeta from '../hooks/usePageMeta';
 
 const marketingFeatures = [
   {
@@ -70,6 +71,12 @@ const marketingFeatures = [
 ];
 
 const PerformanceMarketing = () => {
+  usePageMeta({
+    title: 'Performance Marketing & Paid Ads Agency in Coimbatore | SkillStar',
+    description: 'High-ROI Google Ads, Meta Ads (Facebook & Instagram), LinkedIn B2B campaigns, and conversion funnel optimization in Coimbatore by SkillStar Digital Solutions.',
+    canonical: 'https://www.skillstardigitalsolutions.com/performance-marketing'
+  });
+
   return (
     <div className="bg-[#020516] min-h-screen text-white font-sans overflow-x-hidden selection:bg-[#8B5CF6] selection:text-white">
       
@@ -131,7 +138,7 @@ const PerformanceMarketing = () => {
             >
               Performance Marketing <br />
               <span className="bg-gradient-to-r from-[#00C6FF] via-[#8B5CF6] to-[#D946EF] bg-clip-text text-transparent">
-                & High-Converting Lead Gen
+                & Paid Advertising in Coimbatore
               </span>
             </motion.h1>
 
@@ -258,9 +265,9 @@ const PerformanceMarketing = () => {
                   <span>Why Choose SkillStar Ads</span>
                 </div>
                 
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-white mb-4 tracking-tight">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-white mb-4 tracking-tight">
                   Maximize Ad Spend with Data-Backed Performance
-                </h3>
+                </h2>
 
                 <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6">
                   Every dollar you spend on ads should bring returns. We monitor cost-per-lead (CPL), conversion rates, and ROI closely, refining audience targeting and creative messaging daily to deliver consistent, predictable revenue.

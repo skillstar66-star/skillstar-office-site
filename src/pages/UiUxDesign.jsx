@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
+import usePageMeta from '../hooks/usePageMeta';
 
 const uiUxFeatures = [
   {
@@ -69,6 +70,12 @@ const uiUxFeatures = [
 ];
 
 const UiUxDesign = () => {
+  usePageMeta({
+    title: 'UI/UX Design Company & Agency in Coimbatore | SkillStar',
+    description: 'Human-centered UI/UX design, mobile app design, SaaS product interfaces, wireframing, user research, and Figma design systems in Coimbatore by SkillStar Digital Solutions.',
+    canonical: 'https://www.skillstardigitalsolutions.com/ui-ux-design'
+  });
+
   return (
     <div className="bg-[#020516] min-h-screen text-white font-sans overflow-x-hidden selection:bg-[#8B5CF6] selection:text-white">
       
@@ -128,9 +135,9 @@ const UiUxDesign = () => {
               transition={{ delay: 0.1, duration: 0.7 }}
               className="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-white leading-[1.15] mb-8 tracking-tight"
             >
-              UI / UX <br />
+              UI/UX Design <br />
               <span className="bg-gradient-to-r from-[#00C6FF] via-[#8B5CF6] to-[#D946EF] bg-clip-text text-transparent">
-                Experience Design
+                Company in Coimbatore
               </span>
             </motion.h1>
 
@@ -257,9 +264,9 @@ const UiUxDesign = () => {
                   <span>The SkillStar Design Standard</span>
                 </div>
                 
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-white mb-4 tracking-tight">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-white mb-4 tracking-tight">
                   Design That Inspires & Converts
-                </h3>
+                </h2>
 
                 <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6">
                   We don't design just for looks. We combine behavioral psychology, intuitive navigation, data analytics, and high-fidelity aesthetics to ensure your digital product delights users from the very first interaction.

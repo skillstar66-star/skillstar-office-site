@@ -1,4 +1,4 @@
-﻿import { motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { 
   ArrowLeft, 
   Calendar, 
@@ -17,8 +17,15 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
+import usePageMeta from '../hooks/usePageMeta';
 
 const LocalSeoBlog = () => {
+  usePageMeta({
+    title: 'How Local SEO Helps Businesses Get More Customers | SkillStar Blog',
+    description: 'Learn how Local SEO, Google Business Profile optimization, and local search visibility in Coimbatore can help your business attract more high-intent customers.',
+    canonical: 'https://www.skillstardigitalsolutions.com/blog/how-local-seo-helps-businesses'
+  });
+
   return (
     <div className="bg-[#020516] min-h-screen text-white font-sans overflow-x-hidden selection:bg-[#8B5CF6] selection:text-white">
       
@@ -76,9 +83,9 @@ const LocalSeoBlog = () => {
             transition={{ delay: 0.1, duration: 0.7 }}
             className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white leading-[1.2] mb-6 tracking-tight"
           >
-            How Local SEO Can Help Businesses To Get{' '}
+            How Local SEO Helps Businesses{' '}
             <span className="bg-gradient-to-r from-[#00C6FF] via-[#8B5CF6] to-[#D946EF] bg-clip-text text-transparent">
-              More Customers
+              Get More Customers
             </span>
           </motion.h1>
 

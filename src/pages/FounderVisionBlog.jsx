@@ -1,4 +1,4 @@
-﻿import { motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { 
   ArrowLeft, 
   Calendar, 
@@ -18,8 +18,15 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
+import usePageMeta from '../hooks/usePageMeta';
 
 const FounderVisionBlog = () => {
+  usePageMeta({
+    title: 'The Vision Behind Rahan P R and SkillStar Digital Solutions | SkillStar Blog',
+    description: 'Discover the story, mission, and vision behind Rahannath P R and SkillStar Digital Solutions - empowering businesses with AI, SEO, and full-spectrum digital marketing in Coimbatore.',
+    canonical: 'https://www.skillstardigitalsolutions.com/blog/vision-behind-rahan-pr-skillstar'
+  });
+
   return (
     <div className="bg-[#020516] min-h-screen text-white font-sans overflow-x-hidden selection:bg-[#8B5CF6] selection:text-white">
       

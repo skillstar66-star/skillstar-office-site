@@ -1,4 +1,4 @@
-﻿import { motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { 
   Palette, 
   Layers, 
@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
+import usePageMeta from '../hooks/usePageMeta';
 
 const brandingFeatures = [
   {
@@ -69,6 +70,12 @@ const brandingFeatures = [
 ];
 
 const BrandingCreativeSolutions = () => {
+  usePageMeta({
+    title: 'Branding Agency & Creative Solutions in Coimbatore | SkillStar',
+    description: 'Distinctive logo design, brand identity systems, motion graphics, social media creatives, and corporate presentations in Coimbatore by SkillStar Digital Solutions.',
+    canonical: 'https://www.skillstardigitalsolutions.com/branding'
+  });
+
   return (
     <div className="bg-[#020516] min-h-screen text-white font-sans overflow-x-hidden selection:bg-[#8B5CF6] selection:text-white">
       
@@ -130,7 +137,7 @@ const BrandingCreativeSolutions = () => {
             >
               Branding & <br />
               <span className="bg-gradient-to-r from-[#00C6FF] via-[#8B5CF6] to-[#D946EF] bg-clip-text text-transparent">
-                Creative Solutions
+                Creative Solutions in Coimbatore
               </span>
             </motion.h1>
 
@@ -257,9 +264,9 @@ const BrandingCreativeSolutions = () => {
                   <span>The SkillStar Creative Advantage</span>
                 </div>
                 
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-white mb-4 tracking-tight">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-white mb-4 tracking-tight">
                   Crafting Brands That Demand Attention & Loyalty
-                </h3>
+                </h2>
 
                 <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6">
                   Great branding makes everything else in your marketing work harder. We ensure your brand voice, color palette, logo, and digital assets reflect your market leadership and spark emotional connection with customers.

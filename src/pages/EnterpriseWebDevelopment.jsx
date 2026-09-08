@@ -1,4 +1,4 @@
-﻿import { motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { 
   Monitor, 
   Globe, 
@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
+import usePageMeta from '../hooks/usePageMeta';
 
 const webFeatures = [
   {
@@ -71,6 +72,12 @@ const webFeatures = [
 ];
 
 const EnterpriseWebDevelopment = () => {
+  usePageMeta({
+    title: 'Enterprise Web Development Company in Coimbatore | SkillStar',
+    description: 'Custom web applications, business websites, e-commerce stores, SaaS platforms, and responsive PWAs built with cutting-edge technology by SkillStar Digital Solutions.',
+    canonical: 'https://www.skillstardigitalsolutions.com/web-development'
+  });
+
   return (
     <div className="bg-[#020516] min-h-screen text-white font-sans overflow-x-hidden selection:bg-[#8B5CF6] selection:text-white">
       
@@ -130,9 +137,9 @@ const EnterpriseWebDevelopment = () => {
               transition={{ delay: 0.1, duration: 0.7 }}
               className="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-white leading-[1.15] mb-8 tracking-tight"
             >
-              Enterprise <br />
+              Web Development <br />
               <span className="bg-gradient-to-r from-[#00C6FF] via-[#8B5CF6] to-[#D946EF] bg-clip-text text-transparent">
-                Website Development
+                Company in Coimbatore
               </span>
             </motion.h1>
 
@@ -259,9 +266,9 @@ const EnterpriseWebDevelopment = () => {
                   <span>Enterprise Grade Engineering</span>
                 </div>
                 
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-white mb-4 tracking-tight">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-white mb-4 tracking-tight">
                   Built for Speed, Security & Infinite Scalability
-                </h3>
+                </h2>
 
                 <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6">
                   We don't just build templates. We engineer robust digital platforms with custom code, API integrations, bank-grade security, and responsive layouts that perform flawlessly across all screen sizes.

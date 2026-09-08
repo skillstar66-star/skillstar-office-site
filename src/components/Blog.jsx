@@ -100,7 +100,8 @@ const Blog = () => {
             transition={{ delay: 0.1 }}
             className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white mb-4 sm:mb-6"
           >
-            Latest <span className="bg-gradient-to-r from-[#00C6FF] via-[#8B5CF6] to-[#D946EF] bg-clip-text text-transparent">Insights & Articles</span>
+            Digital Marketing & <br />
+            <span className="bg-gradient-to-r from-[#00C6FF] via-[#8B5CF6] to-[#D946EF] bg-clip-text text-transparent">Digital Solutions Insights</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}

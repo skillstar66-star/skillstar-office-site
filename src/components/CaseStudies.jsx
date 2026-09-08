@@ -113,9 +113,9 @@ const CaseStudies = () => {
             </div>
             
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-extrabold text-white leading-tight">
-              Portfolio & <br />
+              Our Portfolio & <br />
               <span className="bg-gradient-to-r from-[#00C6FF] via-[#8B5CF6] to-[#D946EF] bg-clip-text text-transparent">
-                Client Case Studies
+                Client Success Stories
               </span>
             </h2>
           </div>

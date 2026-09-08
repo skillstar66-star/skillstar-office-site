@@ -1,4 +1,4 @@
-﻿import { motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { 
   Search, 
   Wrench, 
@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
+import usePageMeta from '../hooks/usePageMeta';
 
 const seoFeatures = [
   {
@@ -71,6 +72,12 @@ const seoFeatures = [
 ];
 
 const SeoService = () => {
+  usePageMeta({
+    title: 'Best SEO, AEO & GEO Services in Coimbatore | SkillStar Digital Solutions',
+    description: 'Expert SEO, Local SEO, AEO (Answer Engine Optimization), and GEO (Generative Engine Optimization) services in Coimbatore to rank higher on Google, AI Search, and Maps.',
+    canonical: 'https://www.skillstardigitalsolutions.com/seo'
+  });
+
   return (
     <div className="bg-[#020516] min-h-screen text-white font-sans overflow-x-hidden selection:bg-[#8B5CF6] selection:text-white">
       
@@ -130,9 +137,9 @@ const SeoService = () => {
               transition={{ delay: 0.1, duration: 0.7 }}
               className="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-white leading-[1.15] mb-8 tracking-tight"
             >
-              Grow Your Business with <br />
+              SEO, AEO & GEO <br />
               <span className="bg-gradient-to-r from-[#00C6FF] via-[#8B5CF6] to-[#D946EF] bg-clip-text text-transparent">
-                SEO, GEO & AEO
+                Services in Coimbatore
               </span>
             </motion.h1>
 
@@ -259,9 +266,9 @@ const SeoService = () => {
                   <span>Why Choose SkillStar</span>
                 </div>
                 
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-white mb-4 tracking-tight">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-white mb-4 tracking-tight">
                   Accelerate Your Search Rankings with Data-Backed SEO
-                </h3>
+                </h2>
 
                 <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6">
                   We don't rely on guesswork. Our SEO experts use comprehensive keyword research, competitor intelligence, and technical audits to build a tailored roadmap that brings qualified customers directly to your business.

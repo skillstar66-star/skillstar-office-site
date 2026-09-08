@@ -73,9 +73,9 @@ const Testimonials = () => {
           </div>
           
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-white leading-tight mb-4">
-            What Our Clients <br />
+            What Our Clients Say <br />
             <span className="bg-gradient-to-r from-[#00C6FF] via-[#8B5CF6] to-[#D946EF] bg-clip-text text-transparent">
-              Say About Working With Us
+              About SkillStar Digital Solutions
             </span>
           </h2>
           <p className="text-gray-400 text-sm sm:text-base leading-relaxed">

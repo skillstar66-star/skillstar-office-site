@@ -1,4 +1,4 @@
-﻿import { motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { 
   Cpu, 
   Bot, 
@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
+import usePageMeta from '../hooks/usePageMeta';
 
 const aiFeatures = [
   {
@@ -68,6 +69,12 @@ const aiFeatures = [
 ];
 
 const AiIntelligentAutomation = () => {
+  usePageMeta({
+    title: 'AI Marketing & Intelligent Automation Company in Coimbatore | SkillStar',
+    description: 'Intelligent AI chatbots, workflow automation, CRM integrations, predictive analytics, and custom AI tools in Coimbatore by SkillStar Digital Solutions.',
+    canonical: 'https://www.skillstardigitalsolutions.com/ai-automation'
+  });
+
   return (
     <div className="bg-[#020516] min-h-screen text-white font-sans overflow-x-hidden selection:bg-[#8B5CF6] selection:text-white">
       
@@ -127,9 +134,9 @@ const AiIntelligentAutomation = () => {
               transition={{ delay: 0.1, duration: 0.7 }}
               className="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-white leading-[1.15] mb-8 tracking-tight"
             >
-              AI & Intelligent <br />
+              AI Automation <br />
               <span className="bg-gradient-to-r from-[#00C6FF] via-[#8B5CF6] to-[#D946EF] bg-clip-text text-transparent">
-                Automation Solutions
+                Services in Coimbatore
               </span>
             </motion.h1>
 
@@ -256,9 +263,9 @@ const AiIntelligentAutomation = () => {
                   <span>The Intelligent Automation Advantage</span>
                 </div>
                 
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-white mb-4 tracking-tight">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-white mb-4 tracking-tight">
                   Work Smarter, Move Faster & Scale Without Friction
-                </h3>
+                </h2>
 
                 <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6">
                   Automation is no longer an option—it is the modern business standard. We eliminate repetitive manual bottlenecks so your team can focus on high-value growth, strategy, and customer relationships.

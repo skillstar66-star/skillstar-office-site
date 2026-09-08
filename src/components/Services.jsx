@@ -69,7 +69,7 @@ const Services = () => {
         {/* Heading Section */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-3">
-            Digital Marketing & <span className="bg-gradient-to-r from-[#00C6FF] to-[#D946EF] bg-clip-text text-transparent">Digital Solutions Services</span>
+            Digital Marketing & <span className="bg-gradient-to-r from-[#00C6FF] to-[#D946EF] bg-clip-text text-transparent">Digital Solutions Services in Coimbatore</span>
           </h2>
           <p className="text-gray-400 text-sm md:text-base max-w-2xl mx-auto">
             Providing the best digital solutions and marketing services in Coimbatore engineered to help businesses rank higher, generate high-quality leads, and achieve sustainable ROI.

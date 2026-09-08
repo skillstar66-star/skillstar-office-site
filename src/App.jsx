@@ -29,9 +29,16 @@ import CustomSoftwareDevelopment from './pages/CustomSoftwareDevelopment';
 import VideoEditingGraphicDesign from './pages/VideoEditingGraphicDesign';
 import LocalSeoBlog from './pages/LocalSeoBlog';
 import FounderVisionBlog from './pages/FounderVisionBlog';
+import usePageMeta from './hooks/usePageMeta';
 import { motion, useScroll, useSpring } from 'framer-motion';
 
 function HomePage() {
+  usePageMeta({
+    title: 'Best Digital Solutions Company in Coimbatore | SkillStar',
+    description: 'SkillStar Digital Solutions offers Advanced SEO, AEO, GEO, digital marketing, web development, UI/UX, branding, AI automation and custom software in Coimbatore.',
+    canonical: 'https://www.skillstardigitalsolutions.com/'
+  });
+
   return (
     <>
       <Navbar />
