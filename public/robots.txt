@@ -1,7 +1,42 @@
+# ================================================================
+# SkillStar Digital Solutions - Robots.txt
+# Optimized for Google Search, Bing, AEO (Answer Engines) & GEO (Generative Engines)
+# ================================================================
+
 User-agent: *
 Allow: /
 
+# Allow Search Engines & AI Crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Disallow Private / Admin Routes
 Disallow: /admin/
 Disallow: /private/
+Disallow: /api/
 
+# Sitemap & Host Specification
 Sitemap: https://www.skillstardigitalsolutions.com/sitemap.xml
+Host: https://www.skillstardigitalsolutions.com
+
