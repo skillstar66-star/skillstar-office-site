@@ -11,16 +11,16 @@ import {
 
 const About = () => {
   const servicesList = [
-    { name: 'SEO Optimization', path: '/seo' },
-    { name: 'Local SEO Services', path: '/blog/how-local-seo-helps-businesses' },
-    { name: 'Answer Engine Optimization', path: '/seo' },
+    { name: 'SEO, GEO & AEO Optimization', path: '/seo' },
     { name: 'Performance Marketing', path: '/performance-marketing' },
-    { name: 'Social Media Marketing', path: '/performance-marketing' },
-    { name: 'UI/UX Design Services', path: '/ui-ux-design' },
-    { name: 'Branding & Marketing', path: '/branding' },
-    { name: 'AI Marketing', path: '/ai-automation' },
     { name: 'Web Development', path: '/web-development' },
-    { name: 'Custom Software Development', path: '/custom-software' }
+    { name: 'UI/UX Design Services', path: '/ui-ux-design' },
+    { name: 'Branding & Creative Solutions', path: '/branding' },
+    { name: 'AI & Intelligent Automation', path: '/ai-automation' },
+    { name: 'Custom Software Development', path: '/custom-software' },
+    { name: 'Video Editing & Graphic Design', path: '/video-editing-graphic-design' },
+    { name: 'Local SEO Guide', path: '/blog/how-local-seo-helps-businesses' },
+    { name: 'Founder Vision', path: '/blog/vision-behind-rahan-pr-skillstar' }
   ];
 
   const highlights = [

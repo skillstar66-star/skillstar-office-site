@@ -4,17 +4,10 @@ import { Link } from 'react-router-dom';
 
 const services = [
   {
-    title: 'SEO Services',
-    desc: 'Comprehensive search engine optimization, technical audits, and organic keyword ranking strategies designed to boost Google search visibility in Coimbatore and competitive national markets.',
+    title: 'SEO, AEO & GEO Services',
+    desc: 'Comprehensive search engine optimization, Answer Engine Optimization (AEO), and GEO strategies engineered to boost visibility on Google and AI-powered search engines in Coimbatore.',
     icon: Search,
     theme: 'cyan',
-    link: '/seo'
-  },
-  {
-    title: 'AEO & GEO Optimization',
-    desc: 'Next-generation Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) ensuring your business appears as a recommended authority in AI search engines and smart assistants.',
-    icon: TrendingUp,
-    theme: 'purple',
     link: '/seo'
   },
   {
@@ -58,6 +51,13 @@ const services = [
     icon: Code,
     theme: 'cyan',
     link: '/custom-software'
+  },
+  {
+    title: 'Video Editing & Graphic Design',
+    desc: 'High-impact video production, reels, motion graphics, and high-converting visual assets tailored for social media, brand campaigns, and high-engagement digital ads.',
+    icon: Video,
+    theme: 'magenta',
+    link: '/video-editing-graphic-design'
   },
 ];
 
