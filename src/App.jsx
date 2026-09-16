@@ -27,10 +27,9 @@ import BrandingCreativeSolutions from './pages/BrandingCreativeSolutions';
 import AiIntelligentAutomation from './pages/AiIntelligentAutomation';
 import CustomSoftwareDevelopment from './pages/CustomSoftwareDevelopment';
 import VideoEditingGraphicDesign from './pages/VideoEditingGraphicDesign';
-import LocalSeoBlog from './pages/LocalSeoBlog';
-import FounderVisionBlog from './pages/FounderVisionBlog';
+import RahanPrVisionBlog from './pages/RahanPrVisionBlog';
+import RohanVisionBlog from './pages/RohanVisionBlog';
 import usePageMeta from './hooks/usePageMeta';
-import { motion, useScroll, useSpring } from 'framer-motion';
 
 function HomePage() {
   usePageMeta({
@@ -66,12 +65,6 @@ function HomePage() {
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
 
   return (
     <BrowserRouter>
@@ -80,12 +73,6 @@ function App() {
         
         {/* Preloader Animation */}
         {loading && <Preloader onComplete={() => setLoading(false)} />}
-
-        {/* Scroll Progress Bar */}
-        <motion.div
-          className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-electric via-purple-primary to-magenta transform origin-left z-[100]"
-          style={{ scaleX }}
-        />
         
         <div className="relative z-10">
           <Routes>
@@ -98,8 +85,9 @@ function App() {
             <Route path="/ai-automation" element={<AiIntelligentAutomation />} />
             <Route path="/custom-software" element={<CustomSoftwareDevelopment />} />
             <Route path="/video-editing-graphic-design" element={<VideoEditingGraphicDesign />} />
-            <Route path="/blog/how-local-seo-helps-businesses" element={<LocalSeoBlog />} />
-            <Route path="/blog/vision-behind-rahan-pr-skillstar" element={<FounderVisionBlog />} />
+            <Route path="/blog/vision-behind-rahan-pr-skillstar" element={<RahanPrVisionBlog />} />
+            <Route path="/blog/vision-behind-rohan-skillstar" element={<RohanVisionBlog />} />
+            <Route path="/blog" element={<HomePage />} />
             <Route path="*" element={<HomePage />} />
           </Routes>
         </div>

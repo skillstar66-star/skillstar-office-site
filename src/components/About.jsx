@@ -6,7 +6,8 @@ import {
   Sparkles, 
   CheckCircle2, 
   UserCheck, 
-  Zap
+  Zap,
+  Users
 } from 'lucide-react';
 
 const About = () => {
@@ -19,8 +20,8 @@ const About = () => {
     { name: 'AI & Intelligent Automation', path: '/ai-automation' },
     { name: 'Custom Software Development', path: '/custom-software' },
     { name: 'Video Editing & Graphic Design', path: '/video-editing-graphic-design' },
-    { name: 'Local SEO Guide', path: '/blog/how-local-seo-helps-businesses' },
-    { name: 'Founder Vision', path: '/blog/vision-behind-rahan-pr-skillstar' }
+    { name: 'CEO Vision & Strategy', path: '/blog/vision-behind-rahan-pr-skillstar' },
+    { name: 'Director & Investor Vision', path: '/blog/vision-behind-rohan-skillstar' }
   ];
 
   const highlights = [
@@ -83,22 +84,62 @@ const About = () => {
             </div>
           </div>
 
-          {/* Founder & CEO Highlight Box */}
-          <div className="w-full p-5 sm:p-8 rounded-2xl sm:rounded-3xl bg-gradient-to-r from-[#0A0F24]/90 to-[#120B24]/80 border border-white/10 mb-6 sm:mb-8 shadow-xl backdrop-blur-md relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-48 h-48 bg-[#8B5CF6]/15 blur-3xl rounded-full pointer-events-none"></div>
-            <div className="flex flex-row items-center gap-4 sm:gap-5">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-br from-[#00C6FF] to-[#8B5CF6] flex items-center justify-center text-white flex-shrink-0 shadow-[0_0_20px_rgba(0,198,255,0.4)]">
-                <UserCheck className="w-6 h-6 sm:w-7 sm:h-7" />
-              </div>
-              <div className="flex-1">
-                <h3 className="text-base sm:text-xl font-bold text-white mb-1 flex flex-wrap items-center gap-2">
-                  <span>Rahannath P R</span>
-                  <span className="text-[10px] sm:text-xs font-semibold px-2 sm:px-2.5 py-0.5 rounded-full bg-[#8B5CF6]/20 text-[#00C6FF] border border-[#8B5CF6]/30">CEO & Founder</span>
-                </h3>
-                <p className="text-xs sm:text-base text-gray-300 leading-relaxed font-normal">
-                  Leads the company with a vision to help businesses achieve sustainable digital growth through innovative technology and marketing solutions.
-                </p>
-              </div>
+          {/* Leadership Section */}
+          <div className="w-full mb-6 sm:mb-8">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-3 sm:mb-4 flex items-center gap-2">
+              <Users className="w-4 h-4 text-[#00C6FF]" />
+              Our Leadership
+            </h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+              {/* Leader 1 - Rahannath P R */}
+              <Link 
+                to="/blog/vision-behind-rahan-pr-skillstar"
+                className="w-full p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-gradient-to-r from-[#0A0F24]/90 to-[#120B24]/80 border border-white/10 shadow-xl backdrop-blur-md relative overflow-hidden group hover:border-[#00C6FF]/40 transition-all duration-300 block"
+              >
+                <div className="absolute top-0 right-0 w-36 h-36 bg-[#8B5CF6]/15 blur-3xl rounded-full pointer-events-none group-hover:scale-125 transition-transform duration-500"></div>
+                <div className="flex flex-row items-center gap-4 sm:gap-5">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-br from-[#00C6FF] to-[#8B5CF6] flex items-center justify-center text-white flex-shrink-0 shadow-[0_0_20px_rgba(0,198,255,0.4)]">
+                    <UserCheck className="w-6 h-6 sm:w-7 sm:h-7" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-base sm:text-lg font-bold text-white mb-1 flex flex-wrap items-center gap-2">
+                      <span>Rahannath P R</span>
+                      <span className="text-[10px] sm:text-xs font-semibold px-2 sm:px-2.5 py-0.5 rounded-full bg-[#8B5CF6]/20 text-[#00C6FF] border border-[#8B5CF6]/30">
+                        Co-Founder & CEO
+                      </span>
+                    </h3>
+                    <p className="text-xs sm:text-sm text-gray-300 leading-relaxed font-normal">
+                      Leading strategic partnerships & client scale-up trajectories.
+                    </p>
+                  </div>
+                  <ArrowRight className="w-4 h-4 text-gray-500 group-hover:text-[#00C6FF] group-hover:translate-x-1 transition-all flex-shrink-0" />
+                </div>
+              </Link>
+
+              {/* Leader 2 - Rohan R */}
+              <Link 
+                to="/blog/vision-behind-rohan-skillstar"
+                className="w-full p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-gradient-to-r from-[#0A0F24]/90 to-[#120B24]/80 border border-white/10 shadow-xl backdrop-blur-md relative overflow-hidden group hover:border-[#D946EF]/40 transition-all duration-300 block"
+              >
+                <div className="absolute top-0 right-0 w-36 h-36 bg-[#D946EF]/15 blur-3xl rounded-full pointer-events-none group-hover:scale-125 transition-transform duration-500"></div>
+                <div className="flex flex-row items-center gap-4 sm:gap-5">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-br from-[#8B5CF6] to-[#D946EF] flex items-center justify-center text-white flex-shrink-0 shadow-[0_0_20px_rgba(217,70,239,0.4)]">
+                    <UserCheck className="w-6 h-6 sm:w-7 sm:h-7" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-base sm:text-lg font-bold text-white mb-1 flex flex-wrap items-center gap-2">
+                      <span>Rohan R</span>
+                      <span className="text-[10px] sm:text-xs font-semibold px-2 sm:px-2.5 py-0.5 rounded-full bg-[#D946EF]/20 text-[#D946EF] border border-[#D946EF]/30">
+                        Co-Founder & Director & Investor
+                      </span>
+                    </h3>
+                    <p className="text-xs sm:text-sm text-gray-300 leading-relaxed font-normal">
+                      Directing creative output & unified brand solutions.
+                    </p>
+                  </div>
+                  <ArrowRight className="w-4 h-4 text-gray-500 group-hover:text-[#D946EF] group-hover:translate-x-1 transition-all flex-shrink-0" />
+                </div>
+              </Link>
             </div>
           </div>
 

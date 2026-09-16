@@ -6,24 +6,24 @@ import { Link } from 'react-router-dom';
 const Blog = () => {
   const blogs = [
     {
-      title: "How Local SEO Can Help Businesses To Get More Customers",
-      category: "Local SEO",
-      date: "Sep 02, 2026",
-      readTime: "5 min read",
-      author: "Rahannath P R",
-      link: "/blog/how-local-seo-helps-businesses",
-      gradient: "from-[#00C6FF] to-[#3B82F6]",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
+      title: "Rahan PR: The Visionary Co-Founder and CEO Driving SkillStar Digital Solutions",
+      category: "CEO Vision & Leadership",
+      date: "Sep 16, 2026",
+      readTime: "8 min read",
+      author: "Rahan PR",
+      link: "/blog/vision-behind-rahan-pr-skillstar",
+      gradient: "from-[#00C6FF] via-[#8B5CF6] to-[#D946EF]",
+      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=800"
     },
     {
-      title: "The Vision Behind Rahan P R and SkillStar Digital Solutions",
-      category: "Founder Vision",
-      date: "Sep 02, 2026",
-      readTime: "6 min read",
-      author: "Rahannath P R",
-      link: "/blog/vision-behind-rahan-pr-skillstar",
-      gradient: "from-[#8B5CF6] to-[#D946EF]",
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=800"
+      title: "R. Rohan: The Visionary Co-Founder, Director & Investor Behind SkillStar Digital Solutions",
+      category: "Director & Investor Vision",
+      date: "Sep 16, 2026",
+      readTime: "9 min read",
+      author: "R. Rohan",
+      link: "/blog/vision-behind-rohan-skillstar",
+      gradient: "from-[#D946EF] via-[#8B5CF6] to-[#00C6FF]",
+      image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=800"
     }
   ];
 
@@ -115,30 +115,32 @@ const Blog = () => {
         </div>
 
         {/* Mobile Swipe Guidance & Controls */}
-        <div className="md:hidden flex items-center justify-between mb-4 px-2">
-          <div className="inline-flex items-center gap-1.5 text-xs text-[#00C6FF] font-semibold bg-[#0A0F24]/80 px-3 py-1 rounded-full border border-[#00C6FF]/30">
-            <span>👈 Swipe to read articles 👉</span>
-          </div>
+        {blogs.length > 1 && (
+          <div className="md:hidden flex items-center justify-between mb-4 px-2">
+            <div className="inline-flex items-center gap-1.5 text-xs text-[#00C6FF] font-semibold bg-[#0A0F24]/80 px-3 py-1 rounded-full border border-[#00C6FF]/30">
+              <span>👈 Swipe to read articles 👉</span>
+            </div>
 
-          <div className="flex gap-2">
-            <button
-              onClick={() => scroll('left')}
-              className="w-8 h-8 rounded-full bg-[#0A0F24] border border-white/10 flex items-center justify-center text-white hover:bg-white/10 transition-all shadow-md"
-              aria-label="Scroll left"
-            >
-              <ChevronLeft className="w-4 h-4" />
-            </button>
-            <button
-              onClick={() => scroll('right')}
-              className="w-8 h-8 rounded-full bg-[#0A0F24] border border-white/10 flex items-center justify-center text-white hover:bg-white/10 transition-all shadow-md"
-              aria-label="Scroll right"
-            >
-              <ChevronRight className="w-4 h-4" />
-            </button>
+            <div className="flex gap-2">
+              <button
+                onClick={() => scroll('left')}
+                className="w-8 h-8 rounded-full bg-[#0A0F24] border border-white/10 flex items-center justify-center text-white hover:bg-white/10 transition-all shadow-md"
+                aria-label="Scroll left"
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </button>
+              <button
+                onClick={() => scroll('right')}
+                className="w-8 h-8 rounded-full bg-[#0A0F24] border border-white/10 flex items-center justify-center text-white hover:bg-white/10 transition-all shadow-md"
+                aria-label="Scroll right"
+              >
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
           </div>
-        </div>
+        )}
 
-        {/* Blog Cards: Horizontal Swipe on Mobile (< md), Grid on Desktop (md+) */}
+        {/* Blog Card Container */}
         <motion.div 
           ref={scrollContainerRef}
           onScroll={handleScroll}
@@ -146,14 +148,13 @@ const Blog = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="flex md:grid md:grid-cols-2 max-w-5xl mx-auto gap-4 sm:gap-6 md:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-6 md:pb-0 pt-2 px-2 md:px-0 scrollbar-none [-ms-overflow-style:none] [scrollbar-width:none]"
-          style={{ WebkitOverflowScrolling: 'touch' }}
+          className="flex md:grid md:grid-cols-2 justify-start md:justify-center max-w-5xl mx-auto gap-4 sm:gap-6 md:gap-8 overflow-x-auto md:overflow-visible pb-6 md:pb-0 pt-2 px-2 md:px-0 scrollbar-none snap-x snap-mandatory"
         >
           {blogs.map((blog, idx) => (
             <motion.article 
               key={idx}
               variants={cardVariants}
-              className="w-[84vw] sm:w-[360px] md:w-auto flex-shrink-0 md:flex-shrink snap-center group rounded-3xl bg-[#0A0F24]/80 backdrop-blur-md border border-white/10 overflow-hidden hover:border-white/25 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)] flex flex-col"
+              className="w-[84vw] sm:w-[380px] md:w-full flex-shrink-0 md:flex-shrink snap-center group rounded-3xl bg-[#0A0F24]/80 backdrop-blur-md border border-white/10 overflow-hidden hover:border-white/25 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)] flex flex-col"
             >
               <Link to={blog.link} className="flex flex-col h-full">
                 {/* Image Area */}
@@ -217,27 +218,39 @@ const Blog = () => {
         </motion.div>
 
         {/* Mobile Indicator Dots */}
-        <div className="flex md:hidden justify-center items-center gap-2 mt-4 mb-4">
-          {blogs.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => scrollToCard(idx)}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                activeCard === idx 
-                  ? 'w-7 bg-gradient-to-r from-[#00C6FF] to-[#D946EF]' 
-                  : 'w-2 bg-white/20'
-              }`}
-              aria-label={`Go to article ${idx + 1}`}
-            />
-          ))}
-        </div>
+        {blogs.length > 1 && (
+          <div className="flex md:hidden justify-center items-center gap-2 mt-4 mb-4">
+            {blogs.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => scrollToCard(idx)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  activeCard === idx 
+                    ? 'w-7 bg-gradient-to-r from-[#00C6FF] to-[#D946EF]' 
+                    : 'w-2 bg-white/20'
+                }`}
+                aria-label={`Go to article ${idx + 1}`}
+              />
+            ))}
+          </div>
+        )}
 
-        {/* View All Button */}
-        <div className="mt-12 sm:mt-16 text-center">
-          <a href="#" className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-transparent border border-white/20 text-white font-bold text-sm hover:bg-white/5 transition-all duration-300 group">
-            View All Articles
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </a>
+        {/* Read Full Articles Buttons */}
+        <div className="mt-12 flex flex-wrap justify-center items-center gap-4">
+          <Link 
+            to="/blog/vision-behind-rahan-pr-skillstar" 
+            className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-white/5 border border-white/20 text-white font-bold text-xs sm:text-sm hover:bg-white/10 hover:border-[#00C6FF]/50 transition-all duration-300 group shadow-lg"
+          >
+            CEO Vision (Rahan PR)
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#00C6FF]" />
+          </Link>
+          <Link 
+            to="/blog/vision-behind-rohan-skillstar" 
+            className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-white/5 border border-white/20 text-white font-bold text-xs sm:text-sm hover:bg-white/10 hover:border-[#D946EF]/50 transition-all duration-300 group shadow-lg"
+          >
+            Director & Investor Vision (R. Rohan)
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#D946EF]" />
+          </Link>
         </div>
 
       </div>

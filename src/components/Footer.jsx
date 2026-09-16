@@ -34,8 +34,8 @@ const Footer = () => {
   ];
 
   const articleLinks = [
-    { name: 'How Local SEO Helps Businesses Get More Customers', path: '/blog/how-local-seo-helps-businesses' },
-    { name: 'The Vision Behind Rahan P R and SkillStar Digital Solutions', path: '/blog/vision-behind-rahan-pr-skillstar' }
+    { name: 'Rahan PR: Visionary Co-Founder & CEO Driving SkillStar', path: '/blog/vision-behind-rahan-pr-skillstar', author: 'By Rahan PR' },
+    { name: 'R. Rohan: Visionary Co-Founder, Director & Investor', path: '/blog/vision-behind-rohan-skillstar', author: 'By R. Rohan' }
   ];
 
   const scrollToTop = () => {
@@ -173,7 +173,7 @@ const Footer = () => {
                   >
                     {art.name}
                   </Link>
-                  <span className="text-[9px] sm:text-[10px] text-gray-500 mt-1 block">By Rahannath P R</span>
+                  <span className="text-[9px] sm:text-[10px] text-gray-500 mt-1 block">{art.author}</span>
                 </li>
               ))}
             </ul>
