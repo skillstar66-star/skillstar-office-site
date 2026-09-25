@@ -27,6 +27,8 @@ import BrandingCreativeSolutions from './pages/BrandingCreativeSolutions';
 import AiIntelligentAutomation from './pages/AiIntelligentAutomation';
 import CustomSoftwareDevelopment from './pages/CustomSoftwareDevelopment';
 import VideoEditingGraphicDesign from './pages/VideoEditingGraphicDesign';
+import WebDevelopmentCompanyCoimbatore from './pages/WebDevelopmentCompanyCoimbatore';
+import DigitalMarketingCompanyCoimbatore from './pages/DigitalMarketingCompanyCoimbatore';
 import RahanPrVisionBlog from './pages/RahanPrVisionBlog';
 import RohanVisionBlog from './pages/RohanVisionBlog';
 import usePageMeta from './hooks/usePageMeta';
@@ -80,6 +82,8 @@ function App() {
             <Route path="/seo" element={<SeoService />} />
             <Route path="/performance-marketing" element={<PerformanceMarketing />} />
             <Route path="/web-development" element={<EnterpriseWebDevelopment />} />
+            <Route path="/web-development-company-coimbatore" element={<WebDevelopmentCompanyCoimbatore />} />
+            <Route path="/digital-marketing-company-coimbatore" element={<DigitalMarketingCompanyCoimbatore />} />
             <Route path="/ui-ux-design" element={<UiUxDesign />} />
             <Route path="/branding" element={<BrandingCreativeSolutions />} />
             <Route path="/ai-automation" element={<AiIntelligentAutomation />} />

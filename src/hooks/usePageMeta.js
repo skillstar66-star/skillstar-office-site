@@ -22,7 +22,24 @@ function setCanonical(url) {
   element.setAttribute('href', url);
 }
 
-export default function usePageMeta({ title, description, canonical }) {
+function setStructuredData(data) {
+  let element = document.getElementById('dynamic-page-schema');
+  if (!data) {
+    if (element) element.remove();
+    return;
+  }
+  if (!element) {
+    element = document.createElement('script');
+    element.setAttribute('type', 'application/ld+json');
+    element.setAttribute('id', 'dynamic-page-schema');
+    document.head.appendChild(element);
+  }
+  element.textContent = typeof data === 'string' ? data : JSON.stringify(data, null, 2);
+}
+
+export default function usePageMeta({ title, description, canonical, structuredData, schema }) {
+  const data = structuredData || schema;
+
   useEffect(() => {
     if (title) {
       document.title = title;
@@ -40,6 +57,16 @@ export default function usePageMeta({ title, description, canonical }) {
       setMetaTag('property', 'og:url', canonical);
       setMetaTag('name', 'twitter:url', canonical);
     }
-  }, [title, description, canonical]);
+    if (data) {
+      setStructuredData(data);
+    }
+
+    return () => {
+      if (data) {
+        const element = document.getElementById('dynamic-page-schema');
+        if (element) element.remove();
+      }
+    };
+  }, [title, description, canonical, data]);
 }
 
